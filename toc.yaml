@@ -1,13 +1,13 @@
 ---
 toc:
   properties:
-    subcollection: Db2onCloud
+    subcollection: db2-saas
     category: database
     audience: service
-    href: /docs/Db2onCloud
+    href: /docs/db2-saas
     console-page: /catalog/services/db2
-    product-page: https://www.ibm.com/cloud/db2-on-cloud
-    path: Db2onCloud
+    product-page: https://www.ibm.com/cloud/db2-saas
+    path: db2-saas
     label: IBM Db2 SaaS
   entries: 
   - navgroup: 
@@ -90,16 +90,16 @@ toc:
       - investigating_latency_events.md
       - link: 
             label: "IBM Demos: Tutorials, videos, and hands-on labs"
-            href: https://www.ibm.com/demos/collection/Db2-on-Cloud/
+            href: https://www.ibm.com/demos/collection/db2-saas/
   - navgroup:
       id: reference
       topics: 
       - link: 
             label: Database management API (Standard and Enterprise)
-            href: https://cloud.ibm.com/apidocs/db2-on-cloud/db2-on-cloud-v4
+            href: https://cloud.ibm.com/apidocs/db2-saas/db2-saas-v4
       - link: 
             label: Database resource scaling API
-            href: https://cloud.ibm.com/apidocs/db2-on-cloud/db2oc_scale_exp
+            href: https://cloud.ibm.com/apidocs/db2-saas/db2oc_scale_exp
       - link: 
             label: SQL reference
             href: https://www.ibm.com/support/knowledgecenter/SSFMBX/com.ibm.swg.im.dashdb.sql.ref.doc/doc/c0004100.html
