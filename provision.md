@@ -2,15 +2,15 @@
 
 copyright:
   years: 2014, 2020, 2021, 2022
-lastupdated: "2022-11-07"
+lastupdated: "2025-02-05"
 
-keywords: provision cloud database, database with terraform, provisioning parameters, IBM Db2 SaaS, db2
+keywords: provision cloud database, database with terraform, provisioning parameters, db2 on cloud, db2
 
 subcollection: Db2onCloud
 
 ---
 
- 
+
 {:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:codeblock: .codeblock}
@@ -25,14 +25,14 @@ subcollection: Db2onCloud
 # Provision a service instance
 {: #provisioning}
 
-To deploy an {{site.data.keyword.Db2_on_Cloud_long}} service, you need to create a {{site.data.keyword.Db2_on_Cloud_short}} service instance. 
+To deploy an {{site.data.keyword.Db2_on_Cloud_long}} service, you need to create a {{site.data.keyword.Db2_on_Cloud_short}} service instance.
 {: shortdesc}
 
-You can provision a deployment by visiting the service's catalog page or by specifying the service ID to the command line, or to the API. The deployment type is determined by the service ID, which you must specify when you create a {{site.data.keyword.Db2_on_Cloud_short}} deployment by using the command line or API. 
+You can provision a deployment by visiting the service's catalog page or by specifying the service ID to the command line, or to the API. The deployment type is determined by the service ID, which you must specify when you create a {{site.data.keyword.Db2_on_Cloud_short}} deployment by using the command line or API.
 
 | Deployment Type | Catalog Page | Service ID | Plan IDs |
 |-----------------|--------------|------------|----------|
-| {{site.data.keyword.Db2_on_Cloud_short}} |[Link](https://cloud.ibm.com/catalog/services/db2){: external} | dashdb-for-transactions | dashDBNebula, dashDBStandard |
+| {{site.data.keyword.Db2_on_Cloud_short}} |[Link](https://cloud.ibm.com/catalog/services/db2){: external} | dashdb-for-transactions | dashDBNebula, dashDBStandard, Perfomance|
 
 ## Using the catalog
 {: #prov_catalog}
@@ -47,7 +47,7 @@ When you create the deployment from the catalog, you need to specify the followi
 
 1. **Resource group** - If you are organizing your services into resource groups, you can specify the resource group in this field. Otherwise, you can leave it at default.
 
-1. **KMS instance** and **disk encryption key** - If you use Key Protect or Hyper Protect Crypto Services, an instance and key can be selected to encrypt the deployment's disk. If you do not use your own key, the deployment automatically creates and manages its own disk encryption key using the Key Protect service. If you would like to use HPCS for encryption, you must [provision an HPCS instance](docs/hs-crypto?topic=hs-crypto-provision&interface=ui) and generate or import a key. Currently, HPCS is not EU-Cloud enabled. 
+1. **KMS instance** and **disk encryption key** - If you use Key Protect or Hyper Protect Crypto Services, an instance and key can be selected to encrypt the deployment's disk. If you do not use your own key, the deployment automatically creates and manages its own disk encryption key using the Key Protect service. If you would like to use HPCS for encryption, you must [provision an HPCS instance](docs/hs-crypto?topic=hs-crypto-provision&interface=ui) and generate or import a key. Currently, HPCS is not EU-Cloud enabled.
 
 1. **Backup Encryption Key** - If you use Backup Encyrption Key, you can provide your own KMS instance and key in order to encrypt your backups. This is an optional parameter, and if not provided the default KMS instance and key will be used.
 
@@ -58,6 +58,9 @@ When you create the deployment from the catalog, you need to specify the followi
 1. **High Availability** - whether the services should be Highly Available
 
 1. **Oracle compatibility** - whether the service instance should have Oracle compatibility enabled
+
+2. **Instance Profile** -  Choose machine type resource for your deployment based on your CPU and memory requirements. This option is only available with the Performance plan.
+
 
 After selecting the appropriate settings, click **Create** to start the provisioning process.
 
@@ -105,7 +108,7 @@ The `service-instance-create` command supports a `-p` flag, which allows [additi
 You can provision new deployments by using the Resource Controller API. However, in order to use the Resource Controller API, you need some additional preparation.
 
 1. [Obtain an IAM token from your API token]().
-    
+
 1. You must know the ID of the resource group to which you would like to deploy. This information is available through the [{{site.data.keyword.cloud_notm}} CLI](). You can find a list of resource groups with `ibmcloud resource groups` and the ID of a resource group with `ibmcloud resource group`.
 1. You must know the region to which you would like to deploy.
 
@@ -135,23 +138,24 @@ More information on the Resource Controller API is found in its [API Reference](
 {: #prov_add_parms}
 
 - `backup_id` - A CRN of a backup resource to restore from. The backup must have been created by a database deployment with the same service ID. The backup is loaded after provisioning and the new deployment starts up that uses that data. A backup CRN is in the format `crn:v1:<...>:backup:<uuid>`. If omitted, the database is provisioned empty.
-
-
-
 - `backup_location` - The location of the deployment's backups.
 - `disk_encryption_key_crn` - The CRN of a [KMS key](), which is then used for disk encryption. A KMS CRN is in the format `crn:v1:<...>:key:<id>`.
-- `backup_encryption_key_crn` - The CRN of a [KMS key](), which is then used for backup encryption. A KMS CRN is in the format `crn:v1:<...>:key:<id>`. 
+- `backup_encryption_key_crn` - The CRN of a [KMS key](), which is then used for backup encryption. A KMS CRN is in the format `crn:v1:<...>:key:<id>`.
    To use a key for your backups, you must first enable the [service-to-service delegation]().
-   {: note}
-
-
-
-- `members_cpu_allocation_count` - Enables and allocates the number of specified dedicated cores to your deployment. For example, to use two dedicated cores per member, use `"members_cpu_allocation_count":"2"`. If omitted, the default value "Shared CPU" uses compute resources on shared hosts.  
-
+- `members_cpu_allocation_count` - Enables and allocates the number of specified dedicated cores to your deployment. For example, to use two dedicated cores per member, use `"members_cpu_allocation_count":"2"`. If omitted, the default value "Shared CPU" uses compute resources on shared hosts.
 - `service-endpoints` - Selects the types [Service Endpoints]() supported on your deployment. Options are `public`, `private`, or `public-and-private`. If omitted, the default is `public`. Note that in the CLI, `service-endpoints` is a flag, and not a parameter.
 
+`backup_encryption_key_crn` is NOT applicable to performance plans.  For performance plans, backup will be encrypted with the same key as disk_encryption_key_crn.  If disk_encryption_key_crn is not specified, it'll use the default provider managed key. {: note}
 
+## List of additional parameters (for performance plans only)
 
+- `timezone` - The timezone that your database and the underlying operating system should use. Any timezone identifier accepted by Linux will be valid. Example:`"timezone": "America/Toronto"`. 
+  
+  This example will be accepted here. If omitted, the default is UTC. For a complete list of valid timezone identifiers, refer to [Wikipedia’s tz database time zones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 
-
-
+- `custom_db` , `custom_dbm`, `custom_registry` - This allows you to set custom Db2 DB, DBM, and registry settings. The value should be a JSON array.
+Example:
+  ``` 
+  "custom_registry": { "DB2_SELECTIVITY": "ALL", "DB2_ANTIJOIN": "EXTEND" }
+   ```
+    The [Db2 REST API](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-on-cloud-v4#introduction) can be used to query a full list of changeable Db2 parameters and update Db2 settings on an existing instance.

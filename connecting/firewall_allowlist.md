@@ -23,13 +23,12 @@ subcollection: Db2onCloud
 
 # Firewall Allowlist
 
-If you use allowlists to control connections in your environment, you can use the following IP lists to allowlist IBM Db2 SaaS deployments. You should allowlist all of the subnet ranges for the _entire_ region that your deployments live in.
+If you use allowlists to control connections in your environment, you can use the following IP lists to allowlist Db2 on Cloud deployments. You should allowlist all of the subnet ranges for the _entire_ region that your deployments live in.
 
 As new clusters in a region are created, there will be additional IP ranges that will be added. If an existing Db2oC customer adds a new instance, it may be necessary to add these new IP ranges into the firewall rules.
 {:important}
 
 ### `Dallas` List
-
 Subnet | Location
 -- | --
 52.116.179.72/29 | dal10
@@ -62,7 +61,6 @@ Subnet | Location
 
 
 ### `Frankfurt` List
-
 Subnet | Location
 -- | --
 159.122.98.248/29 | fra02
@@ -77,7 +75,6 @@ Subnet | Location
 
 
 ### `London` List
-
 Subnet | Location
 -- | --
 158.175.68.168/29 | lon04
@@ -90,7 +87,6 @@ Subnet | Location
 
 
 ### `Tokyo` List
-
 Subnet | Location
 -- | --
 169.56.0.248/29 | tok02
@@ -101,7 +97,6 @@ Subnet | Location
 165.192.86.232/29 | tok05
 
 ### `Washington` List
-
 Subnet | Location
 -- | --
 169.55.125.224/29 | wdc04
@@ -113,7 +108,6 @@ Subnet | Location
 
 
 ### `Sydney` List
-
 Subnet | Location
 -- | --
 168.1.11.160/29 | syd01
@@ -124,14 +118,12 @@ Subnet | Location
 135.90.89.48/29 | syd05
 
 ### `Milan` List
-
 Subnet | Location
 -- | --
 159.122.134.192/29 | mil01
 159.122.148.216/29 | mil01
 
 ### `Montreal` List
-
 Subnet | Location
 -- | --
 169.54.88.80/29 | mon01
@@ -139,7 +131,6 @@ Subnet | Location
 
 
 ### `Sao Paulo` List
-
 Subnet | Location
 -- | --
 169.57.160.160/29 | sao01
@@ -153,7 +144,6 @@ Subnet | Location
 
 
 ### `Toronto` List
-
 Subnet | Location
 -- | --
 169.53.186.200/29 | tor01
@@ -167,7 +157,6 @@ Subnet | Location
 
 
 ### `Amsterdam` List
-
 Subnet | Location
 -- | --
 169.51.52.168/29 | ams03

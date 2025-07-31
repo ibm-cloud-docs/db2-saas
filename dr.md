@@ -4,9 +4,9 @@ copyright:
   years: 2014, 2024
 lastupdated: "2024-05-28"
 
-keywords: DR, HADR, disaster recovery, Enterprise, Standard, IBM Db2 SaaS, failover, failback
+keywords: DR, HADR, disaster recovery, Enterprise, Standard, Db2 on Cloud, failover, failback
 
-subcollection: db2-saas
+subcollection: Db2onCloud
 
 ---
 
@@ -113,7 +113,3 @@ The DR node must be in a standby state before you can delete it. If it is not in
 
 4. A successful takeover by the primary node is indicated by the **Promotion** button moving to the recovery node (now the standby) along with a notification. The primary site is now **Active**.
    ![Takeover completion](images/dr_12_v2.jpg  "Takeover completion"){: caption="Takeover completion" caption-side="bottom"}
-
-
-
-

@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2021
 lastupdated: "2021-03-26"
 
-keywords: security compliances, security, compliance, IBM Db2 SaaS
+keywords: security compliances, security, compliance, Db2 on Cloud
 
 subcollection: Db2onCloud
 
@@ -35,4 +35,3 @@ For details about each of the security compliances, see [Details about security 
 | Standard | ![checkmark](images/checkmark.png) | ![checkmark](images/checkmark.png) | ![checkmark](images/checkmark.png) | ![checkmark](images/checkmark.png) | ![checkmark](images/checkmark.png) |
 | Lite |  | ![checkmark](images/checkmark.png) |  | ![checkmark](images/checkmark.png) | ![checkmark](images/checkmark.png) |
 {: caption="Summary of security compliances for the service offering plans" caption-side="top"}
-

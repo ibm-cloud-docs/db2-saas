@@ -23,11 +23,11 @@ subcollection: Db2onCloud
 
 # Investigating latency events
 
-For users facing latency issues when migrating from on-premise applications to on-cloud services please contact the IBM Db2 SaaS team and then complete the following steps to improve latency. To begin the latency improvement process, please open a support case. 
+For users facing latency issues when migrating from on-premise applications to on-cloud services please contact the Db2 on Cloud team and then complete the following steps to improve latency. To begin the latency improvement process, please open a support case. 
 
 For information about opening an IBM support case, or about support levels and case severities, see: [Working with support cases](/docs/get-support?topic=get-support-open-case#open-case){:external}
 
-The latency improvement process cannot be completed without contacting the IBM Db2 SaaS team at this time. 
+The latency improvement process cannot be completed without contacting the Db2 on Cloud team at this time. 
 {: important}
 
 ### Steps
@@ -49,9 +49,9 @@ The latency improvement process cannot be completed without contacting the IBM D
 
         1. Rename to db2dsdriver.cfg
 
-   1. The db2dsdriver.cfg is the last configuration method used to establish a connection to the db2 database. This means that db2dsdriver.cfg has the least precedence and will only be used for connecting when no other connection configurations are available. 
+    1. The db2dsdriver.cfg is the last configuration method used to establish a connection to the db2 database. This means that db2dsdriver.cfg has the least precedence and will only be used for connecting when no other connection configurations are available. 
 
-   1. In order for the db2dsdriver.cfg to be used for the connection, all other connection configurations need to be disabled or removed for that specific database. **Ensure that these existing configuration methods are backed up in the event that backout needs to be executed.** This includes the following:
+    1. In order for the db2dsdriver.cfg to be used for the connection, all other connection configurations need to be disabled or removed for that specific database. **Ensure that these existing configuration methods are backed up in the event that backout needs to be executed.** This includes the following:
         
         1. db2 node and database connection details (check ```db2 list node directory``` and ```db2 list database directory``` - verify connection details are not present for the database you're trying to connect to)
             - back up the connection configs before removing them
@@ -154,8 +154,3 @@ The latency improvement process cannot be completed without contacting the IBM D
 {: note}
       
     - this sample defines the db2 connection details for two different formations in preprod - a single node formation that uses the database alias ```singledb``` and an ha formation that uses the database alias ```hadb```
-
-
-
-
-
