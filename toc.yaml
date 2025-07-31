@@ -56,16 +56,14 @@ toc:
           - acr_setup.md
           - dr.md
           - main.md
-          - ins_db2_terraform.md
           - log_mon.md
-          - logical_schema.md
-          - command_syntax.md
           - topicgroup:
               label: Federation
               topics:
               - federation_v2.md
               - fed_v2_cloud_to_cloud.md
           - local_dev_env.md
+      - migration_setup.md
       - topicgroup:
           label: Security
           topics:
@@ -78,6 +76,7 @@ toc:
           - reference_hpcs.md
           - key_protect_2.md
           - password_policies.md
+      - db2-database-assistant.md
       - communities.md
       - link:
             label: What's new
