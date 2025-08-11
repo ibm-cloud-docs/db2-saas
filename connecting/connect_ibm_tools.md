@@ -595,10 +595,6 @@ How you add data and from where you can add data differs between legacy and IBM 
     
 5. Click **Create**. The connection appears on the **Assets** page.
 
-Watch this video to see how to create a connection and add connected data to a project.
-
-![Create a connection and add connected data to a project](https://www.youtube.com/embed/YV-5zSczhH4?rel=0){: video output="iframe" data-script="none" id="youtubeplayer1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
-
 
 
 #### To create a new connection in a legacy project:
@@ -678,5 +674,3 @@ Before attempting to connect to your {{site.data.keyword.Db2_on_Cloud_short}} da
    - If the connection is successful, click **OK** to return to the ODBC Data Source Administrator window, and then click **OK** to exit the window.
             
    - If the connection is not successful, note and correct any errors before you test the connection again.
-
-
