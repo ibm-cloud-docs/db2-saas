@@ -1,4 +1,4 @@
 # {{site.data.keyword.Db2_on_Cloud_short}} 
- Db2onCloud
+ Db2 SaaS
  
 This repo contains the IBM Cloud Docs content for {{site.data.keyword.Db2_on_Cloud_short}}  (formerly dashDB for Transactions).
