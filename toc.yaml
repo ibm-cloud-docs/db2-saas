@@ -1,0 +1,113 @@
+---
+toc:
+  properties:
+    subcollection: db2-saas
+    category: database
+    audience: service
+    href: /docs/db2-saas
+    path: db2-saas
+    label: IBM Db2 SaaS
+  entries:
+  - navgroup:
+      id: learn
+      topics:
+      - about.md
+      - getting-started.md
+      - topicgroup:
+          label: Free Plan
+          topics:
+          - free_plan.md
+          - faqs_lite.md
+      - topicgroup:
+          label: Connecting
+          topics:
+          - connecting/connecting.md
+          - connecting/connectivity_options.md
+          - connecting/credentials.md
+          - connecting/ssl.md
+          - connecting/driver_pkg.md
+          - connecting/connect_programmatically.md
+          - connecting/connect_ibm_tools.md
+          - connecting/connect_3rd_party_tools.md
+          - connecting/rest_api.md
+          - connecting/firewall_allowlist.md
+      - topicgroup:
+          label: Loading your data
+          topics:
+          - dcw.md
+          - load_cos.md
+      - topicgroup:
+          label: Administration
+          topics:
+          - interfaces.md
+          - endpoints.md
+          - advanced_admin.md
+          - flex_scaling.md
+          - autoscaling_external.md
+          - ha.md
+          - hadr_conversion.md
+          - copy_db.md
+          - deleting_db.md
+          - recovering_db.md
+          - cdc.md
+          - br.md
+          - acr_setup.md
+          - dr.md
+          - main.md
+          - log_mon.md
+          - topicgroup:
+              label: Federation
+              topics:
+              - federation_v2.md
+              - fed_v2_cloud_to_cloud.md
+          - local_dev_env.md
+      - migration_setup.md
+      - topicgroup:
+          label: Security
+          topics:
+          - encryption.md
+          - iam.md
+          - user_mgmt.md
+          - rcac.md
+          - auditing.md
+          - sec_comp_sum.md
+          - reference_hpcs.md
+          - key_protect_2.md
+          - password_policies.md
+      - db2-database-assistant.md
+      - communities.md
+      - link:
+            label: What's new
+            href: https://www.ibm.com/support/pages/whats-new-ibm-db2-cloud
+      - link:
+            label: IBM Developer Answers
+            href: https://developer.ibm.com/answers/index.html
+  - navgroup:
+      id: howto
+      topics:
+      - provision.md
+      - monitor.md
+      - investigating_latency_events.md
+      - link:
+            label: "IBM Demos: Tutorials, videos, and hands-on labs"
+            href: https://www.ibm.com/demos/collection/Db2-on-Cloud/
+  - navgroup:
+      id: reference
+      topics:
+      - link:
+            label: Database management API (Standard and Enterprise)
+            href: https://cloud.ibm.com/apidocs/db2-on-cloud/db2-on-cloud-v4
+      - link:
+            label: Database resource scaling API
+            href: https://cloud.ibm.com/apidocs/db2-on-cloud/db2oc_scale_exp
+      - link:
+            label: SQL reference
+            href: https://www.ibm.com/support/knowledgecenter/SSFMBX/com.ibm.swg.im.dashdb.sql.ref.doc/doc/c0004100.html
+      - link:
+            label: Knowledge Center
+            href: https://www.ibm.com/support/knowledgecenter/SSFMBX/com.ibm.swg.im.dashdb.kc.doc/welcome.html
+  - navgroup:
+      id: help
+      topics:
+      - faqs.md
+      - help.md
