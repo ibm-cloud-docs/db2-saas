@@ -86,14 +86,23 @@ EU-Supported MZR supports 3 node HA in 3 different data centers in that region.
 
 The Performance plan is supported in the following data center geographies:
 
+### Multi-zone region (MZR)
 - **Dallas** - (Dal10, Dal12, Dal14)
 - **Washington** - (Wdc04, Wdc06, Wdc07)
 - **Sydney** - (Syd01, Syd04, Syd05)
 - **Sao Paulo** - (Sao01, Sao04, Sao05)
 - **Toronto** - (Tor01, Tor04, Tor05)
-- **Montreal** - (Mon04)
 - **Frankfurt** - (Fra02, Fra04, Fra05)
 - **Madrid** - (Mad02, Mad04, Mad05)
 - **London** - (Lon04, Lon05, Lon06)
 - **Tokyo** - (Tok02, Tok04, Tok05)
 - **Osaka** - (Osa21, Osa22, Osa23)
+
+MZRs support 3 node HA in 3 different data centers in that region.
+{: note}
+
+### Single-zone region (SZR)
+- **Montreal** - (Mon04)
+
+SZRs support 3 node HA in a single data center in that region.
+{: note}
