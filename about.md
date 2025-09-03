@@ -22,30 +22,6 @@ subcollection: Db2onCloud
 {:pre: .pre}
 {:warning .warning}
 
----
-
-copyright:
-  years: 2014, 2025
-lastupdated: "2025-08-23"
-
-keywords:
-
-subcollection: Db2onCloud
-
----
-
-
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:tip: .tip}
-{:important: .important}
-{:note: .note}
-{:deprecated: .deprecated}
-{:pre: .pre}
-{:warning .warning}
-
 # About
 {: #about}
 
