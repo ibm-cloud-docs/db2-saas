@@ -47,7 +47,7 @@ When you create the deployment from the catalog, you need to specify the followi
 
 1. **Resource group** - If you are organizing your services into resource groups, you can specify the resource group in this field. Otherwise, you can leave it at default.
 
-1. **KMS instance** and **disk encryption key** - If you use Key Protect or Hyper Protect Crypto Services, an instance and key can be selected to encrypt the deployment's disk. If you do not use your own key, the deployment automatically creates and manages its own disk encryption key using the Key Protect service. If you would like to use HPCS for encryption, you must [provision an HPCS instance](docs/hs-crypto?topic=hs-crypto-provision&interface=ui) and generate or import a key. Currently, HPCS is not EU-Cloud enabled.
+1. **KMS instance** and **disk encryption key** - If you use Key Protect or Hyper Protect Crypto Services, an instance and key can be selected to encrypt the deployment's disk. If you do not use your own key, the deployment automatically creates and manages its own disk encryption key using the Key Protect service. If you would like to use HPCS for encryption, you must [provision an HPCS instance](/docs/hs-crypto?topic=hs-crypto-provision) and generate or import a key. Currently, HPCS is not EU-Cloud enabled.
 
 1. **Backup Encryption Key** - If you use Backup Encyrption Key, you can provide your own KMS instance and key in order to encrypt your backups. This is an optional parameter, and if not provided the default KMS instance and key will be used.
 
@@ -78,7 +78,7 @@ ibmcloud resource service-instance-create <service-name> <service-id> <service-p
 ```
 {: codeblock}
 
-More general information about this command is available in the [CLI reference for resource groups]().
+More general information about this command is available in the [CLI reference for resource groups](/docs/cli?topic=cli-ibmcloud_commands_resource).
 
 When the command is run, the database deployment begins. The database takes some time to deploy. You can check on its progress on your {{site.data.keyword.cloud_notm}} dashboard or you can run the following command:
 
@@ -92,7 +92,7 @@ This command reports the current state of the service instance.
 ## Additional flags and parameters
 {: #prov_flags_parms}
 
-The `--service-endpoints` flag allows you to specify which types of [service endpoints]() to include in your deployment. Its default is that connections to your deployment can be made from the public network. Possible values are `public`, `private`, `public-and-private`. If the flag is omitted, the default is a `public` endpoint.
+The `--service-endpoints` flag allows you to specify which types of [service endpoints](/docs/db2-saas?topic=db2-saas-endpts) to include in your deployment. Its default is that connections to your deployment can be made from the public network. Possible values are `public`, `private`, `public-and-private`. If the flag is omitted, the default is a `public` endpoint.
 
 The following example command specifies a service endpoint:
 ```
@@ -107,9 +107,9 @@ The `service-instance-create` command supports a `-p` flag, which allows [additi
 
 You can provision new deployments by using the Resource Controller API. However, in order to use the Resource Controller API, you need some additional preparation.
 
-1. [Obtain an IAM token from your API token]().
+1. [Obtain an IAM token from your API token](/docs/db2-saas?topic=db2-saas-iam#iam_accesstoken).
 
-1. You must know the ID of the resource group to which you would like to deploy. This information is available through the [{{site.data.keyword.cloud_notm}} CLI](). You can find a list of resource groups with `ibmcloud resource groups` and the ID of a resource group with `ibmcloud resource group`.
+1. You must know the ID of the resource group to which you would like to deploy. This information is available through the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli). You can find a list of resource groups with `ibmcloud resource groups` and the ID of a resource group with `ibmcloud resource group`.
 1. You must know the region to which you would like to deploy.
 
 After you have all of the information, the following create request is a `POST` to the `https://resource-controller.cloud.ibm.com/v2/resource_instances` endpoint:
@@ -130,7 +130,7 @@ curl -X POST \
 
 The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are all required. If needed, you can send [additional parameters](#prov_add_parms) in the request body.
 
-More information on the Resource Controller API is found in its [API Reference]().
+More information on the Resource Controller API is found in its [API Reference](/apidocs/resource-controller/resource-controller).
 
 
 
@@ -139,11 +139,11 @@ More information on the Resource Controller API is found in its [API Reference](
 
 - `backup_id` - A CRN of a backup resource to restore from. The backup must have been created by a database deployment with the same service ID. The backup is loaded after provisioning and the new deployment starts up that uses that data. A backup CRN is in the format `crn:v1:<...>:backup:<uuid>`. If omitted, the database is provisioned empty.
 - `backup_location` - The location of the deployment's backups.
-- `disk_encryption_key_crn` - The CRN of a [KMS key](), which is then used for disk encryption. A KMS CRN is in the format `crn:v1:<...>:key:<id>`.
-- `backup_encryption_key_crn` - The CRN of a [KMS key](), which is then used for backup encryption. A KMS CRN is in the format `crn:v1:<...>:key:<id>`.
+- `disk_encryption_key_crn` - The CRN of a [KMS key](/docs/db2-saas?topic=db2-saas-key-management-services), which is then used for disk encryption. A KMS CRN is in the format `crn:v1:<...>:key:<id>`.
+- `backup_encryption_key_crn` - The CRN of a [KMS key](/docs/db2-saas?topic=db2-saas-key-management-services), which is then used for backup encryption. A KMS CRN is in the format `crn:v1:<...>:key:<id>`.
    To use a key for your backups, you must first enable the [service-to-service delegation]().
 - `members_cpu_allocation_count` - Enables and allocates the number of specified dedicated cores to your deployment. For example, to use two dedicated cores per member, use `"members_cpu_allocation_count":"2"`. If omitted, the default value "Shared CPU" uses compute resources on shared hosts.
-- `service-endpoints` - Selects the types [Service Endpoints]() supported on your deployment. Options are `public`, `private`, or `public-and-private`. If omitted, the default is `public`. Note that in the CLI, `service-endpoints` is a flag, and not a parameter.
+- `service-endpoints` - Selects the types [Service Endpoints](/docs/db2-saas?topic=db2-saas-endpts) supported on your deployment. Options are `public`, `private`, or `public-and-private`. If omitted, the default is `public`. Note that in the CLI, `service-endpoints` is a flag, and not a parameter.
 
 `backup_encryption_key_crn` is NOT applicable to performance plans.  For performance plans, backup will be encrypted with the same key as disk_encryption_key_crn.  If disk_encryption_key_crn is not specified, it'll use the default provider managed key. {: note}
 
