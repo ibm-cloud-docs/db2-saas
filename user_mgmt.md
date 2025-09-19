@@ -36,7 +36,19 @@ For more information about IAM, see [What is IBM Cloud Identity and Access Manag
 
 These are the users that are used to access the database. Traditionally, these are the OS users in a typical Db2 deployment, although, in the cloud, a user registry is used. Db2 understands these users as native to the database. The database privileges for the users can be granted or revoked as can roles that are created by the user. 
 
-Database users are not granted any service-level functions. For example, a database administrator who has access to the data does not have the ability to change the configuration of the system outside of the database privileges that they were given.  
+Database users are not granted any service-level functions. For example, a database administrator who has access to the data does not have the ability to change the configuration of the system outside of the database privileges that they were given. 
+
+##### User Naming Rules
+The user ID must follow the [general naming rules](https://www.ibm.com/docs/en/db2/12.1.0?topic=servers-general-naming-rules). It can contain up to 20 characters consisting only of:
+
+- Lowercase letters (`a–z`)
+- Numbers (`0–9`)
+- Dot (`.`)
+- At sign (`@`)
+- Underscore (`_`)
+- Hyphen (`-`)
+
+The user ID cannot begin with a number or an underscore.
 
 #### IAM users
 {: #um_iam_users}
