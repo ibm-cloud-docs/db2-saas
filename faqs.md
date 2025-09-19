@@ -81,7 +81,7 @@ The service includes 24x7 health monitoring of the database and infrastructure.�
 {: faq}
 {: support}
 
-In addition to the {{site.data.keyword.cloud_notm}} documentation site, there is a wide range of information about the underlying Db2 engine functionality in the [IBM Documentation](https://www.ibm.com/docs/en/db2oc){: external}. Updates to the service are posted on our [What's New](https://www.ibm.com/support/pages/whats-new-ibm-db2-cloud){: external} page. 
+In addition to the {{site.data.keyword.cloud_notm}} documentation site, there is a wide range of information about the underlying Db2 engine functionality in the [IBM Documentation](https://www.ibm.com/docs/en/db2oc){: external}. Updates to the service are posted on our [What's New](https://www.ibm.com/support/pages/whats-new-ibm-db2-service){: external} page. 
 
 You can find pricing information and deploy a {{site.data.keyword.Db2_on_Cloud_short}} instance through the {{site.data.keyword.cloud_notm}} [catalog](https://cloud.ibm.com/catalog/services/db2){: external} page for {{site.data.keyword.cloud_notm}}. To learn more, contact [IBM Sales](https://www.ibm.com/contact/us/en/){: external}.
 
