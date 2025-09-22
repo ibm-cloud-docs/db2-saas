@@ -32,7 +32,7 @@ You can provision a deployment by visiting the service's catalog page or by spec
 
 | Deployment Type | Catalog Page | Service ID | Plan IDs |
 |-----------------|--------------|------------|----------|
-| {{site.data.keyword.Db2_on_Cloud_short}} |[Link](https://cloud.ibm.com/catalog/services/db2){: external} | dashdb-for-transactions | dashDBNebula, dashDBStandard, Perfomance|
+| {{site.data.keyword.Db2_on_Cloud_short}} |[Link](https://cloud.ibm.com/catalog/services/db2){: external} | dashdb-for-transactions | Standard Plan - `dashDBNebula1`, Enterprise Plan - `dashDBnebula`, Perfomance Plan - `Perfomance`|
 
 ## Using the catalog
 {: #prov_catalog}
