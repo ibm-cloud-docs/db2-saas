@@ -2,11 +2,11 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-20"
+lastupdated: "2025-09-25"
 
 keywords: 
 
-subcollection: Db2onCloud
+subcollection: db2-saas
 
 ---
 
@@ -64,4 +64,3 @@ To view your endpoints:
 - Select the **Connections** tab. Endpoint information will be displayed in **Connection configuration resources**.
 
 ![Endpoint information](images/endpoint_info.png "Endpoint information"){: caption="Viewing endpoint information" caption-side="bottom"}
-

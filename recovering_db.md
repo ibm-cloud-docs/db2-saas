@@ -2,11 +2,11 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-28"
+lastupdated: "2025-09-25"
 
 keywords: recovery, database
 
-subcollection: Db2onCloud
+subcollection: db2-saas
 
 ---
 

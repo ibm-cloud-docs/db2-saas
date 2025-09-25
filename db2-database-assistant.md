@@ -2,9 +2,9 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-01-10"
+lastupdated: "2025-09-25"
 
-subcollection: Db2onCloud
+subcollection: db2-saas
 
 ---
 

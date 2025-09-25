@@ -2,11 +2,11 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-25"
+lastupdated: "2025-09-25"
 
 keywords:
 
-subcollection: Db2onCloud
+subcollection: db2-saas
 
 ---
 
@@ -31,4 +31,3 @@ subcollection: Db2onCloud
   - [Database management API (Legacy)](https://cloud.ibm.com/apidocs/db2-on-cloud){: external}.
   - [Database management API (Standard and Enterprise)](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-on-cloud-v4){: external}.
 - To scale the storage and compute for your {{site.data.keyword.Db2_on_Cloud_short}} instance, use the [Database resource scaling API](https://cloud.ibm.com/apidocs/db2-on-cloud/db2oc_scale_exp){: external}.
-

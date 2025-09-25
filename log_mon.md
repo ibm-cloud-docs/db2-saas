@@ -2,11 +2,11 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-04"
+lastupdated: "2025-09-25"
 
 keywords: 
 
-subcollection: Db2onCloud
+subcollection: db2-saas
 
 ---
 
@@ -36,5 +36,3 @@ The following are two basic types of checking your system status:
 - Metric-based monitoring 
 
 IBM monitors hundreds of metrics and stores those metrics historically. Based on the values of these metrics, alerts are generated. These alerts are sent to IBM operations staff to ensure that the alerts are seen and addressed. In addition, IBM also sends archived operating system and diagnostic logs for rapid diagnosis. {{site.data.keyword.Db2_on_Cloud_short}} complies with GDPR, and IBM EU Cloud options provide an even higher level of adherence to GDPR, if needed.
-
-

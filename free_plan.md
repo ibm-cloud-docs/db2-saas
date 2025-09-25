@@ -2,11 +2,11 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-04-20"
+lastupdated: "2025-09-25"
 
 keywords: Lite, plan, Lite plan, free plan, availability, restrictions, installation
 
-subcollection: Db2onCloud
+subcollection: db2-saas
 
 ---
 

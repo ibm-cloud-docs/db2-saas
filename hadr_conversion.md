@@ -2,11 +2,11 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-20"
+lastupdated: "2025-09-25"
 
 keywords: HADR, high availability disaster recovery, performance
 
-subcollection: Db2onCloud
+subcollection: db2-saas
 
 ---
 

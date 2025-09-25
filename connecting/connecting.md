@@ -2,11 +2,11 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-10"
+lastupdated: "2025-09-25"
 
 keywords:
 
-subcollection: Db2onCloud
+subcollection: db2-saas
 
 ---
 
@@ -147,5 +147,3 @@ Db2 data virtualization (also known as federation) is supported by {{site.data.k
 This function is supported on all versions of {{site.data.keyword.Db2_on_Cloud_short}}, except for the free Lite plan. However, you can use the Lite plan as a target from which you can pull data.
 
 - [Data virtualization (federation)](/docs/Db2onCloud?topic=Db2onCloud-fed_v2)
-
-

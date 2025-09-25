@@ -2,11 +2,11 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2023-08-01"
+lastupdated: "2025-09-25"
 
 keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode
 
-subcollection: Db2onCloud
+subcollection: db2-saas
 
 ---
 

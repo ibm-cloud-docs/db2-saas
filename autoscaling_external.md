@@ -2,11 +2,11 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2023-07-17"
+lastupdated: "2025-09-25"
 
 keywords:
 
-subcollection: Db2onCloud
+subcollection: db2-saas
 
 ---
 
