@@ -2,11 +2,11 @@
 
 copyright:
   years: 2014, 2020, 2021, 2022, 2025
-lastupdated: "2025-09-23"
+lastupdated: "2025-09-25"
 
 keywords: provision cloud database, database with terraform, provisioning parameters, db2 on cloud, db2
 
-subcollection: Db2onCloud
+subcollection: db2-saas
 
 ---
 

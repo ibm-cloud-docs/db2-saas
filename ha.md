@@ -2,11 +2,11 @@
 
 copyright:
   years: 2014, 2021, 2025
-lastupdated: "2025-07-17"
+lastupdated: "2025-09-25"
 
 keywords: HADR, Legacy Flex, legacy, Flex, high availability disaster recovery
 
-subcollection: Db2onCloud
+subcollection: db2-saas
 
 ---
 

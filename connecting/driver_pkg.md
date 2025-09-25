@@ -2,11 +2,11 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-06"
+lastupdated: "2025-09-25"
 
 keywords:
 
-subcollection: Db2onCloud
+subcollection: db2-saas
 
 ---
 
@@ -264,6 +264,3 @@ Before attempting to connect to your {{site.data.keyword.Db2_on_Cloud_short}} da
    - `<alias>` is an alias that you created with the **db2cli writecfg** command.
 
    By default, the DSN is created as a user DSN.
-
-
-

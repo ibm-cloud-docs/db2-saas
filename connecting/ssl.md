@@ -2,11 +2,11 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-06"
+lastupdated: "2025-09-25"
 
 keywords:
 
-subcollection: Db2onCloud
+subcollection: db2-saas
 
 ---
 
@@ -134,5 +134,3 @@ For more information, see [Configuring Secure Sockets Layer (SSL) support in non
    - Windows: **PATH**
      `<installation_directory>\gsk8\bin`
      `<installation_directory>\gsk8\lib`  (`lib64` for GSKit 64-bit)
-
-

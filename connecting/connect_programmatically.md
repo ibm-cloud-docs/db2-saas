@@ -2,11 +2,11 @@
 
 copyright:
   years: 2014, 2020, 2021
-lastupdated: "2021-12-08"
+lastupdated: "2025-09-25"
 
 keywords:
 
-subcollection: Db2onCloud
+subcollection: db2-saas
 
 ---
 
@@ -385,6 +385,3 @@ Before attempting to connect to your {{site.data.keyword.Db2_on_Cloud_short}} da
    {: codeblock}
 
 5. From your local working directory, push the updates to {{site.data.keyword.Bluemix_notm}} by following the instructions in the "Getting Started" section of the PHP App in your {{site.data.keyword.Bluemix_notm}} dashboard. Then, restart the App in {{site.data.keyword.Bluemix_notm}} and view the App in a browser.
-
-
-

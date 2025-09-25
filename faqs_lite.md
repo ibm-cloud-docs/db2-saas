@@ -2,11 +2,11 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2022-09-07"
+lastupdated: "2025-09-25"
 
 keywords: Lite plan, free plan, faqs
 
-subcollection: Db2onCloud
+subcollection: db2-saas
 
 ---
 
