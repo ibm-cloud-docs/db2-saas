@@ -2,15 +2,15 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2025-09-25"
+lastupdated: "2025-09-30"
 
-keywords: 
+keywords:
 
 subcollection: db2-saas
 
 ---
 
- 
+
 {:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:codeblock: .codeblock}
@@ -34,11 +34,13 @@ The following steps are required to configure the federation system:
 1. [Create the user mapping](#fedv2_user_map)
 1. [Create a nickname](#fedv2_nick)
 
+{: .important}
+**Important:** Federation between Classic and Performance instances requires public endpoints with allowlists. Private endpoints are not supported between these instance types. All Performance instances in a region share the same outbound IP, so traffic must be within IBM networks.
+
 ## Database and host name layout
 {: #fedv2_db_hn}
 
 Target database where the remote table must show:
-
 ```
 Hostname :               <target_host_name>
 DB2 Version:             v11.5
@@ -47,7 +49,6 @@ Schema Name:             <schema_name>
 ```
 
 Remote database where the table is present:
-
 ```
 Hostname :              <remote_host_name>
 DB2 Version:            v11.5
@@ -63,12 +64,10 @@ Table Name:             TEST1
 {: #fedv2_wrapper}
 
 Create a wrapper by running the following command from the console of the target database instance:
-
 ```
 create wrapper drdawrapper library 'libdb2drda.so' options(DB2_FENCED 'Y')
 ```
 {: codeblock}
-
 ```
 DB20000I  The SQL command completed successfully.
 ```
@@ -78,11 +77,20 @@ DB20000I  The SQL command completed successfully.
 
 Create a server to host the remote database by running the following command from the console of the target database instance:
 
+### For Performance instances
 ```
-create server fed_server type DB2/UDB version 11 wrapper drdawrapper authorization "<remote_user>" PASSWORD "<remote_password>" options(host '<remote_host_name>', port '<port>', dbname 'bludb', security 'SSL', password 'y')
+create server fed_server type DB2/UDB version 12 wrapper drdawrapper authorization \"<remote_user>\" PASSWORD \"<remote_password>\" options(host '<remote_host_name>', port '<port>', dbname 'bludb', security 'SSL', password 'y')
 ```
 {: codeblock}
 
+### For Classic instances
+```
+create server fed_server type DB2/UDB version 11 wrapper drdawrapper authorization \"<remote_user>\" PASSWORD \"<remote_password>\" options(host '<remote_host_name>', port '<port>', dbname 'bludb', security 'SSL', password 'y')
+```
+{: codeblock}
+
+{: .important}
+**Important:** If you encounter SQL0104N errors, use escaped double quotes (\") for the authorization and PASSWORD parameters as shown above.
 ```
 DB20000I  The SQL command completed successfully.
 ```
@@ -91,12 +99,10 @@ DB20000I  The SQL command completed successfully.
 {: #fedv2_user_map}
 
 Create the user mapping by running the following command from the console of the target database instance:
-
 ```
 create user mapping for user server fed_server OPTIONS (remote_authid '<remote_user>', remote_password '<remote_password>')
 ```
 {: codeblock}
-
 ```
 DB20000I  The SQL command completed successfully.
 ```
@@ -109,16 +115,13 @@ Create a nickname for the remote database and test the nickname by running the f
 create nickname rmttest1 FOR fed_server.testdb.test1
 ```
 {: codeblock}
-
 ```
 DB20000I  The SQL command completed successfully.
 ```
-
 ```
 select * from rmttest1
 ```
 {: codeblock}
-
 ```
 C1          C2
 ----------- -----------

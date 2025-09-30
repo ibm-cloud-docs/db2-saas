@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2025-09-25"
+lastupdated: "2025-09-30"
 
 keywords:
 
@@ -10,7 +10,7 @@ subcollection: db2-saas
 
 ---
 
- 
+
 {:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:codeblock: .codeblock}
@@ -134,8 +134,6 @@ Subnet | Location
 Subnet | Location
 -- | --
 169.57.160.160/29 | sao01
-169.57.160.136/29 | sao01
-169.57.199.32/29 | sao01
 169.57.208.24/29 | sao01
 163.107.69.232/29 | sao04
 163.107.71.232/29 | sao04
