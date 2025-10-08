@@ -1,4 +1,3 @@
----
 toc:
   properties:
     subcollection: db2-saas
@@ -77,11 +76,11 @@ toc:
       - db2-database-assistant.md
       - communities.md
       - link:
-            label: What's new
-            href: https://www.ibm.com/support/pages/whats-new-ibm-db2-service
+          label: What's new
+          href: https://www.ibm.com/support/pages/whats-new-ibm-db2-service
       - link:
-            label: IBM Developer Answers
-            href: https://developer.ibm.com/answers/index.html
+          label: IBM Developer Answers
+          href: https://developer.ibm.com/answers/index.html
   - navgroup:
       id: howto
       topics:
@@ -89,23 +88,23 @@ toc:
       - monitor.md
       - investigating_latency_events.md
       - link:
-            label: "IBM Demos: Tutorials, videos, and hands-on labs"
-            href: https://www.ibm.com/demos/collection/Db2-on-Cloud/
+          label: 'IBM Demos: Tutorials, videos, and hands-on labs'
+          href: https://www.ibm.com/demos/collection/Db2-on-Cloud/
   - navgroup:
       id: reference
       topics:
       - link:
-            label: Database management API (Standard and Enterprise)
-            href: https://cloud.ibm.com/apidocs/db2-on-cloud/db2-on-cloud-v4
+          label: Database management API (Standard and Enterprise)
+          href: https://cloud.ibm.com/apidocs/db2-on-cloud/db2-on-cloud-v4
       - link:
-            label: Database resource scaling API
-            href: https://cloud.ibm.com/apidocs/db2-on-cloud/db2oc_scale_exp
+          label: Database resource scaling API
+          href: https://cloud.ibm.com/apidocs/db2-on-cloud/db2oc_scale_exp
       - link:
-            label: SQL reference
-            href: https://www.ibm.com/support/knowledgecenter/SSFMBX/com.ibm.swg.im.dashdb.sql.ref.doc/doc/c0004100.html
+          label: SQL reference
+          href: https://www.ibm.com/support/knowledgecenter/SSFMBX/com.ibm.swg.im.dashdb.sql.ref.doc/doc/c0004100.html
       - link:
-            label: Knowledge Center
-            href: https://www.ibm.com/support/knowledgecenter/SSFMBX/com.ibm.swg.im.dashdb.kc.doc/welcome.html
+          label: Knowledge Center
+          href: https://www.ibm.com/support/knowledgecenter/SSFMBX/com.ibm.swg.im.dashdb.kc.doc/welcome.html
   - navgroup:
       id: help
       topics:
