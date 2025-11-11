@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-09-25"
+lastupdated: "2025-11-11"
 
 keywords:
 
@@ -92,3 +92,9 @@ The Performance plan is supported in the following data center geographies:
 - **Madrid** - (eu-es)
 - **London** - (eu-gb)
 - **Tokyo** - (jp-tok)
+
+## API References by plan
+
+- **Standard & Enterprise Plans:** [Db2 on Cloud API](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-on-cloud-v4)  
+-  **Performance Plan:** [Db2 SaaS Performance Plan API](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-saas-perf-v4) 
+- **BYOC Plan:** [Db2 on Cloud BYOC API](https://cloud.ibm.com/apidocs/db2-on-cloud-byoc)
