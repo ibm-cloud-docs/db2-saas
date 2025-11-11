@@ -95,6 +95,6 @@ The Performance plan is supported in the following data center geographies:
 
 ## API References by plan
 
-- **Standard & Enterprise Plans:** [Db2 on Cloud API](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-on-cloud-v4)  
--  **Performance Plan:** [Db2 SaaS Performance Plan API](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-saas-perf-v4) 
-- **BYOC Plan:** [Db2 on Cloud BYOC API](https://cloud.ibm.com/apidocs/db2-on-cloud-byoc)
+- **Standard & Enterprise Plans:** [Db2 as a Service API](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-on-cloud-v4)  
+-  **Performance Plan:** [Db2 as a Service Performance Plan API](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-saas-perf-v4) 
+- **BYOC Plan:** [Db2 as a Service (Bring Your Own Cloud) API](https://cloud.ibm.com/apidocs/db2-on-cloud-byoc)
