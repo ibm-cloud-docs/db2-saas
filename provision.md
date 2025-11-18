@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020, 2021, 2022, 2025
-lastupdated: "2025-09-25"
+lastupdated: "2025-11-18"
 
 keywords: provision cloud database, database with terraform, provisioning parameters, db2 on cloud, db2
 
@@ -47,7 +47,7 @@ When you create the deployment from the catalog, you need to specify the followi
 
 1. **Resource group** - If you are organizing your services into resource groups, you can specify the resource group in this field. Otherwise, you can leave it at default.
 
-1. **KMS instance** and **disk encryption key** - If you use Key Protect or Hyper Protect Crypto Services, an instance and key can be selected to encrypt the deployment's disk. If you do not use your own key, the deployment automatically creates and manages its own disk encryption key using the Key Protect service. If you would like to use HPCS for encryption, you must [provision an HPCS instance](/docs/hs-crypto?topic=hs-crypto-provision) and generate or import a key. Currently, HPCS is not EU-Cloud enabled.
+1. **KMS instance** and **disk encryption key** - If you use Key Protect, an instance and key can be selected to encrypt the deployment's disk. If you do not use your own key, the deployment automatically creates and manages its own disk encryption key using the default key provided by the service.
 
 1. **Backup Encryption Key** - If you use Backup Encyrption Key, you can provide your own KMS instance and key in order to encrypt your backups. This is an optional parameter, and if not provided the default KMS instance and key will be used.
 
