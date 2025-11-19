@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2025-11-18"
+lastupdated: "2025-11-19"
 
 keywords: db2, {{site.data.keyword.Db2_on_Cloud_short}} , bring your own key, byok, crypto-shredding, kyok, keep your own key
 
@@ -52,9 +52,9 @@ Authorize {{site.data.keyword.keymanagementserviceshort}} for use with {{site.da
 1. In the side navigation, select **Authorizations**. Click **Create**.
 1. In the _Source service_ menu, select the service of the deployment. For example, **Db2**.
 1. In the _Source service instance_ menu, select **All service instances**.
-1. In the _Target service_ menu, select **Key Protect** or **Hyper Protect Crypto Services**.
-1. In the _Target service instance_ menu, select the service instance to authorize.
-1. Enable the `Reader` role. Click **Authorize**.
+2. In the _Target service_ menu, select **Key Protect**.
+3. In the _Target service instance_ menu, select the service instance to authorize.
+4. Enable the `Reader` role. Click **Authorize**.
 
 ### Performance plans
 
@@ -65,9 +65,9 @@ Authorize {{site.data.keyword.keymanagementserviceshort}} for use with {{site.da
 1. In the side navigation, select **Authorizations**. Click **Create**.
 1. In the _Source service_ menu, select the service of the deployment. For example, **Db2**.
 1. In the _Source service instance_ menu, select **All service instances**.
-1. In the _Target service_ menu, select **Key Protect** or **Hyper Protect Crypto Services**.
-1. In the _Target service instance_ menu, select the service instance to authorize.
-1. Enable the **Reader** role, and check the box that says **Enable authorizations to be delegated by the source and dependent services**. Click **Authorize**.
+2. In the _Target service_ menu, select **Key Protect**.
+3. In the _Target service instance_ menu, select the service instance to authorize.
+4. Enable the **Reader** role, and check the box that says **Enable authorizations to be delegated by the source and dependent services**. Click **Authorize**.
 
 ## Using the key encryption key
 
