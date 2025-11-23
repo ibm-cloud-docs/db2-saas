@@ -44,6 +44,7 @@ toc:
           - flex_scaling.md
           - autoscaling_external.md
           - ha.md
+          - storage_usage.md
           - hadr_conversion.md
           - copy_db.md
           - deleting_db.md
