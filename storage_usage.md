@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-11-23"
+lastupdated: "2025-11-26"
 
 keywords: storage space
 
@@ -78,10 +78,14 @@ If the output from the query indicates that storage usage on your instance is hi
       {: codeblock}
 
 
-1. If there is no disk space that can be reclaimed, you must either purge unwanted data or scale up the storage on your {{site.data.keyword.dashdbshort_notm}} instance to ensure database stability.
+1. If there is no disk space that can be reclaimed, you must either purge unwanted data or scale up the storage on your {{site.data.keyword.Db2_on_Cloud_long_notm}} instance to ensure database stability.
 
 ## Additional information
 
 {: #stor_add_info}
-[Reclaimable storage](https://www.ibm.com/docs/en/db2/12.1.0?topic=management-reclaimable-storage){: external}
-[ALTER TABLESPACE statement](https://www.ibm.com/docs/en/db2/12.1.0?topic=statements-alter-tablespace){: external}
+
+- [Reclaimable storage](https://www.ibm.com/docs/en/db2/12.1.0?topic=management-reclaimable-storage){: external}  
+  Guidance on how to identify and reclaim unused storage in Db2.
+
+- [ALTER TABLESPACE statement](https://www.ibm.com/docs/en/db2/12.1.0?topic=statements-alter-tablespace){: external}  
+  Reference details for modifying tablespaces in Db2.
