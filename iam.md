@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2025-09-25"
+lastupdated: "2025-11-23"
 
 keywords: 
 
@@ -10,7 +10,10 @@ subcollection: db2-saas
 
 ---
 
- 
+# Identity and access management (IAM) on {{site.data.keyword.Bluemix_notm}}
+
+{: #iam}
+
 {:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:codeblock: .codeblock}
@@ -21,32 +24,43 @@ subcollection: db2-saas
 {:deprecated: .deprecated}
 {:pre: .pre}
 
-# Identity and access management (IAM) on {{site.data.keyword.Bluemix_notm}}
-{: #iam}
-
 Identity and access management (IAM) enables you to securely authenticate users for platform services and control access to resources consistently across the {{site.data.keyword.Bluemix_notm}} platform. For example, with only a single login to {{site.data.keyword.Bluemix_notm}} with your IBMid, you have access to any of your service consoles and their applications without having to log in to each of them separately.
 {: shortdesc}
 
 IAM is enabled for all {{site.data.keyword.Db2_on_Cloud_long}} plans except for **Lite** plan instances.
 
-
-
 ## Features of {{site.data.keyword.Bluemix_notm}} IAM
+
 {: #features}
 
 The following IAM features are implemented for the {{site.data.keyword.Db2_on_Cloud_short}} managed service with two types of supported identities:
 
 ### IBMid
+
 {: #iam_ibmid}
 
 Users with an IBMid must be added to each database service instance by the database administrator through the console or REST API before these users can connect to the particular database service instance. Just like for a non-IBMid user, a user ID for the database service instance must be entered at the same time that the IBMid user is added. This user ID needs to be unique within the database service instance. This user ID is also the authorization (AUTH) ID within the database. The database administrator can grant and revoke permissions based on the AUTH ID.
 
 ### Service IDs
+
 {: #iam_serviceid}
 
-A service ID identifies a service or application similar to how a user ID identifies a user. The service IDs are IDs that can be used by applications to authenticate with an {{site.data.keyword.Bluemix_notm}} service. A service ID represents a separate entity from the owning IBMid. Therefore, different authorities and permissions can be granted specific to the service ID within the database. Service IDs do not have passwords. An API key must be created for each service ID for the service ID to connect to the database service instance. For more information about service IDs, see: [Introducing {{site.data.keyword.Bluemix_notm}} IAM Service IDs and API Keys](https://www.ibm.com/blogs/bluemix/2017/10/introducing-ibm-cloud-iam-service-ids-api-keys/){:external} and [Increase Information Security for Db2 on IBM Cloud](https://www.ibm.com/cloud/blog/increase-information-security-for-db2-on-ibm-cloud){:external}.
+A service ID identifies a service or application similar to how a user ID identifies a user. The service IDs are IDs that can be used by applications to authenticate with an {{site.data.keyword.Bluemix_notm}} service. A service ID represents a separate entity from the owning IBMid. Service IDs are persistent, meaning they are not affected if a user leaves the account, which prevents service disruption.
+
+A service ID in {{site.data.keyword.Bluemix_notm}} provides a unique identity for applications or services, which allows them to access {{site.data.keyword.Bluemix_notm}} services without using individual user credentials. This identification is crucial for automation, security, and managing access at a service level, because it allows developers to assign specific permissions to the service ID and create API keys for authentication. An API key must be created for each service ID for the service ID to connect to the database service instance.
+
+When you implement a service ID with {{site.data.keyword.Db2_on_Cloud_short}} consider the following guidance:
+
+- Create the id using the **Service Credential** option in the Db2 console. Do not create an ID for use with Db2 by using the options found on **Manage** > **Access (IAM)** in the {{site.data.keyword.Bluemix_notm}} console.
+- Use the **Create new Service ID** choice in the Db2 console to generate the credential. After it is created, you can find the new service ID by going to **Manage** > **Access (IAM)** > **Service IDs**.
+- To assign the required service level access, select the service ID from **Manage** > **Access (IAM)** > **Service IDs**, then click **Access**.
+- There is a user name and password associated with the Db2 service credential. To view this user name, go to **Administrator** > **User Management** in the Db2 console. You should use this user name and password for database level activity.
+  - Note: You can transfer ownership of the database objects to this user name.
+
+
 
 ## Roles and actions
+
 {: #iam_roles_actions}
 
 Every user that accesses the {{site.data.keyword.Db2_on_Cloud_short}} service in your account must be assigned an access policy with an IAM role. The access policy that you assign to users in your account determines what actions a user can perform within the context of the service or specific instance that you select. The allowable actions are customized and defined by {{site.data.keyword.Db2_on_Cloud_short}} as operations that are allowed to be performed on the service. Each action is mapped to an IAM platform or service role that you can assign to a user. If a specific role and its actions don't fit the use case that you're looking to address, you can [create a custom role](/docs/account?topic=account-custom-roles#custom-access-roles){: external} and pick the actions to include.
@@ -55,6 +69,7 @@ For information about the exact actions mapped to each role, see [IAM roles and 
 {: tip}
 
 ## Prerequisites
+
 {: #iam_prereqs}
 
 - Db2 Client 11.5 and FP 9 or later.
@@ -63,11 +78,13 @@ For information about the exact actions mapped to each role, see [IAM roles and 
 - Catalog your database. See [Connecting to your database: step 2](/docs/Db2onCloud?topic=Db2onCloud-ssl_support#ssl_conn_db){: external}.
 
 ## Client connections and user logins
+
 {: #connect_user}
 
 The following methods can be used for IAM authentication:
 
 ### Access token
+
 {: #iam_accesstoken}
 
 An access token can be obtained from the IAM service directly by the application through the REST API by using an API key. For more information, see: [Getting an {{site.data.keyword.Bluemix_notm}} IAM token by using an API key](/docs/account?topic=account-iamtoken_from_apikey){:external}. The access token has a default validity period of 60 minutes before it expires. If the token has expired, the Db2 server won't allow the connection to be established. The token isn’t checked for expiry after the connection is established. Just as it was before IAM integration, the connection stays connected until the application disconnects or the connection is terminated due to other reasons.
@@ -85,16 +102,19 @@ curl -k -X POST \
 An access token identifies an IBMid user or a service ID to the database. The database server verifies the validity of the access token before accepting it. This is the best method if the application needs to connect to more than one database service instance or other {{site.data.keyword.Bluemix_notm}} service instances because it minimizes the communication to the IAM service to validate the access token.
 
 ### API key
+
 {: #iam_apikey}
 
 Multiple API keys can be created for each IBMid user or service ID. Each API key is typically created for a single application. It allows the application to connect to the database service instance as long as the owning IBMid or service ID is added as a user to the same database service instance. The API key has the same authorities and permissions within the database as the owning IBMid or service ID. If an application should no longer be allowed to connect to the database, the corresponding API key can be removed. This method of authentication requires less changes in the application than using an access token as it requires no direct interaction with the IAM service. For more information about creating and managing API keys, see: [Managing user API keys](/docs/account?topic=account-userapikey){:external}.
 
 ### IBMid/password
+
 {: #iam_ibmid_pwd}
 
 The IBMid/password can be used to log in to the console and can also be used within the application in the same ways that a user ID/password is allowed. The exception occurs when the IBMid is federated because a redirection to your organization’s login page cannot be done. However, the recommended method for an application to establish a connection to the database service instance is to use an access token.
 
 ## Supported interfaces
+
 {: #sup-if}
 
 The following database client interfaces are supported:
@@ -105,6 +125,7 @@ The following database client interfaces are supported:
 * [JDBC](#jdbc)
 
 ### ODBC, CLP, and CLPPLUS
+
 {: #odbc-clpplus}
 
 For an ODBC application or a command-line client (CLP, CLPPLUS) to connect to a Db2 server by using IAM authentication, a data source name (DSN) needs to be configured first in a `db2dsdriver.cfg` configuration file by running the following command:
@@ -135,6 +156,7 @@ The following example of a `db2dsdriver.cfg` configuration file shows the config
 {: codeblock}
 
 #### ODBC
+
 {: #iam_odbc}
 
 The ODBC connection string can contain one of the following:
@@ -154,6 +176,7 @@ The ODBC connection string can contain one of the following:
 For ODBC, the **AUTHENTICATION=GSSPLUGIN** can be specified in either the `db2dsdriver.cfg` configuration file or in the application’s connection string.
 
 #### CLP
+
 {: #iam_clp}
 
 The CLP CONNECT statement can contain one of the following:
@@ -179,6 +202,7 @@ The CLP CONNECT statement can contain one of the following:
 For more details about connecting to a database server with CLP, see: [CONNECT (type 2) statement](https://www.ibm.com/support/knowledgecenter/SSFMBX/com.ibm.swg.im.dashdb.sql.ref.doc/doc/r0000908.html){:external}. 
 
 #### CLPPLUS
+
 {: #iam_clpplus}
 
 The CLPPLUS CONNECT statement can contain one of the following:
@@ -204,6 +228,7 @@ The CLPPLUS CONNECT statement can contain one of the following:
 For more details about connecting to DSN aliases with CLPPLUS, see: [DSN aliases in CLPPlus](https://www.ibm.com/support/knowledgecenter/SSFMBX/com.ibm.swg.im.dashdb.clpplus.doc/doc/c0057148.html){:external}.
 
 ### JDBC
+
 {: #jdbc}
 
 Type 4 JDBC Driver is supported for IAM authentication.
@@ -279,6 +304,7 @@ The following examples show connection snippets for the three methods:
   {: codeblock}
 
 ## Console user experience
+
 {: #console-ux}
 
 The service console login page has the option to log in with your IBMid and password. After the **Sign In via IBMid** button is clicked, the user is directed to the IAM login page, on which the password is entered. When authentication is completed, the user is redirected back to the console. Before such login can be successful, the IBMid user must be added to each database service instance by the database administrator through the console or REST API. Just like for a non-IBMid user, a user ID for the database service instance must be entered at the same time that the IBMid user is added. The user ID needs to be unique within the database service instance. This user ID is also the authorization (AUTH) ID within the database.
@@ -305,6 +331,7 @@ To add a user with either an IBMid or a service ID by using the web console, com
    {: note}
 
 ## REST API experience
+
 {: #api}
 
 The {{site.data.keyword.Db2_on_Cloud_short}} REST API was enhanced to also accept an IAM access token for the functions that previously accepted a database service-generated access token.
@@ -349,11 +376,13 @@ The {{site.data.keyword.Db2_on_Cloud_short}} REST API was enhanced to also accep
 For more details about your service's API, see: [{{site.data.keyword.Db2_on_Cloud_short}} REST API](https://cloud.ibm.com/apidocs/db2-on-cloud){:external}.
 
 ## IBMid federation
+
 {: #fed_ibmid}
 
 To use your own identity provider such as LDAP, you must first federate your LDAP server with IBMid. For instructions about federating your LDAP server with IBMid, see: [IBMid Enterprise Federation Adoption Guide](https://ibm.ent.box.com/notes/78040808400?v=IBMid-Federation-Guide){:external}. After IBMid federation is completed and the allowed users are added to the database service instance by the database administrator, these users can log in to the console with their company user ID and password. Alternatively, these users can use an access token or API key that represents their user ID to connect to the database service instance through one of the supported database client interfaces.
 
 ## Restrictions
+
 {: #restrictions}
 
 The following restrictions are with regard to IAM authentication:
