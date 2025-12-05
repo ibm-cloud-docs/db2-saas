@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2025-12-03"
+lastupdated: "2025-12-05"
 
 keywords:
 
@@ -106,9 +106,9 @@ The Autoscaling panel is on the Administration tab of your deployment's console 
 3. Enter your desired parameter values.
 4. Be sure to click **Save** for your configuration to be saved and your changes to take effect.
 
-![autoscaling_step1.png](images/autoscaling_perf_step1.png)
+![autoscaling_perf_step1.png](images/autoscaling_perf_step1.png)
 <br>
-![autoscaling_step2.png](images/autoscale_perf_step2.png)
+![autoscale_perf_step2.png](images/autoscale_perf_step2.png)
 
 
 ### To disable autoscaling
