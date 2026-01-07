@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020, 2021, 2022, 2025
-lastupdated: "2025-11-18"
+  years: 2014, 2020, 2021, 2022, 2026
+lastupdated: "2026-01-07"
 
 keywords: provision cloud database, database with terraform, provisioning parameters, db2 on cloud, db2
 
@@ -34,6 +34,9 @@ You can provision a deployment by visiting the service's catalog page or by spec
 |-----------------|--------------|------------|----------|
 | {{site.data.keyword.Db2_on_Cloud_short}} |[Link](https://cloud.ibm.com/catalog/services/db2){: external} | dashdb-for-transactions | Standard Plan - `dashDBStandard`, Enterprise Plan - `dashDBNebula`, Perfomance Plan - `Perfomance`|
 
+The Performance plan supports both Db2 version 12 and version 11.5. Version 12 is recommended for new deployments. Version 11.5 is available for customers requiring application compatibility.
+{: note}
+
 ## Using the catalog
 {: #prov_catalog}
 
@@ -58,6 +61,8 @@ When you create the deployment from the catalog, you need to specify the followi
 1. **High Availability** - whether the services should be Highly Available
 
 1. **Oracle compatibility** - whether the service instance should have Oracle compatibility enabled
+
+1. **Db2 Version** - Choose the Db2 version for your deployment. The Performance plan supports both **Db2 version 12** (recommended) and **Db2 version 11.5** for customers requiring application compatibility.
 
 2. **Instance Profile** -  Choose machine type resource for your deployment based on your CPU and memory requirements. This option is only available with the Performance plan.
 
@@ -149,13 +154,15 @@ More information on the Resource Controller API is found in its [API Reference](
 
 ## List of additional parameters (for performance plans only)
 
-- `timezone` - The timezone that your database and the underlying operating system should use. Any timezone identifier accepted by Linux will be valid. Example:`"timezone": "America/Toronto"`. 
-  
+- `timezone` - The timezone that your database and the underlying operating system should use. Any timezone identifier accepted by Linux will be valid. Example:`"timezone": "America/Toronto"`.
+
   This example will be accepted here. If omitted, the default is UTC. For a complete list of valid timezone identifiers, refer to [Wikipedia’s tz database time zones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 
 - `custom_db` , `custom_dbm`, `custom_registry` - This allows you to set custom Db2 DB, DBM, and registry settings. The value should be a JSON array.
 Example:
-  ``` 
+  ```
   "custom_registry": { "DB2_SELECTIVITY": "ALL", "DB2_ANTIJOIN": "EXTEND" }
    ```
     The [Db2 REST API](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-on-cloud-v4#introduction) can be used to query a full list of changeable Db2 parameters and update Db2 settings on an existing instance.
+
+- `version` - The Db2 version for your deployment. Valid values are `12` or `11.5`. If omitted, the default is `12`. Example: `"version": "11.5"`.
