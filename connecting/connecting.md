@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2025-09-25"
+lastupdated: "2026-01-07"
 
 keywords:
 
@@ -22,12 +22,14 @@ subcollection: db2-saas
 {:pre: .pre}
 
 # Connecting overview
+
 {: #connect_ov}
 
-You can connect command-line interfaces, IBM® or third-party applications and tools, or apps that you create to your {{site.data.keyword.Db2_on_Cloud_short}} database. 
+You can connect command-line interfaces, IBM® or third-party applications and tools, or apps that you create to your {{site.data.keyword.Db2_on_Cloud_short}} database.
 {: shortdesc}
 
 ## Prerequisites
+
 {: #prereqs}
 
 Before attempting to connect to your {{site.data.keyword.Db2_on_Cloud_short}} database, verify that you have the prerequisites. 
@@ -59,11 +61,13 @@ Before attempting to connect to your {{site.data.keyword.Db2_on_Cloud_short}} da
 
 
 ### Collecting connection information
+
 {: #collect_info}
 
 - [Database details and connection credentials](/docs/Db2onCloud/connecting?topic=Db2onCloud-db_details_cxn_creds)
 
 ### Downloading and installing driver package
+
 {: #dl_install}
 
 - [Download driver package](/docs/Db2onCloud/connecting?topic=Db2onCloud-drvr_pkg)
@@ -72,20 +76,23 @@ Before attempting to connect to your {{site.data.keyword.Db2_on_Cloud_short}} da
 - [Installing on Windows](/docs/Db2onCloud/connecting?topic=Db2onCloud-drvr_pkg#drvr_install_windows)
 
 ### Configuring your environment
+
 {: #cfg_env}
 
-- [Configuring your environment](/docs/Db2onCloud/connecting?topic=Db2onCloud-drvr_pkg#drvr_cfg_loc_env)
-- [SSL connectivity](/docs/Db2onCloud/connecting?topic=Db2onCloud-ssl_support)
+- [Configuring your environment](/docs/db2-saas?topic=db2-saas-drvr_pkg#drvr_cfg_loc_env)
+- [SSL connectivity](/docs/db2-saas?topic=db2-saas-ssl_support)
 
 ## Connectivity options
+
 {: #connect_opts}
 
 {{site.data.keyword.Db2_on_Cloud_short}} offers multiple secure connectivity options depending on your application connection requirements.  
 {: shortdesc}
 
-See [Connectivity options](/docs/Db2onCloud/connecting?topic=Db2onCloud-connect_options).
+See [Connectivity options](/docs/db2-saas?topic=db2-saas-connectivity-options).
 
 ## Connecting programmatically
+
 {: #conx_prgrm}
 
 You can use common programming languages to create applications that connect to a {{site.data.keyword.Db2_on_Cloud_short}} database.
@@ -99,16 +106,14 @@ You can use common programming languages to create applications that connect to 
 - [REST API](/docs/Db2onCloud/connecting?topic=Db2onCloud-con_rest_api)
 
 
-
-
-
-
 ## Integrating apps and tools
+
 {: #conx_apps_tools}
 
 You can also connect external applications and tools to {{site.data.keyword.Db2_on_Cloud_short}} and use them to further manage or analyze your data. For example:
 
 ### Data integration
+
 {: #di}
 
 - Connect your {{site.data.keyword.Bluemix_short}} applications that need an analytics database.
@@ -123,6 +128,7 @@ You can also connect external applications and tools to {{site.data.keyword.Db2_
 - [InfoSphere Data Architect to design and deploy your database schema](/docs/Db2onCloud/connecting?topic=Db2onCloud-connect_ibm#ida)
 
 ### Data visualization & BI
+
 {: #dvis_bi}
 
 
@@ -132,6 +138,7 @@ You can also connect external applications and tools to {{site.data.keyword.Db2_
 
 
 ### Data science
+
 {: #dsci}
 
 - [Watson Studio (formerly IBM Data Science Experience)](/docs/Db2onCloud/connecting?topic=Db2onCloud-connect_ibm#watson_studio)
@@ -140,6 +147,7 @@ You can also connect external applications and tools to {{site.data.keyword.Db2_
 
 
 ## Connecting to another Db2 database
+
 {: #fed}
 
 Db2 data virtualization (also known as federation) is supported by {{site.data.keyword.Db2_on_Cloud_short}}. Data virtualization gives you single-query access to all of your data that is on multiple distributed databases anywhere in your organization. You can access data that is on any of your Db2 or Informix data sources, both in the cloud and on premises. 
