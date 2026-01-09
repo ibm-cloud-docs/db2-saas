@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020, 2021, 2022
-lastupdated: "2025-12-16"
+lastupdated: "2026-01-09"
 
 keywords:
 
@@ -221,3 +221,6 @@ After you've configured {{site.data.keyword.cloud_notm}} private endpoint connec
 To learn more about the {{site.data.keyword.cloud_notm}} endpoint service, see [Secure access to services using service endpoints](/docs/account?topic=account-service-endpoints-overview).
 
 To complete the setup of virtual private endpoints, see [Virtual Private Endpoint Gateways](/docs/vpc?topic=vpc-ordering-endpoint-gateway&interface).
+
+An administrator must set up and verify a Virtual Private Endpoint Gateway (VPEG) for the connection to work. Without a properly configured gateway, the private endpoint will not function.
+{: important}
