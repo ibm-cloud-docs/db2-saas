@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020, 2021, 2022, 2026
-lastupdated: "2026-01-07"
+lastupdated: "2026-01-09"
 
 keywords: provision cloud database, database with terraform, provisioning parameters, db2 on cloud, db2
 
@@ -32,7 +32,7 @@ You can provision a deployment by visiting the service's catalog page or by spec
 
 | Deployment Type | Catalog Page | Service ID | Plan IDs |
 |-----------------|--------------|------------|----------|
-| {{site.data.keyword.Db2_on_Cloud_short}} |[Link](https://cloud.ibm.com/catalog/services/db2){: external} | dashdb-for-transactions | Standard Plan - `dashDBStandard`, Enterprise Plan - `dashDBNebula`, Perfomance Plan - `Perfomance`|
+| {{site.data.keyword.Db2_on_Cloud_short}} |[Link](https://cloud.ibm.com/catalog/services/db2){: external} | dashdb-for-transactions | Perfomance Plan - `Perfomance`|
 
 The Performance plan supports both Db2 version 12 and version 11.5. Version 12 is recommended for new deployments. Version 11.5 is available for customers requiring application compatibility.
 {: note}
@@ -54,7 +54,7 @@ When you create the deployment from the catalog, you need to specify the followi
 
 1. **Backup Encryption Key** - If you use Backup Encyrption Key, you can provide your own KMS instance and key in order to encrypt your backups. This is an optional parameter, and if not provided the default KMS instance and key will be used.
 
-1. **CPU allocation** - Choose dedicated compute resources for your deployment. With dedicated cores, your resource group is given a single-tenant host with a guaranteed minimum reserve of cpu shares. Your deployments are then allocated the number of CPUs you specify. This defaults to the `standard plan` if not specified in the provisioning request by using the API or CLI.
+1. **CPU allocation** - Choose dedicated compute resources for your deployment. With dedicated cores, your resource group is given a single-tenant host with a guaranteed minimum reserve of cpu shares. Your deployments are then allocated the number of CPUs you specify. This defaults to the `Performance plan` if not specified in the provisioning request by using the API or CLI.
 
 1. **Endpoints** - You can configure the types Service Endpoints on your deployment. The default is that connections to your deployment can be made from the public network.
 

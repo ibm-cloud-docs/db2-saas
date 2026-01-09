@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-01-07"
+lastupdated: "2026-01-09"
 
 keywords:
 
@@ -33,6 +33,9 @@ The [IBM Documentation for the service](https://www.ibm.com/docs/en/db2-as-a-ser
 ## Standard/Enterprise Plans
 
 {: #ab_plans_cfgs}
+
+The **Standard** and **Enterprise** plans are deprecated. All new deployments should use the **Performance** plan. Existing Standard/Enterprise customers are encouraged to migrate to the Performance plan. For migration instructions, see [Migration](/docs/db2-saas?topic=db2-saas-migration).
+{: deprecated}
 
 
 
@@ -101,5 +104,5 @@ The Performance plan is supported in the following data center geographies:
 
 ## API References by plan
 
-- **Standard & Enterprise Plans:** [IBM Db2 as a Service REST API](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-on-cloud-v4)  
-- **Performance Plan:** [IBM Db2 as a Service Performance REST API](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-saas-perf-v4) 
+- **Standard & Enterprise Plans:** [IBM Db2 as a Service REST API](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-on-cloud-v4)
+- **Performance Plan:** [IBM Db2 as a Service Performance REST API](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-saas-perf-v4)
