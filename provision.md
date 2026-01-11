@@ -32,10 +32,9 @@ You can provision a deployment by visiting the service's catalog page or by spec
 
 | Deployment Type | Catalog Page | Service ID | Plan IDs |
 |-----------------|--------------|------------|----------|
-| {{site.data.keyword.Db2_on_Cloud_short}} |[Link](https://cloud.ibm.com/catalog/services/db2){: external} | dashdb-for-transactions | Perfomance Plan - `Perfomance`|
+| {{site.data.keyword.Db2_on_Cloud_short}} |[Link](https://cloud.ibm.com/catalog/services/db2){: external} | dashdb-for-transactions | Standard Plan - `dashDBStandard`, Enterprise Plan - `dashDBNebula`, Perfomance Plan - `Perfomance`|
 
-The Performance plan supports both Db2 version 12 and version 11.5. Version 12 is recommended for new deployments. Version 11.5 is available for customers requiring application compatibility.
-{: note}
+
 
 ## Using the catalog
 {: #prov_catalog}
