@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020, 2021, 2022, 2026
-lastupdated: "2026-01-09"
+lastupdated: "2026-01-11"
 
 keywords: provision cloud database, database with terraform, provisioning parameters, db2 on cloud, db2
 
@@ -54,17 +54,15 @@ When you create the deployment from the catalog, you need to specify the followi
 
 1. **Backup Encryption Key** - If you use Backup Encyrption Key, you can provide your own KMS instance and key in order to encrypt your backups. This is an optional parameter, and if not provided the default KMS instance and key will be used.
 
-1. **CPU allocation** - Choose dedicated compute resources for your deployment. With dedicated cores, your resource group is given a single-tenant host with a guaranteed minimum reserve of cpu shares. Your deployments are then allocated the number of CPUs you specify. This defaults to the `Performance plan` if not specified in the provisioning request by using the API or CLI.
 
-1. **Endpoints** - You can configure the types Service Endpoints on your deployment. The default is that connections to your deployment can be made from the public network.
 
-1. **High Availability** - whether the services should be Highly Available
+2. **Endpoints** - You can configure the types Service Endpoints on your deployment. The default is that connections to your deployment can be made from the public network.
 
-1. **Oracle compatibility** - whether the service instance should have Oracle compatibility enabled
+3. **High Availability** - whether the services should be Highly Available
 
-1. **Db2 Version** - Choose the Db2 version for your deployment. The Performance plan supports both **Db2 version 12** (recommended) and **Db2 version 11.5** for customers requiring application compatibility.
+4. **Oracle compatibility** - whether the service instance should have Oracle compatibility enabled
 
-2. **Instance Profile** -  Choose machine type resource for your deployment based on your CPU and memory requirements. This option is only available with the Performance plan.
+6. **Instance Profile** -  Choose machine type resource for your deployment based on your CPU and memory requirements. This option is only available with the Performance plan.
 
 
 After selecting the appropriate settings, click **Create** to start the provisioning process.
