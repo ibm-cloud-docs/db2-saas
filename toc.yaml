@@ -103,7 +103,7 @@ toc:
           label: SQL reference
           href: https://www.ibm.com/support/knowledgecenter/SSFMBX/com.ibm.swg.im.dashdb.sql.ref.doc/doc/c0004100.html
       - link:
-          label: Knowledge Center
+          label: IBM Documentation
           href: https://www.ibm.com/support/knowledgecenter/SSFMBX/com.ibm.swg.im.dashdb.kc.doc/welcome.html
   - navgroup:
       id: help

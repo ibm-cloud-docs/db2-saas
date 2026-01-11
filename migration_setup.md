@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2025
-lastupdated: "2025-09-25"
+  years: 2026
+lastupdated: "2026-01-11"
 
 keywords:
 
@@ -23,6 +23,8 @@ subcollection: db2-saas
 {: #migration}
 
 Upgrading your {{site.data.keyword.Db2_on_Cloud_long}}  deployment from the **Standard/Enterprise Plan** to the **Performance plan** provides improved scalability, enhanced reliability, and a modern management experience. After you initiate the upgrade, the system automatically provisions a new instance and migrates your data with minimal downtime. The system keeps your two instances in sync until you decide to finalize your upgrade.
+
+
 
 Any autoscale settings in **Standard/Enterprise Plan** will need to be recreated in the **Performance** plan after the migration is complete.
 {: important}
@@ -61,7 +63,9 @@ Follow these steps to begin the migration:
 
   -  Complete Migration to the Performance Plan
 
-      Select `Disable the prior system` to complete the migration to the Performance instance.  This will terminate synchronization, upgrade to v12 and pause the Standard/Enterprise instance.   The customer can delete the Standard/Enterprise instance within 2 weeks to avoid charges
+      Select `Disable the prior system` to complete the migration to the Performance instance. This will terminate synchronization and pause the Standard/Enterprise instance.
+
+      
 
    ![Confirm upgrade button](images/confirm_complete_upgrade.png){: caption="Select what to do with source option and complete upgrade" caption-side="bottom"}
 

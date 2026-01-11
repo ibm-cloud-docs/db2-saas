@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2025
-lastupdated: "2025-11-15"
+  years: 2014, 2026
+lastupdated: "2026-01-11"
 
 keywords:
 
@@ -20,15 +20,21 @@ subcollection: db2-saas
 {:note: .note}
 {:deprecated: .deprecated}
 {:pre: .pre}
-{:warning .warning}
+{:warning: .warning}
+{:attention: .attention}
 
 # About
+
 {: #about}
 
-This set of documentation covers the detailed commands and reference topics for the Db2 engine that powers Db2 SaaS. To find the IBM Cloud documentation for the offering, see [here](https://cloud.ibm.com/docs/Db2onCloud?topic=Db2onCloud-about). The IBM Cloud documentation covers the high-level functionality for the cloud offering, and refers back to this set of documentation where appropriate.{: warning}
+The [IBM Documentation for the service](https://www.ibm.com/docs/en/db2-as-a-service) covers the detailed commands and reference topics for the Db2 engine that powers Db2 SaaS. The IBM Cloud documentation covers the high-level functionality for the cloud offering, and refers back to this set of documentation where appropriate.
+{: attention}
 
 ## Standard/Enterprise Plans
+
 {: #ab_plans_cfgs}
+
+
 
 
 
@@ -43,6 +49,7 @@ This set of documentation covers the detailed commands and reference topics for 
 - 1 TB of free backup storage for up to 14 days of backups
 
 ### Supported Data Centers
+
 {: #ab_sup_dcs}
 
 The Standard and Enterprise plans are supported in the following data center geographies:
@@ -61,6 +68,7 @@ MZRs support 3 node HA in 3 different data centers in that region.
 {: note}
 
 ### Single-zone region (SZR)
+
 - **Amsterdam** - (Ams03)
 - **Montréal** - (Mon01)
 
@@ -95,5 +103,5 @@ The Performance plan is supported in the following data center geographies:
 
 ## API References by plan
 
-- **Standard & Enterprise Plans:** [IBM Db2 as a Service REST API](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-on-cloud-v4)  
-- **Performance Plan:** [IBM Db2 as a Service Performance REST API](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-saas-perf-v4) 
+- **Standard & Enterprise Plans:** [IBM Db2 as a Service REST API](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-on-cloud-v4)
+- **Performance Plan:** [IBM Db2 as a Service Performance REST API](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-saas-perf-v4)

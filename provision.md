@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020, 2021, 2022, 2025
-lastupdated: "2025-11-18"
+  years: 2014, 2020, 2021, 2022, 2026
+lastupdated: "2026-01-11"
 
 keywords: provision cloud database, database with terraform, provisioning parameters, db2 on cloud, db2
 
@@ -34,6 +34,8 @@ You can provision a deployment by visiting the service's catalog page or by spec
 |-----------------|--------------|------------|----------|
 | {{site.data.keyword.Db2_on_Cloud_short}} |[Link](https://cloud.ibm.com/catalog/services/db2){: external} | dashdb-for-transactions | Standard Plan - `dashDBStandard`, Enterprise Plan - `dashDBNebula`, Perfomance Plan - `Perfomance`|
 
+
+
 ## Using the catalog
 {: #prov_catalog}
 
@@ -51,15 +53,15 @@ When you create the deployment from the catalog, you need to specify the followi
 
 1. **Backup Encryption Key** - If you use Backup Encyrption Key, you can provide your own KMS instance and key in order to encrypt your backups. This is an optional parameter, and if not provided the default KMS instance and key will be used.
 
-1. **CPU allocation** - Choose dedicated compute resources for your deployment. With dedicated cores, your resource group is given a single-tenant host with a guaranteed minimum reserve of cpu shares. Your deployments are then allocated the number of CPUs you specify. This defaults to the `standard plan` if not specified in the provisioning request by using the API or CLI.
 
-1. **Endpoints** - You can configure the types Service Endpoints on your deployment. The default is that connections to your deployment can be made from the public network.
 
-1. **High Availability** - whether the services should be Highly Available
+2. **Endpoints** - You can configure the types Service Endpoints on your deployment. The default is that connections to your deployment can be made from the public network.
 
-1. **Oracle compatibility** - whether the service instance should have Oracle compatibility enabled
+3. **High Availability** - whether the services should be Highly Available
 
-2. **Instance Profile** -  Choose machine type resource for your deployment based on your CPU and memory requirements. This option is only available with the Performance plan.
+4. **Oracle compatibility** - whether the service instance should have Oracle compatibility enabled
+
+6. **Instance Profile** -  Choose machine type resource for your deployment based on your CPU and memory requirements. This option is only available with the Performance plan.
 
 
 After selecting the appropriate settings, click **Create** to start the provisioning process.
@@ -149,13 +151,15 @@ More information on the Resource Controller API is found in its [API Reference](
 
 ## List of additional parameters (for performance plans only)
 
-- `timezone` - The timezone that your database and the underlying operating system should use. Any timezone identifier accepted by Linux will be valid. Example:`"timezone": "America/Toronto"`. 
-  
+- `timezone` - The timezone that your database and the underlying operating system should use. Any timezone identifier accepted by Linux will be valid. Example:`"timezone": "America/Toronto"`.
+
   This example will be accepted here. If omitted, the default is UTC. For a complete list of valid timezone identifiers, refer to [Wikipedia’s tz database time zones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 
 - `custom_db` , `custom_dbm`, `custom_registry` - This allows you to set custom Db2 DB, DBM, and registry settings. The value should be a JSON array.
 Example:
-  ``` 
+  ```
   "custom_registry": { "DB2_SELECTIVITY": "ALL", "DB2_ANTIJOIN": "EXTEND" }
    ```
     The [Db2 REST API](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-on-cloud-v4#introduction) can be used to query a full list of changeable Db2 parameters and update Db2 settings on an existing instance.
+
+- `version` - The Db2 version for your deployment. Valid values are `12` or `11.5`. If omitted, the default is `12`. Example: `"version": "11.5"`.
