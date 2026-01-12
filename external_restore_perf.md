@@ -8,7 +8,6 @@ keywords: external restore, performance plan, backup restore, rollforward, IBM C
 subcollection: Db2onCloud
 ---
 
-
 {:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:codeblock: .codeblock}
@@ -35,7 +34,6 @@ Before starting the restore process, ensure you have the following:
 - An existing DB2 backup stored in an IBM Cloud Object Storage or Amazon S3 bucket (file must be in a subdirectory folder inside the bucket)
 - Your endpoint URL along with HMAC credentials (Access Key and Secret Access Key) to access the bucket and backup image
 - Sufficient database storage space to accommodate the restored database
-{: important}
 
 The internal backup is required as a safety measure. If the external restore fails, you can recover the database by restoring from the internal backup.
 {: note}
