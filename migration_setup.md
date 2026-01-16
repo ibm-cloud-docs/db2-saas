@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-01-13"
+lastupdated: "2026-01-16"
 
 keywords:
 
@@ -24,7 +24,7 @@ subcollection: db2-saas
 
 Upgrading your {{site.data.keyword.Db2_on_Cloud_long}}  deployment from the **Standard/Enterprise Plan** to the **Performance plan** provides improved scalability, enhanced reliability, and a modern management experience. After you initiate the upgrade, the system automatically provisions a new instance and migrates your data with minimal downtime. The system keeps your two instances in sync until you decide to finalize your upgrade.
 
-The **Standard** and **Enterprise** plans are deprecated. All new deployments should use the **Performance** plan. Existing Standard/Enterprise customers are encouraged to migrate to the Performance plan.
+The **Standard** and **Enterprise** plans are now deprecated. Existing Standard/Enterprise customers are encouraged to migrate to the Performance plan before October 16th, 2026. For more information, see the [Announcement](https://cloud.ibm.com/status/announcement?query=Deprecation+Announcement+-+IBM+Db2+SaaS+Standard+%26+Enterprise+Plans){: external}. For migration instructions, see [Migration](/docs/db2-saas?topic=db2-saas-migration). All new deployments will now use the **Performance** plan.
 {: deprecated}
 
 When migrating to the **Performance** plan, you can choose to deploy your database at either **Db2 version 12** or **Db2 version 11.5**. Version 11.5 is supported on the Performance plan for customers who require compatibility with existing applications or need additional time before upgrading to version 12.

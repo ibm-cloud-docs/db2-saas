@@ -39,7 +39,7 @@ The Performance plan is supported in the following data center geographies:
 ## Standard/Enterprise Plans
 {: #ab_plans_cfgs}
 
-The **Standard** and **Enterprise** plans are deprecated. All new deployments will use the **Performance** plan. Existing Standard/Enterprise customers are encouraged to migrate to the Performance plan. For migration instructions, see [Migration](/docs/db2-saas?topic=db2-saas-migration). For the latest status, see the [deprecation announcement](https://cloud.ibm.com/status/announcement?query=Deprecation+Announcement+-+IBM+Db2+SaaS+Standard+%26+Enterprise+Plans){: external}.
+The **Standard** and **Enterprise** plans are now deprecated. Existing Standard/Enterprise customers are encouraged to migrate to the Performance plan before October 16th, 2026. For more information, see the [Announcement](https://cloud.ibm.com/status/announcement?query=Deprecation+Announcement+-+IBM+Db2+SaaS+Standard+%26+Enterprise+Plans){: external}. For migration instructions, see [Migration](/docs/db2-saas?topic=db2-saas-migration). All new deployments will now use the **Performance** plan.
 {: deprecated}
 
 
