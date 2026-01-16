@@ -73,5 +73,5 @@ SZRs support 3 node HA in a single data center in that region.
 EU-Supported MZR supports 3 node HA in 3 different data centers in that region.
 {: note}
 ## API References by plan
-- **Standard & Enterprise Plans:** [IBM Db2 as a Service REST API](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-on-cloud-v4)
+- **Standard & Enterprise Plans (Deprecated):** [IBM Db2 as a Service REST API](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-on-cloud-v4)
 - **Performance Plan:** [IBM Db2 as a Service Performance REST API](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-saas-perf-v4)
