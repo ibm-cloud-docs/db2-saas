@@ -31,7 +31,7 @@ Before starting the restore process, ensure you have the following:
 
 - Access to your Db2 on Cloud console page
 - At least one successful internal (snapshot) backup taken on the target instance before initiating external restore
-- An existing DB2 backup stored in an IBM Cloud Object Storage or Amazon S3 bucket (file must be in a subdirectory folder inside the bucket)
+- An existing DB2 backup stored in an IBM Cloud Object Storage or Amazon S3 bucket
 - Your endpoint URL along with HMAC credentials (Access Key and Secret Access Key) to access the bucket and backup image
 - Sufficient database storage space to accommodate the restored database
 
@@ -77,7 +77,7 @@ In the Connect step, provide the connection details for your external storage:
 
 4. Enter your **Secret access key** (HMAC secret access key).
 
-5. Optionally, click **Test connection** to verify the credentials are correct.
+5. Click **Test connection** to verify the credentials are correct.
 
 6. Click **Next** to proceed.
 
@@ -103,11 +103,13 @@ In the Select backup image step, browse and select your backup file:
 
 In the Confirm step, review your selections and configure restore options:
 
-1. Choose whether to perform database validation or skip it. Database validation checks if your instance has sufficient storage for the backup before starting the restore. Skipping validation will start the restore immediately, but it may fail mid-process if storage is insufficient.
+1. Choose whether to perform backup size validation or skip it. Backup size validation checks if your instance has sufficient storage space for the backup before starting the restore. Skipping validation will start the restore immediately, but it may fail mid-process if storage is insufficient.
+
+   ![Confirm restore backup with validation and rollforward options](images/confirm_restore_backup_options.png){: caption="Confirm restore backup with validation and rollforward options" caption-side="bottom"}
 
 2. Configure the rollforward option:
    - **Rollforward to end of backup**: Completes the restore and brings the database online.
-   - **Rollforward to end of logs**: Allows you to apply additional transaction logs after the initial restore. You can specify a log location path and enable "Complete rollforward" to bring the database online after applying logs.
+   - **Rollforward to end of logs**: Keeps the database in a rollforward pending state, allowing you to apply additional logs later if needed. When you're ready to make the database available for connections, enable "Complete rollforward" to bring it online.
 
 3. Click **Start restore backup** to start the external restore.
 
@@ -145,7 +147,7 @@ If you selected "Rollforward to end of logs" without enabling "Complete rollforw
 
 2. In the Rollforward dialog:
    - Enable **Complete rollforward** toggle to bring the database online after this rollforward.
-   - Optionally enter an **Archive log location** if you have additional transaction logs to apply.
+   - **Archive log location** will be prefilled based on the selection in the previous external restore step. You can change the path if the new logs are in a different location.
 
 3. Click **Start rollforward** to proceed.
 
@@ -172,3 +174,12 @@ If you selected "Rollforward to end of logs" without enabling "Complete rollforw
 
 After the restore completes, it may take a few additional minutes for all console features to become fully available while the system completes post-restore setup tasks.
 {: note}
+
+## External restore failure
+{: #restore-external-failure}
+
+In case of an external restore failure, there are a couple of options to recover the system:
+
+1. **Initiate a different external restore**: Click the **External restore** button to start a new restore. For example, if you previously selected a backup image that is not compatible with the system, you can initiate a new external restore with the correct backup image.
+
+2. **Reset from internal backup**: Click the **Reset from last internal backup** option to restore from the internal backup you created earlier. This will reset the system to its state before the external restore was attempted.
