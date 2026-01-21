@@ -79,7 +79,7 @@ Follow these steps to begin the migration:
 
       Select `Disable the prior system` to complete the migration to the Performance instance. This will terminate synchronization and pause the Standard/Enterprise instance.
 
-      
+
 
    ![Confirm upgrade button](images/confirm_complete_upgrade.png){: caption="Select what to do with source option and complete upgrade" caption-side="bottom"}
 
