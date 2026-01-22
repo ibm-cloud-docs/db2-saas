@@ -2,15 +2,14 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2025-09-25"
+lastupdated: "2026-01-22"
 
-keywords: 
+keywords:
 
 subcollection: db2-saas
 
 ---
 
- 
 {:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:codeblock: .codeblock}
@@ -24,21 +23,24 @@ subcollection: db2-saas
 # Managing users
 {: #user_mgmt}
 
-Access to {{site.data.keyword.Db2_on_Cloud_long}} service instances for users in your account is controlled by [Identity and access management (IAM) on IBM Cloud](/docs/Db2onCloud?topic=Db2onCloud-iam) and database access is provided by standard access controls provided by the database. 
+Access to {{site.data.keyword.Db2_on_Cloud_long}} service instances for users in your account is controlled by [Identity and access management (IAM) on IBM Cloud](/docs/Db2onCloud?topic=Db2onCloud-iam) and database access is provided by standard access controls provided by the database.
 
 For more information about IAM, see [What is IBM Cloud Identity and Access Management?](/docs/account?topic=account-iamoverview).
 
-### User types
+## User types
+
 {: #um_user_types}
 
-#### Database users
+### Database users
+
 {: #um_db_users}
 
-These are the users that are used to access the database. Traditionally, these are the OS users in a typical Db2 deployment, although, in the cloud, a user registry is used. Db2 understands these users as native to the database. The database privileges for the users can be granted or revoked as can roles that are created by the user. 
+These are the users that are used to access the database. Traditionally, these are the OS users in a typical Db2 deployment, although, in the cloud, a user registry is used. Db2 understands these users as native to the database. The database privileges for the users can be granted or revoked as can roles that are created by the user.
 
-Database users are not granted any service-level functions. For example, a database administrator who has access to the data does not have the ability to change the configuration of the system outside of the database privileges that they were given. 
+Database users are not granted any service-level functions. For example, a database administrator who has access to the data does not have the ability to change the configuration of the system outside of the database privileges that they were given.
 
-##### User Naming Rules
+#### User Naming Rules
+
 The user ID must follow the [general naming rules](https://www.ibm.com/docs/en/db2/12.1.0?topic=servers-general-naming-rules). It can contain up to 20 characters consisting only of:
 
 - Lowercase letters (`a–z`)
@@ -50,21 +52,26 @@ The user ID must follow the [general naming rules](https://www.ibm.com/docs/en/d
 
 The user ID cannot begin with a number or an underscore.
 
-#### IAM users
+
+
+### IAM users
 {: #um_iam_users}
 
 IAM is only integrated with high-level service access, which governs privileges and operations available in the {{site.data.keyword.Db2_on_Cloud_short}} console and database. Access to the database by these IAM users is provided by allowing an IAM user or service ID access to a specific Db2 user, as mentioned earlier.
 
 ### Roles and access
+
 {: #um_roles_access}
 
-Users can use JDBC or any Db2 client to connect to their database. There are two ways that users can access the database: 
-- Use their database user name and password associated with their account 
-- Use the IAM token (or APIKey, which gets the token) that is mapped to the associated database user 
+Users can use JDBC or any Db2 client to connect to their database. There are two ways that users can access the database:
 
-IAM authentication is performed as the authentication mechanism. Permissions are not controlled by IAM. Permissions are controlled by database level privileges of the associated user. 
+- Use their database user name and password associated with their account
+- Use the IAM token (or APIKey, which gets the token) that is mapped to the associated database user
+
+IAM authentication is performed as the authentication mechanism. Permissions are not controlled by IAM. Permissions are controlled by database level privileges of the associated user.
 
 #### Console access
+
 {: #um_console_access}
 
 Console access is controlled by IAM. An IAM user can be assigned access by the IAM interface to all Db2 service instances, all Db2 service instances in a resource group, or a specific service instance. Within these parameters, IAM users can be assigned platform and service-level access.
@@ -79,8 +86,9 @@ Console access is controlled by IAM. An IAM user can be assigned access by the I
 | Non-IAM, but authenticate with JDBC | Only "Change password" | Yes | No | No | Yes |
 {: caption="Roles and console permissions" caption-side="top"}
 
-#### Service action mapping
-{: @um_serv_act_map}
+### Service action mapping
+
+{: #um_serv_act_map}
 
 Service action access is also controlled by IAM Roles. An IAM user can be assigned access by the IAM interface to all Db2 service instances, all Db2 service instances in a resource group, or a specific service instance. Within these parameters, IAM users can be assigned or revoked access from specific service actions.
 
@@ -90,7 +98,7 @@ Service action access is also controlled by IAM Roles. An IAM user can be assign
 | IAM - Platform - Operator      | No           |  Yes  | No    | Yes     | Yes | Yes     | Yes    |  Yes    | Yes              |
 | IAM - Platform - Editor        | No           |  Yes  | Yes   | Yes     | Yes | Yes     | Yes    |  Yes    | Yes              |
 | IAM - Platform - Administrator | Yes          |  Yes  | Yes   | Yes     | Yes | Yes     | Yes    |  Yes    | Yes              |
-{: caption="Roles and service actions" caption-side="top"} 
+{: caption="Roles and service actions" caption-side="top"}
 
 
 For more information about user management, see [Database user management](https://www.ibm.com/docs/en/db2oc?topic=features-database-user-management){: external}
