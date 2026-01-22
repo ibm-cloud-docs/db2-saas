@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020, 2021, 2022, 2026
-lastupdated: "2026-01-13"
+lastupdated: "2026-01-11"
 
 keywords: provision cloud database, database with terraform, provisioning parameters, db2 on cloud, db2
 
@@ -32,10 +32,9 @@ You can provision a deployment by visiting the service's catalog page or by spec
 
 | Deployment Type | Catalog Page | Service ID | Plan IDs |
 |-----------------|--------------|------------|----------|
-| {{site.data.keyword.Db2_on_Cloud_short}} |[Link](https://cloud.ibm.com/catalog/services/db2){: external} | dashdb-for-transactions | Perfomance Plan - `Perfomance`|
+| {{site.data.keyword.Db2_on_Cloud_short}} |[Link](https://cloud.ibm.com/catalog/services/db2){: external} | dashdb-for-transactions | Standard Plan - `dashDBStandard`, Enterprise Plan - `dashDBNebula`, Perfomance Plan - `Perfomance`|
 
-The Performance plan supports both Db2 version 12 and version 11.5. Version 12 is recommended for new deployments. Version 11.5 is available for customers requiring application compatibility.
-{: note}
+
 
 ## Using the catalog
 {: #prov_catalog}
@@ -54,15 +53,13 @@ When you create the deployment from the catalog, you need to specify the followi
 
 1. **Backup Encryption Key** - If you use Backup Encyrption Key, you can provide your own KMS instance and key in order to encrypt your backups. This is an optional parameter, and if not provided the default KMS instance and key will be used.
 
-1. **CPU allocation** - Choose dedicated compute resources for your deployment. With dedicated cores, your resource group is given a single-tenant host with a guaranteed minimum reserve of cpu shares. Your deployments are then allocated the number of CPUs you specify. This defaults to the `Performance plan` if not specified in the provisioning request by using the API or CLI.
+
 
 2. **Endpoints** - You can configure the types Service Endpoints on your deployment. The default is that connections to your deployment can be made from the public network.
 
 3. **High Availability** - whether the services should be Highly Available
 
 4. **Oracle compatibility** - whether the service instance should have Oracle compatibility enabled
-
-5. **Db2 Version** - Choose the Db2 version for your deployment. The Performance plan supports both **Db2 version 12** (recommended) and **Db2 version 11.5** for customers requiring application compatibility.
 
 6. **Instance Profile** -  Choose machine type resource for your deployment based on your CPU and memory requirements. This option is only available with the Performance plan.
 
@@ -77,6 +74,7 @@ The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate wit
 To create a {{site.data.keyword.databases-for}} deployment, you use the CLI to request a service instance with the service ID of the database (or messaging queue) that you want to provision.
 
 Run the following command template:
+
 ```
 ibmcloud resource service-instance-create <service-name> <service-id> <service-plan-id> <region> --service-endpoints <SERVICE_ENDPOINTS_TYPE>
 ```
@@ -85,6 +83,7 @@ ibmcloud resource service-instance-create <service-name> <service-id> <service-p
 More general information about this command is available in the [CLI reference for resource groups](/docs/cli?topic=cli-ibmcloud_commands_resource).
 
 When the command is run, the database deployment begins. The database takes some time to deploy. You can check on its progress on your {{site.data.keyword.cloud_notm}} dashboard or you can run the following command:
+
 ```
 ibmcloud resource service-instance-create <service-name>
 ```
@@ -116,6 +115,7 @@ You can provision new deployments by using the Resource Controller API. However,
 1. You must know the region to which you would like to deploy.
 
 After you have all of the information, the following create request is a `POST` to the `https://resource-controller.cloud.ibm.com/v2/resource_instances` endpoint:
+
 ```
 curl -X POST \
   https://resource-controller.cloud.ibm.com/v2/resource_instances \
@@ -153,13 +153,13 @@ More information on the Resource Controller API is found in its [API Reference](
 
 - `timezone` - The timezone that your database and the underlying operating system should use. Any timezone identifier accepted by Linux will be valid. Example:`"timezone": "America/Toronto"`.
 
-  This example will be accepted here. If omitted, the default is UTC. For a complete list of valid timezone identifiers, refer to [Wikipedia's tz database time zones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
+  This example will be accepted here. If omitted, the default is UTC. For a complete list of valid timezone identifiers, refer to [Wikipedia’s tz database time zones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 
 - `custom_db` , `custom_dbm`, `custom_registry` - This allows you to set custom Db2 DB, DBM, and registry settings. The value should be a JSON array.
 Example:
-```
+  ```
   "custom_registry": { "DB2_SELECTIVITY": "ALL", "DB2_ANTIJOIN": "EXTEND" }
-```
+   ```
     The [Db2 REST API](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-on-cloud-v4#introduction) can be used to query a full list of changeable Db2 parameters and update Db2 settings on an existing instance.
 
 - `version` - The Db2 version for your deployment. Valid values are `12` or `11.5`. If omitted, the default is `12`. Example: `"version": "11.5"`.
