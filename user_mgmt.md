@@ -7,6 +7,7 @@ lastupdated: "2026-01-22"
 keywords: 
 
 subcollection: db2-saas
+topicid: user_mgmt
 
 ---
 
@@ -102,12 +103,12 @@ IAM is only integrated with high-level service access, which governs privileges 
 
 {: #um_roles_access}
 
-Users can use JDBC or any Db2 client to connect to their database. There are two ways that users can access the database: 
+Users can use JDBC or any Db2 client to connect to their database. There are two ways that users can access the database:
 
 - Use their database user name and password associated with their account
 - Use the IAM token (or APIKey, which gets the token) that is mapped to the associated database user
 
-IAM authentication is performed as the authentication mechanism. Permissions are not controlled by IAM. Permissions are controlled by database level privileges of the associated user. 
+IAM authentication is performed as the authentication mechanism. Permissions are not controlled by IAM. Permissions are controlled by database level privileges of the associated user.
 
 #### Console access
 
