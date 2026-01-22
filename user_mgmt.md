@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2021
 lastupdated: "2026-01-22"
 
-keywords: 
+keywords:
 
 subcollection: db2-saas
 
@@ -23,7 +23,7 @@ subcollection: db2-saas
 # Managing users
 {: #user_mgmt}
 
-Access to {{site.data.keyword.Db2_on_Cloud_long}} service instances for users in your account is controlled by [Identity and access management (IAM) on IBM Cloud](/docs/Db2onCloud?topic=Db2onCloud-iam) and database access is provided by standard access controls provided by the database. 
+Access to {{site.data.keyword.Db2_on_Cloud_long}} service instances for users in your account is controlled by [Identity and access management (IAM) on IBM Cloud](/docs/Db2onCloud?topic=Db2onCloud-iam) and database access is provided by standard access controls provided by the database.
 
 For more information about IAM, see [What is IBM Cloud Identity and Access Management?](/docs/account?topic=account-iamoverview).
 
@@ -35,7 +35,7 @@ For more information about IAM, see [What is IBM Cloud Identity and Access Manag
 
 {: #um_db_users}
 
-These are the users that are used to access the database. Traditionally, these are the OS users in a typical Db2 deployment, although, in the cloud, a user registry is used. Db2 understands these users as native to the database. The database privileges for the users can be granted or revoked as can roles that are created by the user. 
+These are the users that are used to access the database. Traditionally, these are the OS users in a typical Db2 deployment, although, in the cloud, a user registry is used. Db2 understands these users as native to the database. The database privileges for the users can be granted or revoked as can roles that are created by the user.
 
 Database users are not granted any service-level functions. For example, a database administrator who has access to the data does not have the ability to change the configuration of the system outside of the database privileges that they were given.
 
@@ -52,47 +52,9 @@ The user ID must follow the [general naming rules](https://www.ibm.com/docs/en/d
 
 The user ID cannot begin with a number or an underscore.
 
-### Resolving Locked or Invalid Password Errors 
-
-{: #um_locked_pw}
-
-When a user attempts to connect with an invalid password or after exceeding the maximum login attempts, the following error may occur:
-
-```
-Caused by: java.sql.SQLInvalidAuthorizationSpecException: 
-[jcc][t4][2017][11253][4.35.11] Connection authorization failure occurred. 
-Reason: User ID revoked. ERRORCODE=-4214, SQLSTATE=28000 
-DSRA0010E: SQL State = 28000, Error Code = -4,214
-
-```
-
-#### How to Resolve
-
-{: #um_resolve}
-
-1. **Verify credentials**  
-   - Ensure the correct database user ID and password are being used.  
-   - Check for typos, expired passwords, or case sensitivity issues.
-
-2. **Reset password (if invalid)**  
-   - Use the *Change password* option in the console or via JDBC client.  
-   - Follow password policy rules (minimum length, complexity, history restrictions).
-
-3. **Unlock account (if locked)**  
-   - If the account is locked due to failed attempts, wait for the configured *Lock Duration* to expire.  
-   - If immediate access is required:
-      - Paid plans: An administrator must manually unlock the user via user management commands.
-      - Lite/Free plans: Since no administrator is available, users must open a support case to request unlock assistance.
-
-4. **Check password policies**  
-   - Review the configured `max_attempts`, `lock_duration`, and `failure_interval` to understand why the lock occurred.  
-
-5. **Escalate if unresolved**  
-   - If the account remains inaccessible, contact your Db2 SaaS administrator to verify IAM mappings and database privileges.
 
 
 ### IAM users
-
 {: #um_iam_users}
 
 IAM is only integrated with high-level service access, which governs privileges and operations available in the {{site.data.keyword.Db2_on_Cloud_short}} console and database. Access to the database by these IAM users is provided by allowing an IAM user or service ID access to a specific Db2 user, as mentioned earlier.
@@ -136,7 +98,7 @@ Service action access is also controlled by IAM Roles. An IAM user can be assign
 | IAM - Platform - Operator      | No           |  Yes  | No    | Yes     | Yes | Yes     | Yes    |  Yes    | Yes              |
 | IAM - Platform - Editor        | No           |  Yes  | Yes   | Yes     | Yes | Yes     | Yes    |  Yes    | Yes              |
 | IAM - Platform - Administrator | Yes          |  Yes  | Yes   | Yes     | Yes | Yes     | Yes    |  Yes    | Yes              |
-{: caption="Roles and service actions" caption-side="top"} 
+{: caption="Roles and service actions" caption-side="top"}
 
 
 For more information about user management, see [Database user management](https://www.ibm.com/docs/en/db2oc?topic=features-database-user-management){: external}

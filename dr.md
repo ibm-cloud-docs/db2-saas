@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2025-11-24"
+lastupdated: "2026-01-22"
 
 keywords: DR, HADR, disaster recovery, Enterprise, Standard, {{site.data.keyword.Db2_on_Cloud_short}} , failover, failback
 
@@ -10,7 +10,7 @@ subcollection: db2-saas
 
 ---
 
- 
+
 {:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:codeblock: .codeblock}
@@ -36,7 +36,7 @@ DR nodes are currently available for only Enterprise and Standard HADR plans. DR
 
 Failover to the DR site is not automatic. You must initiate the failover.
 {: important}
- 
+
 [Creating a DR node](#dr_create_dr_node)
 
 [Deleting a DR node](#dr_delete_dr_node)
@@ -57,7 +57,7 @@ With the introduction of Geo-Replicated Disaster Recovery nodes, you are now abl
 ## Enterprise and Standard HADR plans
 {: #dr_ent_std_plans}
 
-DR nodes are now available for Enterprise and Standard HADR plans only. DR nodes are currently not supported in single node plans or in EU-Cloud.  
+DR nodes are now available for Enterprise and Standard HADR plans only. DR nodes are currently not supported in single node plans or in EU-Cloud.
 
 ### Creating a DR node
 {: #dr_create_dr_node}
@@ -76,12 +76,12 @@ DR nodes are now available for Enterprise and Standard HADR plans only. DR nodes
 
 Deleting a DR service instance removes only the DR node, leaving the HA instance intact. Once deleted, you can re-deploy a DR node in any designated location from the HA setup.
 
-The DR node must be in a standby state before you can delete it. If it is not in standby, you must initiate a failback to the primary site. {: important}
+The DR node must be in a standby state before you can delete it. If it is not in standby, you must initiate a failback to the primary site. To delete the DR node, navigate to the IBM Cloud Resource List and delete it from there. {: important}
 
 ### Forcing a failover to the DR site
 {: #dr_force_failover}
 
-1. To force a failover to the DR site, open the web console for the recovery site from the {{site.data.keyword.cloud_notm}} dashboard. 
+1. To force a failover to the DR site, open the web console for the recovery site from the {{site.data.keyword.cloud_notm}} dashboard.
    ![Recovery node console](images/dr_4_v2.jpg  "Recovery node console"){: caption="Recovery node console" caption-side="bottom"}
 
 2. To initiate a takeover, click **Promote** on the **Disaster recovery** page.
