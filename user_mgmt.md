@@ -7,7 +7,6 @@ lastupdated: "2026-01-22"
 keywords: 
 
 subcollection: db2-saas
-topicid: user_mgmt
 
 ---
 
@@ -22,7 +21,6 @@ topicid: user_mgmt
 {:pre: .pre}
 
 # Managing users
-
 {: #user_mgmt}
 
 Access to {{site.data.keyword.Db2_on_Cloud_long}} service instances for users in your account is controlled by [Identity and access management (IAM) on IBM Cloud](/docs/Db2onCloud?topic=Db2onCloud-iam) and database access is provided by standard access controls provided by the database. 
