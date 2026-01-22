@@ -2,17 +2,13 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2026-01-21"
+lastupdated: "2026-01-22"
 
 keywords: 
 
 subcollection: db2-saas
 
 ---
-
-# Managing users
-
-{: #user_mgmt}
 
 {:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
@@ -24,15 +20,19 @@ subcollection: db2-saas
 {:deprecated: .deprecated}
 {:pre: .pre}
 
+# Managing users
+
+{: #user_mgmt}
+
 Access to {{site.data.keyword.Db2_on_Cloud_long}} service instances for users in your account is controlled by [Identity and access management (IAM) on IBM Cloud](/docs/Db2onCloud?topic=Db2onCloud-iam) and database access is provided by standard access controls provided by the database. 
 
 For more information about IAM, see [What is IBM Cloud Identity and Access Management?](/docs/account?topic=account-iamoverview).
 
-### User types
+## User types
 
 {: #um_user_types}
 
-#### Database users
+### Database users
 
 {: #um_db_users}
 
@@ -40,7 +40,7 @@ These are the users that are used to access the database. Traditionally, these a
 
 Database users are not granted any service-level functions. For example, a database administrator who has access to the data does not have the ability to change the configuration of the system outside of the database privileges that they were given.
 
-##### User Naming Rules
+#### User Naming Rules
 
 The user ID must follow the [general naming rules](https://www.ibm.com/docs/en/db2/12.1.0?topic=servers-general-naming-rules). It can contain up to 20 characters consisting only of:
 
@@ -55,6 +55,8 @@ The user ID cannot begin with a number or an underscore.
 
 ### Resolving Locked or Invalid Password Errors 
 
+{: #um_locked_pw}
+
 When a user attempts to connect with an invalid password or after exceeding the maximum login attempts, the following error may occur:
 
 ```
@@ -66,6 +68,8 @@ DSRA0010E: SQL State = 28000, Error Code = -4,214
 ```
 
 #### How to Resolve
+
+{: #um_resolve}
 
 1. **Verify credentials**  
    - Ensure the correct database user ID and password are being used.  
@@ -88,7 +92,7 @@ DSRA0010E: SQL State = 28000, Error Code = -4,214
    - If the account remains inaccessible, contact your Db2 SaaS administrator to verify IAM mappings and database privileges.
 
 
-#### IAM users
+### IAM users
 
 {: #um_iam_users}
 
@@ -121,9 +125,9 @@ Console access is controlled by IAM. An IAM user can be assigned access by the I
 | Non-IAM, but authenticate with JDBC | Only "Change password" | Yes | No | No | Yes |
 {: caption="Roles and console permissions" caption-side="top"}
 
-#### Service action mapping
+### Service action mapping
 
-{: @um_serv_act_map}
+{: #um_serv_act_map}
 
 Service action access is also controlled by IAM Roles. An IAM user can be assigned access by the IAM interface to all Db2 service instances, all Db2 service instances in a resource group, or a specific service instance. Within these parameters, IAM users can be assigned or revoked access from specific service actions.
 
