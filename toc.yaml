@@ -51,6 +51,7 @@ toc:
           - recovering_db.md
           - cdc.md
           - br.md
+          - external_restore_perf.md
           - acr_setup.md
           - dr.md
           - main.md
