@@ -64,7 +64,7 @@ The easiest way to connect to your data is by way of the public host name that w
 
 {: #pub_endpt_current}
 
-##### {{site.data.keyword.Db2_on_Cloud_long} section
+##### {{site.data.keyword.Db2_on_Cloud_long}} section
 
 {: #pub_db2oc}
 
