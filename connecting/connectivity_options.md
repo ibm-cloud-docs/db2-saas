@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020, 2021, 2022
-lastupdated: "2026-01-09"
+lastupdated: "2026-01-29"
 
 keywords:
 
@@ -22,20 +22,17 @@ subcollection: db2-saas
 {:pre: .pre}
 
 # Connectivity options
-
 {: #connect_options}
 
 {{site.data.keyword.Db2_on_Cloud_long}} offers multiple secure connectivity options that depend on your application connection requirements.
 {: shortdesc}
 
 ## Connecting to a public endpoint (default option)
-
 {: #pub_endpt}
 
 As with any public cloud service, you can connect your application by way of a public host name that is provided to you at the time that your service is provisioned. Access to your data is protected by strong authentication, vast Db2 authorization options and access controls, encryption over the wire and at rest, and IBM security and compliance practices for development and operations.
 
 ### How to connect to a public endpoint:
-
 {: #pub_endpt_steps}
 
 For application connections, do not use IP addresses to connect to the {{site.data.keyword.Db2_on_Cloud_short}} instance, as the IP addresses resolved from the hostname may change. Use hostnames to reference your connection properties where it is available. In cases where hostnames cannot be used such as firewall rules, see https://cloud.ibm.com/docs/Db2onCloud?topic=Db2onCloud-firewall-allowlist on suggestions for opening firewalls with subnet information.
@@ -67,7 +64,7 @@ The easiest way to connect to your data is by way of the public host name that w
 
 {: #pub_endpt_current}
 
-##### {{site.data.keyword.Db2_on_Cloud_long} section
+##### {{site.data.keyword.Db2_on_Cloud_long}} section
 
 {: #pub_db2oc}
 
