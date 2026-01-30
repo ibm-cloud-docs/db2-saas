@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2026-01-22"
+lastupdated: "2026-01-30"
 
 keywords:
 
@@ -52,7 +52,43 @@ The user ID must follow the [general naming rules](https://www.ibm.com/docs/en/d
 
 The user ID cannot begin with a number or an underscore.
 
+### Resolving Locked or Invalid Password Errors
 
+{: #um_locked_pw}
+
+When a user attempts to connect with an invalid password or after exceeding the maximum login attempts, the following error may occur:
+
+```
+Caused by: java.sql.SQLInvalidAuthorizationSpecException:
+[jcc][t4][2017][11253][4.35.11] Connection authorization failure occurred.
+Reason: User ID revoked. ERRORCODE=-4214, SQLSTATE=28000
+DSRA0010E: SQL State = 28000, Error Code = -4,214
+
+```
+
+#### How to Resolve
+
+{: #um_resolve}
+
+1. **Verify credentials**
+   - Ensure the correct database user ID and password are being used.
+   - Check for typos, expired passwords, or case sensitivity issues.
+
+2. **Reset password (if invalid)**
+   - Use the *Change password* option in the console or via JDBC client.
+   - Follow password policy rules (minimum length, complexity, history restrictions).
+
+3. **Unlock account (if locked)**
+   - If the account is locked due to failed attempts, wait for the configured *Lock Duration* to expire.
+   - If immediate access is required:
+      - Paid plans: An administrator must manually unlock the user via user management commands.
+      - Lite/Free plans: Since no administrator is available, users must open a support case to request unlock assistance.
+
+4. **Check password policies**
+   - Review the configured `max_attempts`, `lock_duration`, and `failure_interval` to understand why the lock occurred.
+
+5. **Escalate if unresolved**
+   - If the account remains inaccessible, contact your Db2 SaaS administrator to verify IAM mappings and database privileges.
 
 ### IAM users
 {: #um_iam_users}
