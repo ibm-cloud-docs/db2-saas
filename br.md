@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2025
-lastupdated: "2025-09-25"
+  years: 2014, 2026
+lastupdated: "2026-02-03"
 
 keywords:
 
@@ -189,6 +189,25 @@ The following is an example of the end-of-backup restore operation in the web co
 {{site.data.keyword.Db2_on_Cloud_long}} added a point-in-time restore capability for systems in {{site.data.keyword.Bluemix_notm}} Public. You can restore to an exact point in time from your backups.
 
 The following are a selected example of screen captures of the point-in-time restore operation in the web console UI:
+
+#### Performance plans
+{: #br_pit_perf}
+
+1. Click **Backups** from the top navigation bar. Click the down arrow beside the **Run backup** button. Select **Restore (point-in-time)**.
+![View of the highlighted selection of the point-in-time restore option](images/perf_pit_restore_pick.png "Backup and restore console page"){: caption="View of the selection of the point-in-time restore option" caption-side="bottom"}
+
+2. Select a point-in-time date and time to which you want to restore the database. The point-in-time restore process selects the backup closest to your requested point-in-time date out of the pool of retained backups made during the previous 14 days. Click **Restore**.
+
+The point-in-time restore process invalidates any of the previously retained backups with dates after the selected point-in-time date because of a resultant divergence in the timeline.
+{: note}
+
+![View of date and time selection for point-in-time restore](images/perf_pit_restore_date.png "Backup and restore console page"){: caption="View of date and time selection for point-in-time restore" caption-side="bottom"}
+
+3. Restoring the database to the selected point in time. You can monitor progress through the **Notifications** panel.
+![View of the point-in-time restore in progress](images/perf_pit_restore_progress.png "Initialization of point-in-time restoration"){: caption="View of the point-in-time restore in progress" caption-side="bottom"}
+
+4. The restore operation completed successfully.
+![View of the successful completion of the restoration](images/perf_pit_restore_successful.png "Successful completion"){: caption="View of the successful completion of the restoration" caption-side="bottom"}
 
 #### Enterprise and Standard plans
 {: #br_pit_ent_std}
