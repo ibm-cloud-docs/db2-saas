@@ -2,15 +2,15 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2025-09-25"
+lastupdated: "2026-01-30"
 
-keywords: 
+keywords:
 
 subcollection: db2-saas
 
 ---
 
- 
+
 {:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:codeblock: .codeblock}
@@ -24,22 +24,43 @@ subcollection: db2-saas
 # Endpoints
 {: #endpts}
 
+## Performance plans
+{: #ep_performance}
+
+Performance plans offer the choice of Public, Private, or both Public and Private endpoints.
+
+- Public network service endpoint is accessible from anywhere on the internet.
+- Private network service endpoint access traverses only the {{site.data.keyword.cloud_notm}} backbone network, not the public internet.
+
+### Changing endpoints
+{: #ep_perf_chg_epts}
+
+To change endpoints, complete the following steps:
+- Select your Db2 service from {{site.data.keyword.cloud_notm}}.
+- From the **Manage** tab, click **Open Console**.
+- Select **Administration** from the left side menu.
+- Select the **Settings** tab.
+- Under **Service endpoints**, select either **Public endpoints**, **Private endpoints**, or both.
+- Click **Update**. The change occurs immediately.
+
+![Performance access restriction](images/performance_access_restriction.png "Service endpoints"){: caption="Service endpoints configuration for Performance plans" caption-side="bottom"}
+
 ## Standard and Enterprise plans
 {: #ep_plans}
 
 The Standard and Enterprise plans offer the choice of Public, Private, or both Public and Private endpoints.
 
-- Public network service endpoint is accessible from anywhere on the internet. 
+- Public network service endpoint is accessible from anywhere on the internet.
 - Private network service endpoint access traverses only the {{site.data.keyword.cloud_notm}} backbone network, not the public internet.
 
-### Instance creation
+## Instance creation
 {: ep_inst_create}
 
 At the time of instance creation, you can select your choice of endpoint from the **Service Endpoints** box on {{site.data.keyword.cloud_notm}}.
 
 ![Instance creation endpoints](images/creation_endpoint.png "Endpoint choice"){: caption="Endpoint choice at instance creation" caption-side="bottom"}
 
-### Changing endpoints after creation
+## Changing endpoints after creation
 {: #ep_chg_epts_after_creation}
 
 You can change endpoints at any time after creating an instance of a Standard or Enterprise plan.
@@ -52,9 +73,9 @@ To change endpoints, complete the following steps:
 - Select either **Public endpoints**, **Private endpoints**, or **Public-and-private endpoints**.
 - Click **Update**. The change occurs immediately.
 
-![Change endpoints](images/change_endpoint.png "Endpoint choice"){: caption="Change endpoint after instance creation" caption-side="bottom"}
+![Access restriction](images/access_restriction.png "Service endpoints"){: caption="Service endpoints configuration for Standard and Enterprise plans" caption-side="bottom"}
 
-### View endpoints
+## View endpoints
 {: #ep_view_endpoints}
 
 To view your endpoints:
