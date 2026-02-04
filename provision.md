@@ -43,7 +43,7 @@ When you create the deployment from the catalog, you need to specify the followi
 
 1. **Service name** - The name can be any string and is the name that is used on the web and in the command line to identify the new deployment.
 
-1. **Region** - The region in which the deployment resides.
+1. **Region** - The region in which the deployment resides. Available regions include: `us-south` (Dallas), `us-east` (Washington DC), `eu-de` (Frankfurt), `eu-gb` (London), `eu-es` (Madrid), `ca-tor` (Toronto), `br-sao` (Sao Paulo), `au-syd` (Sydney), and `jp-tok` (Tokyo).
 
 1. **Backup Location** - The location of the deployment's backups. Users can choose **Cross Regional** or **Regional** backups. Cross Regional backups can be stored across multiple regions in one zone. Whereas, Regional backups can be stored in one region only.
 
@@ -62,6 +62,8 @@ When you create the deployment from the catalog, you need to specify the followi
 4. **Oracle compatibility** - whether the service instance should have Oracle compatibility enabled
 
 5. **Db2 Version** - Choose the Db2 version for your deployment. The Performance plan supports both **Db2 version 12** (recommended) and **Db2 version 11.5** for customers requiring application compatibility.
+
+   When provisioning through the API or CLI, specify the version by using the `version` parameter. Valid values are `12` or `11.5`. If omitted, the default is `12`.
 
 6. **Instance Profile** -  Choose machine type resource for your deployment based on your CPU and memory requirements. This option is only available with the Performance plan.
 
@@ -121,9 +123,9 @@ curl -X POST \
   -H 'Content-Type: application/json' \
     -d '{
     "name": "my-instance",
-    "target": "bluemix-us-south",
+    "target": "us-south",
     "resource_group": "5g9f447903254bb58972a2f3f5a4c711",
-    "resource_plan_id": "dashdb-for-transactions"
+    "resource_plan_id": "Performance"
   }'
 ```
 {: codeblock}
@@ -158,5 +160,3 @@ Example:
   "custom_registry": { "DB2_SELECTIVITY": "ALL", "DB2_ANTIJOIN": "EXTEND" }
 ```
     The [Db2 REST API](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-on-cloud-v4#introduction) can be used to query a full list of changeable Db2 parameters and update Db2 settings on an existing instance.
-
-- `version` - The Db2 version for your deployment. Valid values are `12` or `11.5`. If omitted, the default is `12`. Example: `"version": "11.5"`.
