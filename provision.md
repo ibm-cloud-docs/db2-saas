@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020, 2021, 2022, 2026
-lastupdated: "2026-02-04"
+lastupdated: "2026-02-10"
 
 keywords: provision cloud database, database with terraform, provisioning parameters, db2 on cloud, db2
 
@@ -78,7 +78,7 @@ To create a {{site.data.keyword.databases-for}} deployment, you use the CLI to r
 
 Run the following command template:
 ```
-ibmcloud resource service-instance-create <service-name> <service-id> <service-plan-id> <region> --service-endpoints <SERVICE_ENDPOINTS_TYPE>
+ibmcloud resource service-instance-create <service-name> dashdb-for-transactions Performance <region> --service-endpoints <SERVICE_ENDPOINTS_TYPE> -p '{"version": "<VERSION>"}'
 ```
 {: codeblock}
 
@@ -125,7 +125,8 @@ curl -X POST \
     "name": "my-instance",
     "target": "us-south",
     "resource_group": "5g9f447903254bb58972a2f3f5a4c711",
-    "resource_plan_id": "Performance"
+    "resource_plan_id": "Performance",
+    "parameters": {"version": "12"}
   }'
 ```
 {: codeblock}
