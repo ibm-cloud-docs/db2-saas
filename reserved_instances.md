@@ -51,7 +51,7 @@ You can select a Reserved Instance license type when provisioning a new Db2 on C
 
 During the provisioning process, locate the **Reserved Instance/BYOL** dropdown. By default, the license is set to **Default license**. Select **Reserved Instance (1 year)** or **Reserved Instance (3 year)** from the dropdown, then continue with the rest of the provisioning steps.
 
-![Selecting a Reserved Instance during provisioning](images/byol_provisioning.png){: caption="Figure 1. Select Reserved Instance (1 year) or Reserved Instance (3 year) from the Reserved Instance/BYOL dropdown during provisioning" caption-side="bottom"}
+![Selecting a Reserved Instance during provisioning](images/byol_provisioning.png){: caption="Select Reserved Instance (1 year) or Reserved Instance (3 year) from the Reserved Instance/BYOL dropdown during provisioning" caption-side="bottom"}
 
 ## Configuring a Reserved Instance in the UI
 {: #ri-configuration}
@@ -67,14 +67,14 @@ From your Db2 on Cloud instance dashboard:
 1. Select the **License** sub-tab.
 1. Click the **Change** button on the right side to modify your license type.
 
-![Navigating to Settings > License > Change](images/step1_navigate_settings.png){: caption="Figure 2. Navigate to Settings > License and click Change" caption-side="bottom"}
+![Navigating to Settings > License > Change](images/step1_navigate_settings.png){: caption="Navigate to Settings > License and click Change" caption-side="bottom"}
 
 ### Step 2: Select the Reserved Instance license type
 {: #ri-step2}
 
 On the License selection page, select either the **1-Year Reserve (license included)** or **3-Year Reserve (license included)** radio button, then click **Save**.
 
-![Selecting a Reserved Instance license option](images/step2_select_ri.png){: caption="Figure 3. Select a Reserved Instance option" caption-side="bottom"}
+![Selecting a Reserved Instance license option](images/step2_select_ri.png){: caption="Select a Reserved Instance option" caption-side="bottom"}
 
 ### Step 3: Confirm the license change
 {: #ri-step3}
@@ -86,14 +86,14 @@ A confirmation dialog appears showing the details of your license change:
 
 The discount takes effect immediately. An **Expiration date** is displayed on the License settings page indicating when the reservation term ends.
 
-![Confirming the license change](images/step3_confirm_changes.png){: caption="Figure 4. Confirm the license change to a Reserved Instance" caption-side="bottom"}
+![Confirming the license change](images/step3_confirm_changes.png){: caption="Confirm the license change to a Reserved Instance" caption-side="bottom"}
 
 ### Step 4: Verify successful update
 {: #ri-step4}
 
 After clicking Proceed, you are returned to the License settings page. A green success banner confirms that the license has been successfully updated. The new Reserved Instance pricing is now active on your instance.
 
-![License successfully updated](images/step4_success.png){: caption="Figure 5. License successfully updated confirmation" caption-side="bottom"}
+![License successfully updated](images/step4_success.png){: caption="License successfully updated confirmation" caption-side="bottom"}
 
 ## Important notes
 {: #ri-notes}

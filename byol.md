@@ -42,7 +42,7 @@ You can select the BYOL license type when provisioning a new Db2 on Cloud instan
 
 During the provisioning process, locate the **Reserved Instance/BYOL** dropdown. By default, the license is set to **Default license**. Select **Bring your own license (BYOL)** from the dropdown, then continue with the rest of the provisioning steps.
 
-![Selecting BYOL during provisioning](images/byol_provisioning.png){: caption="Figure 1. Select Bring your own license (BYOL) from the Reserved Instance/BYOL dropdown during provisioning" caption-side="bottom"}
+![Selecting BYOL during provisioning](images/byol_provisioning.png){: caption="Select Bring your own license (BYOL) from the Reserved Instance/BYOL dropdown during provisioning" caption-side="bottom"}
 
 ## Configuring BYOL in the UI
 {: #byol-configuration}
@@ -58,7 +58,7 @@ From your Db2 on Cloud instance dashboard:
 1. Select the **License** sub-tab.
 1. Click the **Change** button on the right side to modify your license type.
 
-![Navigating to Settings > License > Change](images/step1_navigate_settings.png){: caption="Figure 2. Navigate to Settings > License and click Change" caption-side="bottom"}
+![Navigating to Settings > License > Change](images/step1_navigate_settings.png){: caption="Navigate to Settings > License and click Change" caption-side="bottom"}
 
 ### Step 2: Select the BYOL license type
 {: #byol-step2}
@@ -68,7 +68,7 @@ On the License selection page, select the **Bring Your Own License (BYOL)** radi
 The BYOL option provides the highest discount at 50% off compute costs. Ensure you meet the eligibility requirements stated in Section 5.4 of the Service Description before proceeding. Eligible licenses include Db2 Standard and Db2 Advanced, and you must maintain active Subscription and Support on your existing license entitlements.
 {: important}
 
-![Selecting the BYOL license option](images/step2_select_byol.png){: caption="Figure 3. Select the Bring Your Own License (BYOL) option" caption-side="bottom"}
+![Selecting the BYOL license option](images/step2_select_byol.png){: caption="Select the Bring Your Own License (BYOL) option" caption-side="bottom"}
 
 ### Step 3: Confirm the license change
 {: #byol-step3}
@@ -81,14 +81,14 @@ A confirmation dialog appears showing the details of your license change:
 
 The discount takes effect immediately.
 
-![Confirming the license change](images/step3_confirm_changes.png){: caption="Figure 4. Confirm the license change to BYOL" caption-side="bottom"}
+![Confirming the license change](images/step3_confirm_changes.png){: caption="Confirm the license change to BYOL" caption-side="bottom"}
 
 ### Step 4: Verify successful update
 {: #byol-step4}
 
 After clicking Proceed, you are returned to the License settings page. A green success banner confirms that the license has been successfully updated. The new BYOL pricing is now active on your instance.
 
-![License successfully updated](images/step4_success.png){: caption="Figure 5. License successfully updated confirmation" caption-side="bottom"}
+![License successfully updated](images/step4_success.png){: caption="License successfully updated confirmation" caption-side="bottom"}
 
 ## Important notes
 {: #byol-notes}
