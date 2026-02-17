@@ -43,6 +43,7 @@ toc:
           - advanced_admin.md
           - flex_scaling.md
           - autoscaling_external.md
+          - reserved_instances.md
           - byol.md
           - ha.md
           - storage_usage.md

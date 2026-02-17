@@ -85,7 +85,7 @@ Follow these steps to begin the migration:
    Creating a Copy in the Performance Plan for Testing Purposes will result in billing for both the Performance and Standard/Enerprise instances, until the Performance instance is deleted
    {: important}
 
-   If you disable the prior instance, IBM does not charge for that source instance for 14 days. After 14 days, storage charges will begin automatically.
+   When you complete the migration and disable the Standard/Enterprise instance, IBM does not charge for that instance for 14 days. After 14 days, storage charges will begin automatically unless the instance is deleted.
    {: important}
 
 1. When the migration is complete, your deployment is now available in the **Performance** plan.
