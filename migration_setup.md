@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-01-23"
+lastupdated: "2026-02-17"
 
 keywords:
 
@@ -82,7 +82,7 @@ Follow these steps to begin the migration:
 
    ![Confirm upgrade button](images/confirm_complete_upgrade.png){: caption="Select what to do with source option and complete upgrade" caption-side="bottom"}
 
-   Keeping both the Standard/Enterprise and Performance plan instances active will result in billing for each environment until the Standard/Enterprise plan instance is deleted.
+   Creating a Copy in the Performance Plan for Testing Purposes will result in billing for both the Performance and Standard/Enerprise instances, until the Performance instance is deleted
    {: important}
 
    If you disable the prior instance, IBM does not charge for that source instance for 14 days. After 14 days, storage charges will begin automatically.
