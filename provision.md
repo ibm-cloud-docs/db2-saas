@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020, 2021, 2022, 2026
-lastupdated: "2026-02-04"
+lastupdated: "2026-02-12"
 
 keywords: provision cloud database, database with terraform, provisioning parameters, db2 on cloud, db2
 
@@ -31,7 +31,7 @@ You can provision a deployment by visiting the service's catalog page or by spec
 
 | Deployment Type | Catalog Page | Service ID | Plan IDs |
 |-----------------|--------------|------------|----------|
-| {{site.data.keyword.Db2_on_Cloud_short}} |[Link](https://cloud.ibm.com/catalog/services/db2){: external} | dashdb-for-transactions | Performance Plan - `Performance`|
+| {{site.data.keyword.Db2_on_Cloud_short}} |[Link](https://cloud.ibm.com/catalog/services/db2){: external} | dashdb-for-transactions | `Performance`|
 
 The Performance plan supports both Db2 version 12 and version 11.5. Version 12 is recommended for new deployments. Version 11.5 is available for customers requiring application compatibility.
 {: note}
@@ -43,7 +43,16 @@ When you create the deployment from the catalog, you need to specify the followi
 
 1. **Service name** - The name can be any string and is the name that is used on the web and in the command line to identify the new deployment.
 
-1. **Region** - The region in which the deployment resides. Available regions include: `us-south` (Dallas), `us-east` (Washington DC), `eu-de` (Frankfurt), `eu-gb` (London), `eu-es` (Madrid), `ca-tor` (Toronto), `br-sao` (Sao Paulo), `au-syd` (Sydney), and `jp-tok` (Tokyo).
+1. 1. **Region** - The region in which the deployment resides. Available regions include:
+   - `us-south` (Dallas)
+   - `us-east` (Washington DC)
+   - `eu-de` (Frankfurt)
+   - `eu-gb` (London)
+   - `eu-es` (Madrid)
+   - `ca-tor` (Toronto)
+   - `br-sao` (Sao Paulo)
+   - `au-syd` (Sydney)
+   - `jp-tok` (Tokyo)
 
 1. **Backup Location** - The location of the deployment's backups. Users can choose **Cross Regional** or **Regional** backups. Cross Regional backups can be stored across multiple regions in one zone. Whereas, Regional backups can be stored in one region only.
 
@@ -63,7 +72,17 @@ When you create the deployment from the catalog, you need to specify the followi
 
 5. **Db2 Version** - Choose the Db2 version for your deployment. The Performance plan supports both **Db2 version 12** (recommended) and **Db2 version 11.5** for customers requiring application compatibility.
 
-   When provisioning through the API or CLI, specify the version by using the `version` parameter. Valid values are `12` or `11.5`. If omitted, the default is `12`.
+   When provisioning through the CLI, specify the version by using the `-p` flag:
+```
+   -p '{"version": "12"}'
+```
+
+   When provisioning through the API, include the version in the `parameters` object of the request body:
+```
+   "parameters": {"version": "12"}
+```
+
+   Valid values are `12` or `11.5`. If omitted, the default is `12`.
 
 6. **Instance Profile** -  Choose machine type resource for your deployment based on your CPU and memory requirements. This option is only available with the Performance plan.
 
@@ -78,7 +97,7 @@ To create a {{site.data.keyword.databases-for}} deployment, you use the CLI to r
 
 Run the following command template:
 ```
-ibmcloud resource service-instance-create <service-name> <service-id> <service-plan-id> <region> --service-endpoints <SERVICE_ENDPOINTS_TYPE>
+ibmcloud resource service-instance-create <service-name> dashdb-for-transactions Performance <region> --service-endpoints <SERVICE_ENDPOINTS_TYPE> -p '{"version": "<VERSION>"}'
 ```
 {: codeblock}
 
@@ -125,7 +144,8 @@ curl -X POST \
     "name": "my-instance",
     "target": "us-south",
     "resource_group": "5g9f447903254bb58972a2f3f5a4c711",
-    "resource_plan_id": "Performance"
+    "resource_plan_id": "Performance",
+    "parameters": {"version": "12"}
   }'
 ```
 {: codeblock}
@@ -145,18 +165,13 @@ More information on the Resource Controller API is found in its [API Reference](
    To use a key for your backups, you must first enable the [service-to-service delegation]().
 - `members_cpu_allocation_count` - Enables and allocates the number of specified dedicated cores to your deployment. For example, to use two dedicated cores per member, use `"members_cpu_allocation_count":"2"`. If omitted, the default value "Shared CPU" uses compute resources on shared hosts.
 - `service-endpoints` - Selects the types [Service Endpoints](/docs/db2-saas?topic=db2-saas-endpts) supported on your deployment. Options are `public`, `private`, or `public-and-private`. If omitted, the default is `public`. Note that in the CLI, `service-endpoints` is a flag, and not a parameter.
-
-`backup_encryption_key_crn` is NOT applicable to performance plans.  For performance plans, backup will be encrypted with the same key as disk_encryption_key_crn.  If disk_encryption_key_crn is not specified, it'll use the default provider managed key. {: note}
-
-## List of additional parameters (for performance plans only)
-
-- `timezone` - The timezone that your database and the underlying operating system should use. Any timezone identifier accepted by Linux will be valid. Example:`"timezone": "America/Toronto"`.
-
-  This example will be accepted here. If omitted, the default is UTC. For a complete list of valid timezone identifiers, refer to [Wikipedia's tz database time zones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
-
-- `custom_db` , `custom_dbm`, `custom_registry` - This allows you to set custom Db2 DB, DBM, and registry settings. The value should be a JSON array.
-Example:
+- `timezone` - The timezone that your database and the underlying operating system should use. Any timezone identifier accepted by Linux will be valid. Example: `"timezone": "America/Toronto"`. If omitted, the default is UTC. For a complete list of valid timezone identifiers, refer to [Wikipedia's tz database time zones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). *(Performance plan only)*
+- `custom_db`, `custom_dbm`, `custom_registry` - This allows you to set custom Db2 DB, DBM, and registry settings. The value should be a JSON array. *(Performance plan only)*
+  Example:
 ```
   "custom_registry": { "DB2_SELECTIVITY": "ALL", "DB2_ANTIJOIN": "EXTEND" }
 ```
-    The [Db2 REST API](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-on-cloud-v4#introduction) can be used to query a full list of changeable Db2 parameters and update Db2 settings on an existing instance.
+  The [Db2 REST API](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-on-cloud-v4#introduction) can be used to query a full list of changeable Db2 parameters and update Db2 settings on an existing instance.
+
+`backup_encryption_key_crn` is NOT applicable to performance plans. For performance plans, backup will be encrypted with the same key as disk_encryption_key_crn. If disk_encryption_key_crn is not specified, it'll use the default provider managed key.
+{: note}

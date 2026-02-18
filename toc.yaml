@@ -98,8 +98,11 @@ toc:
           label: Database management API (Standard and Enterprise)
           href: https://cloud.ibm.com/apidocs/db2-on-cloud/db2-on-cloud-v4
       - link:
+          label: Database management API (Performance)
+          href: https://cloud.ibm.com/apidocs/db2-on-cloud/db2-saas-perf-v4
+      - link:
           label: Database resource scaling API
-          href: https://cloud.ibm.com/apidocs/db2-on-cloud/db2oc_scale_exp
+          href: https://cloud.ibm.com/apidocs/db2-on-cloud/db2-on-cloud-v4#postscalingrequest
       - link:
           label: SQL reference
           href: https://www.ibm.com/support/knowledgecenter/SSFMBX/com.ibm.swg.im.dashdb.sql.ref.doc/doc/c0004100.html
