@@ -37,7 +37,7 @@ From your Db2 on Cloud instance dashboard:
 1. Select **Pause & Resume** from the top navigation bar.
 1. Click the **Pause now** button.
 
-![Navigate to Pause & Resume and click Pause now](images/pause_navigate.png){: caption="Figure 1. Navigate to Pause & Resume and click Pause now" caption-side="bottom"}
+![Navigate to Pause & Resume and click Pause now](images/pause_navigate.png){: caption="Navigate to Pause & Resume and click Pause now" caption-side="bottom"}
 
 ### Step 2: Confirm the pause
 {: #pause-step2}
@@ -56,14 +56,14 @@ If you want to check your current in-flight executions before pausing, go to **M
 
 Click **Confirm** to pause the instance.
 
-![Pause compute resource confirmation dialog](images/pause_confirm.png){: caption="Figure 2. Confirm the pause compute action" caption-side="bottom"}
+![Pause compute resource confirmation dialog](images/pause_confirm.png){: caption="Confirm the pause compute action" caption-side="bottom"}
 
 ### Step 3: Instance is paused
 {: #pause-step3}
 
 After confirming, the instance enters a paused state. The dashboard displays a **Database Paused** screen with a **Resume now** button.
 
-![Database Paused screen](images/pause_paused.png){: caption="Figure 3. Database Paused screen" caption-side="bottom"}
+![Database Paused screen](images/pause_paused.png){: caption="Database Paused screen" caption-side="bottom"}
 
 ## Resuming your instance
 {: #resume}
@@ -73,11 +73,11 @@ After confirming, the instance enters a paused state. The dashboard displays a *
 
 From the **Database Paused** screen, click the **Resume now** button. The instance begins preparing to resume. This may take up to a few hours depending on the database size.
 
-![Database Paused - Preparing to resume](images/pause_resuming.png){: caption="Figure 4. Preparing to resume" caption-side="bottom"}
+![Database Paused - Preparing to resume](images/pause_resuming.png){: caption="Preparing to resume" caption-side="bottom"}
 
 ### Step 2: Verify successful resume
 {: #resume-step2}
 
 Once the resume completes, you are returned to the instance dashboard. A **Resume success!** notification confirms that the instance is back online.
 
-![Resume success notification](images/pause_resume_success.png){: caption="Figure 5. Resume success notification" caption-side="bottom"}
+![Resume success notification](images/pause_resume_success.png){: caption="Resume success notification" caption-side="bottom"}
