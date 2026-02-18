@@ -86,7 +86,7 @@ A confirmation dialog appears showing the details of your license change:
 
 The discount takes effect immediately. An **Expiration date** is displayed on the License settings page indicating when the reservation term ends.
 
-![Confirming the license change](images/step3_confirm_changes.png){: caption="Confirm the license change to a Reserved Instance" caption-side="bottom"}
+![Confirming the license change](images/step3_confirm_changes_ri.png){: caption="Confirm the license change to a Reserved Instance" caption-side="bottom"}
 
 ### Step 4: Verify successful update
 {: #ri-step4}
