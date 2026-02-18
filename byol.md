@@ -22,7 +22,7 @@ subcollection: Db2onCloud
 # Bring Your Own License (BYOL)
 {: #byol}
 
-The Bring Your Own License (BYOL) option for Db2 on Cloud allows you to apply your existing eligible Db2 software licenses to your cloud instance, resulting in up to a **50% discount** on compute costs compared to the standard On Demand pricing model.
+The Bring Your Own License (BYOL) option for Db2 on Cloud allows you to apply your existing eligible Db2 software licenses to your cloud instance, resulting in up to a **28% discount** on compute costs compared to the standard On Demand pricing model.
 {: shortdesc}
 
 ## Prerequisites
@@ -65,7 +65,7 @@ From your Db2 on Cloud instance dashboard:
 
 On the License selection page, select the **Bring Your Own License (BYOL)** radio button, then click **Save**.
 
-The BYOL option provides the highest discount at 50% off compute costs. Ensure you meet the eligibility requirements stated in Section 5.4 of the Service Description before proceeding. Eligible licenses include Db2 Standard and Db2 Advanced, and you must maintain active Subscription and Support on your existing license entitlements.
+The BYOL option provides the highest discount at 28% off compute costs. Ensure you meet the eligibility requirements stated in Section 5.4 of the Service Description before proceeding. Eligible licenses include Db2 Standard and Db2 Advanced, and you must maintain active Subscription and Support on your existing license entitlements.
 {: important}
 
 ![Selecting the BYOL license option](images/step2_select_byol.png){: caption="Select the Bring Your Own License (BYOL) option" caption-side="bottom"}
