@@ -81,3 +81,14 @@ From the **Database Paused** screen, click the **Resume now** button. The instan
 Once the resume completes, you are returned to the instance dashboard. A **Resume success!** notification confirms that the instance is back online.
 
 ![Resume success notification](images/pause_resume_success.png){: caption="Resume success notification" caption-side="bottom"}
+
+## Important notes
+{: #pause-resume-notes}
+
+- **Compute charges stop**: While paused, you are not charged for compute resources.
+- **Storage charges continue**: Storage charges continue to be applied while the instance is paused.
+- **Connections terminated**: All active connections and queries are cancelled when the pause starts. Team members are logged out immediately.
+- **Scheduled tasks suspended**: All future activities and scheduled tasks are suspended during the pause and resume when the instance is brought back online.
+- **Resume time**: Resuming may take up to a few hours depending on the database size.
+- **Disaster recovery**: Pause and Resume is not supported on instances with a disaster recovery (DR) configuration.
+- **Maintenance updates**: If a maintenance update is required while your instance is paused, the system will temporarily resume the instance to perform the update. Compute charges will apply during the update. The instance will be paused again once the update is complete.
