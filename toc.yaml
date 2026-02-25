@@ -30,6 +30,7 @@ toc:
           - connecting/connect_3rd_party_tools.md
           - connecting/rest_api.md
           - connecting/firewall_allowlist.md
+          - connecting/vpeg.md
       - topicgroup:
           label: Loading your data
           topics:
