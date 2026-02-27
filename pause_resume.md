@@ -85,7 +85,7 @@ Once the resume completes, you are returned to the instance dashboard. A **Resum
 ## Important notes
 {: #pause-resume-notes}
 
-- **Compute charges stop**: While paused, you are not charged for compute resources.
+- **Compute charges stop**: While paused, you are not charged for compute resources. However, instances on a Reserved Instance (1-year or 3-year) term will continue to be billed at the regular rate, even while paused.
 - **Storage charges continue**: Storage charges continue to be applied while the instance is paused.
 - **Connections terminated**: All active connections and queries are cancelled when the pause starts. Team members are logged out immediately.
 - **Scheduled tasks suspended**: All future activities and scheduled tasks are suspended during the pause and resume when the instance is brought back online.
