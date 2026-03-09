@@ -63,6 +63,9 @@ Click **Confirm** to pause the instance.
 
 After confirming, the instance enters a paused state. The dashboard displays a **Database Paused** screen with a **Resume now** button.
 
+The instance can remain paused for up to 7 days. After 7 days, the instance automatically resumes. Once resumed, you may choose to pause the instance again through the console.
+{: important}
+
 ![Database Paused screen](images/pause_paused.png){: caption="Database Paused screen" caption-side="bottom"}
 
 ## Resuming your instance
