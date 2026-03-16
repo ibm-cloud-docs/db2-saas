@@ -117,7 +117,6 @@ On the **New clone** page, enter information for the new copy instance:
 1. Select a disk encryption key under **Disk encryption key**. If not selected, automatic disk encryption key is used by default.
 1. Select the backup location for the new copy instance under **Backup location**. Cross regional backup can be stored across multiple regions in a zone. Regional backups are stored only in one specific region.
 1. Click **Clone**.
-
 ![New clone form](images/perf_clone_form.png "New clone form"){: caption="Enter information for the new clone instance" caption-side="bottom"}
 
 1. The **Notifications** icon of the console shows the progress of the copy process.
