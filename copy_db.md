@@ -43,7 +43,7 @@ Because the copy creates a new instance and restores your existing backup, it's 
 The **Standard** and **Enterprise** plans are now deprecated. Copying a database directly within Standard or Enterprise plans is no longer supported. To create a copy of your Standard or Enterprise database, you must use the migration tool to copy your instance into the **Performance** plan. For more information, see the [Deprecation Announcement](https://cloud.ibm.com/status/announcement?query=Deprecation+Announcement+-+IBM+Db2+SaaS+Standard+%26+Enterprise+Plans){: external}.
 {: deprecated}
 
-When creating a copy into the Performance plan, select **Db2 version 11.5** to ensure compatibility with your existing database.
+Note: When migrating to the Performance plan, you can choose to deploy your database at either Db2 version 12 or Db2 version 11.5. Version 11.5 is supported on the Performance plan for customers who require compatibility with existing applications or need additional time before upgrading to version 12.
 {: note}
 
 ### Prerequisites
