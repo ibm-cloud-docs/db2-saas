@@ -18,6 +18,7 @@ You can restore your {{site.data.keyword.Db2_on_Cloud_long}} Performance plan da
 
 ## Prerequisites
 {: #restore-external-prerequisites}
+{: ui}
 
 Before starting the restore process, ensure you have the following:
 
@@ -26,12 +27,40 @@ Before starting the restore process, ensure you have the following:
 - An existing DB2 backup stored in an IBM Cloud Object Storage or Amazon S3 bucket
 - Your endpoint URL along with HMAC credentials (Access Key and Secret Access Key) to access the bucket and backup image
 - Sufficient database storage space to accommodate the restored database
+- A backup image that meets the following requirements:
+   - Must be a full database backup. Incremental backups are not supported.
+   - Must be compatible with the current Db2 system: created on a Linux-x86-64 system, unencrypted, and created on a single partition system.
+   - Offline backups: no more than two major versions behind the current Db2 on Cloud version. Online backups: must be on the same major version as the Db2 on Cloud system.
+   - If the backup was taken in an Oracle-compatible system, ensure the Db2 on Cloud system is provisioned with Oracle compatibility enabled before restoring.
+
+   ![Backup image requirements](images/backup_image_requirements.png){: caption="Backup image requirements" caption-side="bottom"}
+
+The internal backup is required as a safety measure. If the external restore fails, you can recover the database by restoring from the internal backup.
+{: note}
+
+## Prerequisites
+{: #restore-external-prerequisites-api}
+{: api}
+
+Before starting the restore process, ensure you have the following:
+
+- An IAM API key with sufficient permissions
+- At least one successful internal (snapshot) backup taken on the target instance before initiating external restore
+- An existing DB2 backup stored in an IBM Cloud Object Storage or Amazon S3 bucket
+- Your endpoint URL along with HMAC credentials (Access Key and Secret Access Key) to access the bucket and backup image
+- Sufficient database storage space to accommodate the restored database
+- A backup image that meets the following requirements:
+   - Must be a full database backup. Incremental backups are not supported.
+   - Must be compatible with the current Db2 system: created on a Linux-x86-64 system, unencrypted, and created on a single partition system.
+   - Offline backups: no more than two major versions behind the current Db2 on Cloud version. Online backups: must be on the same major version as the Db2 on Cloud system.
+   - If the backup was taken in an Oracle-compatible system, ensure the Db2 on Cloud system is provisioned with Oracle compatibility enabled before restoring.
 
 The internal backup is required as a safety measure. If the external restore fails, you can recover the database by restoring from the internal backup.
 {: note}
 
 ## Create internal backup (Prerequisite)
 {: #restore-external-create-backup}
+{: ui}
 
 1. Navigate to the **External restore** tab. If no internal backup exists, you will see a message indicating that an internal backup file is required.
 
@@ -47,7 +76,13 @@ The internal backup is required as a safety measure. If the external restore fai
 
    ![Snapshot backup in progress](images/snapshot_backup_in_progress.png){: caption="Snapshot backup in progress" caption-side="bottom"}
 
-## Access external restore using the console
+## Create internal backup (Prerequisite)
+{: #restore-external-create-backup-api}
+{: api}
+
+Ensure at least one successful internal (snapshot) backup has been taken on the target instance before initiating an external restore. You can trigger an internal backup through the Db2 on Cloud console before proceeding with the API calls.
+
+## Access external restore
 {: #restore-external-access}
 {: ui}
 
@@ -109,7 +144,7 @@ In the Confirm step, review your selections and configure restore options:
 The database will be unavailable during the restore process. If you choose rollforward to end of logs without enabling "Complete rollforward", the database will remain offline until you manually complete the rollforward.
 {: note}
 
-## Access external restore using the API
+## Access external restore
 {: #restore-external-access-api}
 {: api}
 
@@ -118,7 +153,7 @@ To initiate an external restore through the API, use the [Restore database from 
 The database will be unavailable during the restore process. If you choose rollforward to end of logs without enabling "Complete rollforward", the database will remain offline until you manually complete the rollforward.
 {: note}
 
-## Monitor restore progress using the console
+## Monitor restore progress
 {: #restore-external-monitor}
 {: ui}
 
@@ -139,7 +174,7 @@ Regular users will see a full-screen progress page during the restore.
 During the restore process, console functionality is limited for all users. Regular users are directed to the full-screen progress page, while IAM admins can view the restore history page to monitor status. Restore times can vary depending on the size of the backup and system conditions, and may take anywhere from several hours to a few days.
 {: note}
 
-## Monitor restore progress using the API
+## Monitor restore progress
 {: #restore-external-monitor-api}
 {: api}
 
@@ -148,7 +183,7 @@ To monitor the progress of an external restore through the API, use the [Get the
 Restore times can vary depending on the size of the backup and system conditions, and may take anywhere from several hours to a few days.
 {: note}
 
-## Complete rollforward using the console
+## Complete rollforward
 {: #restore-external-rollforward}
 {: ui}
 
@@ -172,7 +207,7 @@ If you selected "Rollforward to end of logs" without enabling "Complete rollforw
 
    ![External restore finalizing](images/external_restore_finalizing.png){: caption="External restore finalizing" caption-side="bottom"}
 
-## Complete rollforward using the API
+## Complete rollforward
 {: #restore-external-rollforward-api}
 {: api}
 
@@ -180,6 +215,7 @@ To trigger a rollforward through the API, use the [Trigger rollforward from an e
 
 ## Verify completion
 {: #restore-external-verify}
+{: ui}
 
 1. When the restore is complete, the status will show "Completed" with a green checkmark.
 
@@ -194,11 +230,31 @@ To trigger a rollforward through the API, use the [Trigger rollforward from an e
 After the restore completes, it may take a few additional minutes for all console features to become fully available while the system completes post-restore setup tasks.
 {: note}
 
+## Verify completion
+{: #restore-external-verify-api}
+{: api}
+
+Use the [Get the list of new external restores](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-saas-perf-v4#getnewexternalrestorestatuslist){: external} endpoint to check the status of the restore operation. The restore is complete when the status shows "completed".
+
+After the restore completes, it may take a few additional minutes for all console features to become fully available while the system completes post-restore setup tasks.
+{: note}
+
 ## External restore failure
 {: #restore-external-failure}
+{: ui}
 
 In case of an external restore failure, there are a couple of options to recover the system:
 
 1. **Initiate a different external restore**: Click the **External restore** button to start a new restore. For example, if you previously selected a backup image that is not compatible with the system, you can initiate a new external restore with the correct backup image.
 
 2. **Reset from internal backup**: Click the **Reset from last internal backup** option to restore from the internal backup you created earlier. This will reset the system to its state before the external restore was attempted.
+
+## External restore failure
+{: #restore-external-failure-api}
+{: api}
+
+In case of an external restore failure, you can:
+
+1. **Initiate a different external restore**: Call the [Restore database from external storage](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-saas-perf-v4#postexternalbackuprestore){: external} endpoint again with the correct backup image.
+
+2. **Reset from internal backup**: Use the console to click the **Reset from last internal backup** option to restore from the internal backup you created earlier. This will reset the system to its state before the external restore was attempted.
