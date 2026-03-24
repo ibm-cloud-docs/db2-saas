@@ -58,11 +58,21 @@ The internal backup is required as a safety measure. If the external restore fai
 ## Access external restore
 {: #restore-external-access}
 
+### Using the console
+{: #restore-external-access-ui}
+{: ui}
+
 1. Once the internal backup is complete, navigate to the **External restore** tab.
 
 2. Click the **External restore** button to begin the restore wizard.
 
    ![External restore page ready to initiate restore](images/external_restore_page_ready.png){: caption="External restore page ready to initiate restore" caption-side="bottom"}
+
+### Using the API
+{: #restore-external-access-api}
+{: api}
+
+To initiate an external restore through the API, use the [Restore database from external storage](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-saas-perf-v4#postexternalbackuprestore){: external} endpoint. This covers connecting to external storage, selecting the backup image, and confirming the restore in a single API call.
 
 ## Step 1: Connect external system
 {: #restore-external-connect}
@@ -119,6 +129,10 @@ The database will be unavailable during the restore process. If you choose rollf
 ## Monitor restore progress
 {: #restore-external-monitor}
 
+### Using the console
+{: #restore-external-monitor-ui}
+{: ui}
+
 Once the restore is initiated, you can monitor its progress on the External restore page. The view you see depends on your login type:
 
 ### For IAM Admins
@@ -136,8 +150,18 @@ Regular users will see a full-screen progress page during the restore.
 During the restore process, console functionality is limited for all users. Regular users are directed to the full-screen progress page, while IAM admins can view the restore history page to monitor status. Restore times can vary depending on the size of the backup and system conditions, and may take anywhere from several hours to a few days.
 {: note}
 
+### Using the API
+{: #restore-external-monitor-api}
+{: api}
+
+To monitor the progress of an external restore through the API, use the [Get the list of new external restores](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-saas-perf-v4#getnewexternalrestorestatuslist){: external} endpoint.
+
 ## Complete rollforward
 {: #restore-external-rollforward}
+
+### Using the console
+{: #restore-external-rollforward-ui}
+{: ui}
 
 If you selected "Rollforward to end of logs" without enabling "Complete rollforward", the restore will finish in a "rollforward_pending" state:
 
@@ -158,6 +182,12 @@ If you selected "Rollforward to end of logs" without enabling "Complete rollforw
    ![Rollforward in progress](images/rollforward_in_progress.png){: caption="Rollforward in progress" caption-side="bottom"}
 
    ![External restore finalizing](images/external_restore_finalizing.png){: caption="External restore finalizing" caption-side="bottom"}
+
+### Using the API
+{: #restore-external-rollforward-api}
+{: api}
+
+To trigger a rollforward through the API, use the [Trigger rollforward from an external restore backup](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-saas-perf-v4#externalrestorerollforward){: external} endpoint. The `restore_crd` parameter can be found in the `name` field from the response of the [Get the list of new external restores](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-saas-perf-v4#getnewexternalrestorestatuslist){: external} endpoint.
 
 ## Verify completion
 {: #restore-external-verify}
