@@ -18,8 +18,6 @@ subcollection: Db2onCloud
 {:deprecated: .deprecated}
 {:pre: .pre}
 
-{{site.data.keyword.attribute-definition-list}}
-
 # Restore from external backup (Performance Plan)
 {: #restore-external-backup-performance}
 
