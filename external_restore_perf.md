@@ -8,21 +8,13 @@ keywords: external restore, performance plan, backup restore, rollforward, IBM C
 subcollection: Db2onCloud
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:tip: .tip}
-{:important: .important}
-{:note: .note}
-{:deprecated: .deprecated}
-{:pre: .pre}
+{{site.data.keyword.attribute-definition-list}}
 
 # Restore from external backup (Performance Plan)
 {: #restore-external-backup-performance}
 
 You can restore your {{site.data.keyword.Db2_on_Cloud_long}} Performance plan database from an external backup stored in IBM Cloud Object Storage (COS) or Amazon S3. This feature allows you to recover your database from backups stored in your own storage bucket.
-{:shortdesc}
+{: shortdesc}
 
 ## Prerequisites
 {: #restore-external-prerequisites}
