@@ -148,9 +148,29 @@ The database will be unavailable during the restore process. If you choose rollf
 {: #restore-external-access-api}
 {: api}
 
-To initiate an external restore through the API, use the [Restore database from external storage](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-saas-perf-v4#postexternalbackuprestore){: external} endpoint. This single API call covers connecting to external storage, selecting the backup image, and confirming the restore.
+To initiate an external restore, use the [Restore database from external storage](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-saas-perf-v4#postexternalbackuprestore){: external} endpoint. This single API call covers connecting to external storage, selecting the backup image, and confirming the restore.
 
-The database will be unavailable during the restore process. If you choose rollforward to end of logs without enabling "Complete rollforward", the database will remain offline until you manually complete the rollforward.
+```bash
+curl -X POST \
+  https://{HOSTNAME}/dbapi/v4/manage/backups/new_external_restore \
+  -H 'accept: application/json' \
+  -H 'authorization: Bearer {AUTH_TOKEN}' \
+  -H 'content-type: application/json' \
+  -d '{"input_image":"<backup_image_path>","input_container":"<bucket_name>","archivelog_location":"<archive_log_path>","access_key":"<access_key>","secret_key":"<secret_key>","check_db_size":"false","complete_rollforward":"true","region":""}'
+```
+{: pre}
+
+Where:
+- `input_image`: Path of the backup image in object storage, excluding the part number suffix. For example, if the full backup image path is `master/subdir/online/EUDB.0.db2inst1.DBPART000.20251018182026.001`, the value should be `master/subdir/online/EUDB.0.db2inst1.DBPART000.20251018182026`.
+- `input_container`: Name of the bucket in your object storage.
+- `archivelog_location`: Path to the archive log location in object storage if rolling forward to end of logs. For end of backup restores, the value should be `extrestore_endofbackup`.
+- `access_key`: HMAC access key for object storage authentication.
+- `secret_key`: HMAC secret key for object storage authentication.
+- `check_db_size`: Set to `true` to validate database size before restore, or `false` to skip validation.
+- `complete_rollforward`: Set to `true` to complete rollforward and bring the database online, or `false` to leave the database in rollforward pending state.
+- `region`: Region of the external object storage (optional).
+
+The database will be unavailable during the restore process. If you set `complete_rollforward` to `false`, the database will remain offline until you manually complete the rollforward.
 {: note}
 
 ## Monitor restore progress
@@ -178,7 +198,18 @@ During the restore process, console functionality is limited for all users. Regu
 {: #restore-external-monitor-api}
 {: api}
 
-To monitor the progress of an external restore through the API, use the [Get the list of new external restores](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-saas-perf-v4#getnewexternalrestorestatuslist){: external} endpoint.
+To monitor the progress of an external restore, use the [Get the list of new external restores](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-saas-perf-v4#getnewexternalrestorestatuslist){: external} endpoint.
+
+```bash
+curl -X GET \
+  https://{HOSTNAME}/dbapi/v4/manage/backups/new_external_restore/status/list \
+  -H 'accept: application/json' \
+  -H 'authorization: Bearer {AUTH_TOKEN}' \
+  -H 'content-type: application/json'
+```
+{: pre}
+
+The response includes the restore status and the `name` field, which is used as the `restore_crd` parameter when triggering a rollforward.
 
 Restore times can vary depending on the size of the backup and system conditions, and may take anywhere from several hours to a few days.
 {: note}
@@ -211,7 +242,22 @@ If you selected "Rollforward to end of logs" without enabling "Complete rollforw
 {: #restore-external-rollforward-api}
 {: api}
 
-To trigger a rollforward through the API, use the [Trigger rollforward from an external restore backup](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-saas-perf-v4#externalrestorerollforward){: external} endpoint. The `restore_crd` parameter can be found in the `name` field from the response of the [Get the list of new external restores](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-saas-perf-v4#getnewexternalrestorestatuslist){: external} endpoint.
+To trigger a rollforward, use the [Trigger rollforward from an external restore backup](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-saas-perf-v4#externalrestorerollforward){: external} endpoint.
+
+```bash
+curl -X POST \
+  https://{HOSTNAME}/dbapi/v4/manage/backups/new_external_restore/rollforward \
+  -H 'accept: application/json' \
+  -H 'authorization: Bearer {AUTH_TOKEN}' \
+  -H 'content-type: application/json' \
+  -d '{"restore_crd":"<restore_crd_id>","complete_rollforward":"true","archivelog_location":"<archive_log_path>"}'
+```
+{: pre}
+
+Where:
+- `restore_crd`: Identifier of the restore operation. This value can be found in the `name` field from the response of the [Get the list of new external restores](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-saas-perf-v4#getnewexternalrestorestatuslist){: external} endpoint.
+- `complete_rollforward`: Set to `true` to bring the database online after rollforward, or `false` to keep it in rollforward pending state for additional log application.
+- `archivelog_location`: Path to the archive log location in object storage. If not provided, uses the location from the original restore request.
 
 ## Verify completion
 {: #restore-external-verify}
@@ -235,6 +281,15 @@ After the restore completes, it may take a few additional minutes for all consol
 {: api}
 
 Use the [Get the list of new external restores](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-saas-perf-v4#getnewexternalrestorestatuslist){: external} endpoint to check the status of the restore operation. The restore is complete when the status shows "completed".
+
+```bash
+curl -X GET \
+  https://{HOSTNAME}/dbapi/v4/manage/backups/new_external_restore/status/list \
+  -H 'accept: application/json' \
+  -H 'authorization: Bearer {AUTH_TOKEN}' \
+  -H 'content-type: application/json'
+```
+{: pre}
 
 After the restore completes, it may take a few additional minutes for all console features to become fully available while the system completes post-restore setup tasks.
 {: note}
