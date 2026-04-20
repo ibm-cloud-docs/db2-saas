@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-02-03"
+lastupdated: "2026-04-20"
 
 keywords:
 
@@ -131,6 +131,9 @@ Any backup which is within 24 hours of being removed (i.e. 1 day or less from ex
 {: #br_restore}
 
 All paid plans make use of Cross-Regional IBM Cloud Object Storage (COS), by default, to keep backups offsite. {: important}
+
+The COS bucket stores full backups, archived transaction logs, and LOAD copy images. The `DB2_LOAD_COPY_NO_OVERRIDE` registry variable is configured so that all LOAD operations execute with COPY YES, even if COPY NO is specified. This ensures that load copy images are available in COS to support point-in-time restores and high availability. Load copies are pruned automatically based on the recovery history retention period (`REC_HIS_RETENTN` in the database configuration). COS storage is billed based on space used by the workload, and because load copies rotate with backup retention, storage costs do not grow indefinitely.
+{: note}
 
 For information about point-in-time restores, see [Point-in-time restore](#point-in-time).
 
