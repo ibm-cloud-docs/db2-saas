@@ -59,6 +59,9 @@ Follow these steps to begin the migration:
 
 1. When the new instance has been created, there will be a link to go to the new system to complete the upgrade. Click on **Go to new system to complete upgrade**
 
+1. The system continuously synchronizes data between your Standard/Enterprise instance and the new Performance instance. You can continue using your Standard/Enterprise instance as normal during this time. This synchronization runs automatically in the background until you choose to complete the upgrade. You can start the migration process at any time up to this point without affecting your existing instance.
+{: note}
+
 1. When the process has completed, click the **Complete Upgrade** button on the new instance.
 ![complete upgrade button](images/upgrade_system_complete_upgrade.png){: caption="Click complete upgrade button." caption-side="bottom"}
 
