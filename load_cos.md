@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2025-09-25"
+lastupdated: "2026-05-05"
 
 keywords:
 
@@ -49,7 +49,7 @@ BLUUSERS cannot load data from the console.
 5. Ensure `Include HMAC Credential` is enabled
 
 
- ![Create Service Credentials](images/credential.png "Create Service Credentials"){: caption="Create Service Credentials" caption-side="bottom"}
+ ![Create Service Credentials](images/credential1.png "Create Service Credentials"){: caption="Create Service Credentials" caption-side="bottom"}
 
 
 
