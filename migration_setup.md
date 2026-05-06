@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-04-06"
+lastupdated: "2026-05-05"
 
 keywords:
 
@@ -59,13 +59,19 @@ Follow these steps to begin the migration:
 
 1. When the new instance has been created, there will be a link to go to the new system to complete the upgrade. Click on **Go to new system to complete upgrade**
 
+   The system continuously synchronizes data between your Standard/Enterprise instance and the new Performance instance. You can continue using your Standard/Enterprise instance as normal during this time. This synchronization runs automatically in the background until you choose to complete the upgrade. You can start the migration process at any time up to this point without affecting your existing instance.
+   {: important}
+
 1. When the process has completed, click the **Complete Upgrade** button on the new instance.
 ![complete upgrade button](images/upgrade_system_complete_upgrade.png){: caption="Click complete upgrade button." caption-side="bottom"}
 
 1. There will be a popup to finalize and complete the upgrade.
   - Create a Copy in the Performance Plan for Testing Purposes
 
-       Selecting the `Keep the prior system running without synchronization with the new system` option will keep the Standard/Enterprise instance running, stop ongoing synchronization with the Performance instance thereby making a **copy** in the Performance Plan.  Both the Standard/Enterprise and Performance instances will be available for connections.
+       Selecting the `Keep the prior system running without synchronization with the new system` option will keep the Standard/Enterprise instance running, stop ongoing synchronization with the Performance instance thereby making a **copy** in the Performance Plan. Both the Standard/Enterprise and Performance instances will be available for connections.
+
+       This option is intended for testing only. The Performance copy created through this option does not complete the migration. After you finish testing, you must delete the Performance copy instance, then repeat the migration process from the beginning and select `Disable the prior system` to complete the migration to the Performance plan.
+       {: important}
 
   -  Complete Migration to the Performance Plan
 
@@ -75,7 +81,7 @@ Follow these steps to begin the migration:
 
    ![Confirm upgrade button](images/confirm_complete_upgrade.png){: caption="Select what to do with source option and complete upgrade" caption-side="bottom"}
 
-   Creating a Copy in the Performance Plan for Testing Purposes will result in billing for both the Performance and Standard/Enerprise instances, until the Performance instance is deleted
+   Creating a Copy in the Performance Plan for Testing Purposes will result in billing for both the Performance and Standard/Enterprise instances, until the Performance instance is deleted
    {: important}
 
    When you complete the migration and disable the Standard/Enterprise instance, IBM does not charge for that instance for 14 days. After 14 days, storage charges will begin automatically unless the instance is deleted.
