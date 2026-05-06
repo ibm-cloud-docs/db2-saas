@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-05-05"
+lastupdated: "2026-05-06"
 
 keywords: HADR, high availability disaster recovery, performance
 
@@ -33,8 +33,13 @@ With {{site.data.keyword.Db2_on_Cloud_long}} Performance plans, administrators c
 
 ## ****Configuring Availability in the UI****
 
-The High Availability panel is on the Adminstration tab > Databases > Select your database > Backup and recovery > High Availability in console page.
+The High Availability panel is on the Adminstration tab of your deployment's console page.
+
+
 
 You can choose the desired availability and click **Save**.
 
-![high_availability_page.png](images/high_availability.png)
+
+
+
+![high_availability_page.png](images/high_availability_page.png)
