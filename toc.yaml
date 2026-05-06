@@ -39,27 +39,27 @@ toc:
       - topicgroup:
           label: Administration
           topics:
-          - interfaces.md
-          - endpoints.md
           - advanced_admin.md
-          - flex_scaling.md
+          - acr_setup.md
           - autoscaling_external.md
-          - reserved_instances.md
+          - br.md
           - byol.md
-          - pause_resume.md
-          - ha.md
-          - storage_usage.md
-          - hadr_conversion.md
           - copy_db.md
           - deleting_db.md
-          - recovering_db.md
-          - cdc.md
-          - br.md
-          - external_restore_perf.md
-          - acr_setup.md
+          - storage_usage.md
+          - endpoints.md
+          - flex_scaling.md
           - dr.md
-          - main.md
+          - hadr_conversion.md
+          - ha.md
+          - cdc.md
+          - interfaces.md
           - log_mon.md
+          - main.md
+          - pause_resume
+          - recovering_db.md
+          - reserved_instances.md
+          - external_restore_perf.md
           - topicgroup:
               label: Federation
               topics:
