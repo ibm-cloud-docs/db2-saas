@@ -55,15 +55,12 @@ You can also change your license type on an existing Db2 on Cloud instance throu
 From your Db2 on Cloud instance dashboard:
 
 
-1. Select **Administration** from the left-side navigation.
-2. Go to **Databases** and click on your database.
-3. Click **Licensing** from the left menu.
-4. In the main content area, click **Manage license**.
-5. Click the **Change** button on the right side to modify your license type.
-
-![Navigating to Settings > License > Change](images/manage_licence.png){: caption="Navigate to Settings > License and click Change" caption-side="bottom"}
+1. Click the **Settings** icon in the left sidebar (wrench icon), or select **Settings** from the top navigation bar.
+1. Select the **License** sub-tab.
+1. Click the **Change** button on the right side to modify your license type.
 
 
+![Navigating to Settings > License > Change](images/step1_navigate_settings.png){: caption="Navigate to Settings > License and click Change" caption-side="bottom"}
 
 ### Step 2: Select the BYOL license type
 {: #byol-step2}
@@ -73,8 +70,8 @@ On the License selection page, select the **Bring Your Own License (BYOL)** radi
 The BYOL option provides the highest discount at 28% off compute costs. Ensure you meet the eligibility requirements stated in Section 5.4 of the Service Description before proceeding. Eligible licenses include Db2 Standard and Db2 Advanced, and you must maintain active Subscription and Support on your existing license entitlements.
 {: important}
 
-![Selecting the BYOL license option](images/step2_mnglicence.png){: caption="Select the Bring Your Own License (BYOL) option" caption-side="bottom"}
 
+![Selecting the BYOL license option](images/step2_select_byol.png){: caption="Select the Bring Your Own License (BYOL) option" caption-side="bottom"}
 
 
 ### Step 3: Confirm the license change
