@@ -22,14 +22,14 @@ toc:
           topics:
           - connecting/connecting.md
           - connecting/connectivity_options.md
-          - connecting/credentials.md
-          - connecting/ssl.md
-          - connecting/driver_pkg.md
           - connecting/connect_programmatically.md
           - connecting/connect_ibm_tools.md
           - connecting/connect_3rd_party_tools.md
-          - connecting/rest_api.md
+          - connecting/credentials.md
+          - connecting/driver_pkg.md
           - connecting/firewall_allowlist.md
+          - connecting/rest_api.md
+          - connecting/ssl.md
           - connecting/vpeg.md
       - topicgroup:
           label: Loading your data
@@ -39,27 +39,27 @@ toc:
       - topicgroup:
           label: Administration
           topics:
-          - interfaces.md
-          - endpoints.md
           - advanced_admin.md
-          - flex_scaling.md
+          - acr_setup.md
           - autoscaling_external.md
-          - reserved_instances.md
+          - br.md
           - byol.md
-          - pause_resume.md
-          - ha.md
-          - storage_usage.md
-          - hadr_conversion.md
           - copy_db.md
           - deleting_db.md
-          - recovering_db.md
-          - cdc.md
-          - br.md
-          - external_restore_perf.md
-          - acr_setup.md
+          - storage_usage.md
+          - endpoints.md
+          - flex_scaling.md
           - dr.md
-          - main.md
+          - hadr_conversion.md
+          - ha.md
+          - cdc.md
+          - interfaces.md
           - log_mon.md
+          - main.md
+          - pause_resume.md
+          - recovering_db.md
+          - reserved_instances.md
+          - external_restore_perf.md
           - topicgroup:
               label: Federation
               topics:
@@ -70,14 +70,14 @@ toc:
       - topicgroup:
           label: Security
           topics:
+          - auditing.md
           - encryption.md
           - iam.md
-          - user_mgmt.md
-          - rcac.md
-          - auditing.md
-          - sec_comp_sum.md
           - key_protect_2.md
+          - user_mgmt.md
           - password_policies.md
+          - rcac.md
+          - sec_comp_sum.md
       - db2-database-assistant.md
       - communities.md
       - link:
