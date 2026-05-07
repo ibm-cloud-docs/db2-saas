@@ -72,6 +72,8 @@ BLUUSERS cannot load data from the console.
 7. Click on `Browse Files` to select the file you want to load from
 
 
+![Load Data page](images/key.png "Load COS Data"){: caption="Load COS Data" caption-side="bottom"}
+
 
 
 
