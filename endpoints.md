@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2026-01-30"
+lastupdated: "2026-05-07"
 
 keywords:
 
@@ -36,6 +36,7 @@ Performance plans offer the choice of Public, Private, or both Public and Privat
 {: #ep_perf_chg_epts}
 
 To change endpoints, complete the following steps:
+
 - Select your Db2 service from {{site.data.keyword.cloud_notm}}.
 - From the **Manage** tab, click **Open Console**.
 - Select **Administration** from the left side menu.
@@ -44,6 +45,11 @@ To change endpoints, complete the following steps:
 - Click **Update**. The change occurs immediately.
 
 ![Performance access restriction](images/performance_access_restriction.png "Service endpoints"){: caption="Service endpoints configuration for Performance plans" caption-side="bottom"}
+
+
+
+
+
 
 ## Standard and Enterprise plans
 {: #ep_plans}
@@ -82,6 +88,6 @@ To view your endpoints:
 - Select your Db2 service from {{site.data.keyword.cloud_notm}}.
 - From the **Manage** tab, click **Open Console**.
 - Select **Administration** from the left side menu.
-- Select the **Connections** tab. Endpoint information will be displayed in **Connection configuration resources**.
+- Select the **Connections** tab. Endpoint information is displayed in the **Connection configuration resources**.
 
 ![Endpoint information](images/endpoint_info.png "Endpoint information"){: caption="Viewing endpoint information" caption-side="bottom"}
