@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2026-05-07"
+lastupdated: "2026-05-08"
 
 keywords:
 
@@ -60,8 +60,8 @@ BLUUSERS cannot load data from the console.
 ![Get Keys](images/bucket.png "Get Access Keys"){: caption="Get Access Keys" caption-side="bottom"}
 
 
-
 ### Open the Db2 Console to the load data page
+
 
 1. Click on `Data` on the left menu
 2. Click on `Load Data` on the top tab
@@ -72,7 +72,12 @@ BLUUSERS cannot load data from the console.
 7. Click on `Browse Files` to select the file you want to load from
 
 
+
+
+
 ![Load Data page](images/key.png "Load COS Data"){: caption="Load COS Data" caption-side="bottom"}
+
+
 
 
 
