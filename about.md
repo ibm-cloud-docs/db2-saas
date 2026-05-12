@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2014, 2026
-lastupdated: "2026-01-23"
+lastupdated: "2026-05-12"
 keywords:
 subcollection: db2-saas
 ---
@@ -36,6 +36,14 @@ The Performance plan is supported in the following data center geographies:
 - **Madrid** - (eu-es)
 - **London** - (eu-gb)
 - **Tokyo** - (jp-tok)
+
+### EU-Cloud supported (Performance)
+EU-Cloud is supported in the following data center geography:
+- **Frankfurt (SZR)** - (eu-de)
+
+EU-Cloud support is available only in the Frankfurt (eu-de) region.
+{: note}
+
 ## Standard/Enterprise Plans
 {: #ab_plans_cfgs}
 
@@ -61,17 +69,23 @@ The Standard and Enterprise plans are supported in the following data center geo
 - **Washington, DC** - (Wdc04, Wdc06, Wdc07)
 - **Sao Paulo** - (Sao01, Sao04, Sao05)
 - **Toronto** - (Tor01, Tor04, Tor05)
+
 MZRs support 3 node HA in 3 different data centers in that region.
 {: note}
+
 ### Single-zone region (SZR)
 - **Amsterdam** - (Ams03)
 - **Montréal** - (Mon01)
+
 SZRs support 3 node HA in a single data center in that region.
 {: note}
+
 ### EU-Supported (MZR)
 - **Frankfurt 02** - (Fra02, Fra04, Fra05)
+
 EU-Supported MZR supports 3 node HA in 3 different data centers in that region.
 {: note}
+
 ## API References by plan
 - **Standard & Enterprise Plans (Deprecated):** [IBM Db2 as a Service REST API](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-on-cloud-v4)
 - **Performance Plan:** [IBM Db2 as a Service Performance REST API](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-saas-perf-v4)

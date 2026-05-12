@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-05-05"
+lastupdated: "2026-05-12"
 
 keywords:
 
@@ -42,6 +42,9 @@ During migration, you can select your preferred Db2 version. If you are migratin
 Any autoscale settings in **Standard/Enterprise Plan** will need to be recreated in the **Performance** plan after the migration is complete.
 {: important}
 
+If you are migrating from a Standard or Enterprise plan instance that is deployed in the EU-Cloud environment, your instance will be migrated directly into the EU-Cloud environment on the Performance plan. No additional configuration is required for the EU-Cloud designation during migration.
+{: note}
+
 Follow these steps to begin the migration:
 
 1. Provision your {{site.data.keyword.Db2_on_Cloud_short}}  resource from the IBM Cloud catalog if you haven't already.
@@ -57,6 +60,9 @@ Follow these steps to begin the migration:
 1. A popup will show with the current and new instance names. Select the location, Db2 version, key management services, and disk encryption key for your new instance. Click **Create** to start provisioning your new upgraded environment.
 ![Create Instance Confirm](images/migration_create_confirm.png){: caption="Confirm location and create new instance." caption-side="bottom"}
 
+   When using Key Protect Dedicated (Single-tenant), you must select **Regional** as the backup location.
+   {: important}
+
 1. When the new instance has been created, there will be a link to go to the new system to complete the upgrade. Click on **Go to new system to complete upgrade**
 
    The system continuously synchronizes data between your Standard/Enterprise instance and the new Performance instance. You can continue using your Standard/Enterprise instance as normal during this time. This synchronization runs automatically in the background until you choose to complete the upgrade. You can start the migration process at any time up to this point without affecting your existing instance.
@@ -70,7 +76,7 @@ Follow these steps to begin the migration:
 
        Selecting the `Keep the prior system running without synchronization with the new system` option will keep the Standard/Enterprise instance running, stop ongoing synchronization with the Performance instance thereby making a **copy** in the Performance Plan. Both the Standard/Enterprise and Performance instances will be available for connections.
 
-       This option is intended for testing only. The Performance copy created through this option does not complete the migration. After you finish testing, you must delete the Performance copy instance, then repeat the migration process from the beginning and select `Disable the prior system` to complete the migration to the Performance plan.
+       This option is intended for testing only. The Performance copy created through this option does not complete the migration. After you finish testing, you can choose to delete the Performance copy instance, then repeat the migration process from the beginning and select `Disable the prior system` to complete the migration to the Performance plan.
        {: important}
 
   -  Complete Migration to the Performance Plan

@@ -60,7 +60,11 @@ From your Db2 on Cloud instance dashboard:
 1. Click the **Change** button on the right side to modify your license type.
 
 
+
+
+
 ![Navigating to Settings > License > Change](images/step1_navigate_settings.png){: caption="Navigate to Settings > License and click Change" caption-side="bottom"}
+
 
 ### Step 2: Select the BYOL license type
 {: #byol-step2}
@@ -72,6 +76,8 @@ The BYOL option provides the highest discount at 28% off compute costs. Ensure y
 
 
 ![Selecting the BYOL license option](images/step2_select_byol.png){: caption="Select the Bring Your Own License (BYOL) option" caption-side="bottom"}
+
+
 
 
 ### Step 3: Confirm the license change

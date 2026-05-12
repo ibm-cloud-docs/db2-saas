@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-05-06"
+lastupdated: "2026-05-07"
 
 keywords: HADR, high availability disaster recovery, performance
 
@@ -33,7 +33,9 @@ With {{site.data.keyword.Db2_on_Cloud_long}} Performance plans, administrators c
 
 ## ****Configuring Availability in the UI****
 
+
 The High Availability panel is on the Adminstration tab of your deployment's console page.
+
 
 
 
