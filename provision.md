@@ -71,6 +71,7 @@ When you create the deployment from the catalog, you need to specify the followi
 4. **Oracle compatibility** - whether the service instance should have Oracle compatibility enabled
 
 5. **EU cloud supported** - When you select Frankfurt (eu-de) as the deployment region, the **EU cloud supported** option is displayed. Select **YES** if you require your data to be stored and processed under EU policy standards. This option is only available in the Frankfurt (eu-de) region.
+![EU cloud supported toggle](images/eu_cloud_supported_toggle.png){: caption="EU cloud supported toggle in the provisioning catalog." caption-side="bottom"}
 
 6. **Db2 Version** - Choose the Db2 version for your deployment.
 

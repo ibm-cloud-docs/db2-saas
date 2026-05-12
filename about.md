@@ -41,6 +41,8 @@ The Performance plan is supported in the following data center geographies:
 
 The Performance plan supports EU-Cloud deployments in the **Frankfurt** (eu-de) region. When you select Frankfurt as your deployment region, you can enable the **EU cloud supported** option to ensure that your data is stored and processed under EU policy standards.
 
+![EU cloud supported toggle](images/eu_cloud_supported_toggle.png){: caption="EU cloud supported option displayed when Frankfurt (eu-de) is selected." caption-side="bottom"}
+
 EU-Cloud support is available only in the Frankfurt (eu-de) region.
 {: note}
 
