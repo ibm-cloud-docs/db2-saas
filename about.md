@@ -37,9 +37,9 @@ The Performance plan is supported in the following data center geographies:
 - **London** - (eu-gb)
 - **Tokyo** - (jp-tok)
 
-### EU-Cloud supported (SZR) (Performance)
+### EU-Cloud supported (Performance)
 EU-Cloud is supported in the following data center geography:
-- **Frankfurt** - (eu-de)
+- **Frankfurt (SZR)** - (eu-de)
 
 EU-Cloud support is available only in the Frankfurt (eu-de) region.
 {: note}
