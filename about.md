@@ -37,11 +37,9 @@ The Performance plan is supported in the following data center geographies:
 - **London** - (eu-gb)
 - **Tokyo** - (jp-tok)
 
-### EU-Cloud supported (Performance)
-
-The Performance plan supports EU-Cloud deployments in the **Frankfurt** (eu-de) region. When you select (eu-de) as your deployment region, EU cloud support by toggling the **EU cloud supported** to yes to ensure that your instance and data is stored and processed under EU policy standards.
-
-![EU cloud supported toggle](images/eu_cloud_supported_toggle.png){: caption="EU cloud supported option displayed when Frankfurt (eu-de) is selected." caption-side="bottom"}
+### EU-Cloud supported (SZR) (Performance)
+EU-Cloud is supported in the following data center geography:
+- **Frankfurt** - (eu-de)
 
 EU-Cloud support is available only in the Frankfurt (eu-de) region.
 {: note}
@@ -82,10 +80,10 @@ MZRs support 3 node HA in 3 different data centers in that region.
 SZRs support 3 node HA in a single data center in that region.
 {: note}
 
-### EU-Supported (SZR)
-- **Frankfurt** - (eu-de)
+### EU-Supported (MZR)
+- **Frankfurt 02** - (Fra02, Fra04, Fra05)
 
-EU-Supported SZR supports 3 node HA in 3 different data centers in that region.
+EU-Supported MZR supports 3 node HA in 3 different data centers in that region.
 {: note}
 
 ## API References by plan
