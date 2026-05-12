@@ -60,7 +60,7 @@ Follow these steps to begin the migration:
 1. A popup will show with the current and new instance names. Select the location, Db2 version, key management services, and disk encryption key for your new instance. Click **Create** to start provisioning your new upgraded environment.
 ![Create Instance Confirm](images/migration_create_confirm.png){: caption="Confirm location and create new instance." caption-side="bottom"}
 
-   When using Key Protect Dedicated (single-tenant), you must select **Regional** as the backup location. Cross-regional backup is not supported with Key Protect Dedicated.
+   When using Key Protect Dedicated (Single-tenant), you must select **Regional** as the backup location.
    {: important}
 
 1. When the new instance has been created, there will be a link to go to the new system to complete the upgrade. Click on **Go to new system to complete upgrade**

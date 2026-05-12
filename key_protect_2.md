@@ -69,7 +69,7 @@ Authorize {{site.data.keyword.keymanagementserviceshort}} for use with {{site.da
 3. In the _Target service instance_ menu, select the service instance to authorize.
 4. Enable the **Reader** role, and check the box that says **Enable authorizations to be delegated by the source and dependent services**. Click **Authorize**.
 
-When using Key Protect Dedicated (single-tenant), you must select **Regional** as the backup location. Cross-regional backup is not supported with Key Protect Dedicated.
+When using Key Protect Dedicated (Single-tenant), you must select **Regional** as the backup location.
 {: important}
 
 ## Using the key encryption key
