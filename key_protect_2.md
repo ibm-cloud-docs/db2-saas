@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2025-11-19"
+lastupdated: "2026-05-12"
 
 keywords: db2, {{site.data.keyword.Db2_on_Cloud_short}} , bring your own key, byok, crypto-shredding, kyok, keep your own key
 
@@ -68,6 +68,9 @@ Authorize {{site.data.keyword.keymanagementserviceshort}} for use with {{site.da
 2. In the _Target service_ menu, select **Key Protect**.
 3. In the _Target service instance_ menu, select the service instance to authorize.
 4. Enable the **Reader** role, and check the box that says **Enable authorizations to be delegated by the source and dependent services**. Click **Authorize**.
+
+When using Key Protect Dedicated (single-tenant), you must select **Regional** as the backup location. Cross-regional backup is not supported with Key Protect Dedicated.
+{: important}
 
 ## Using the key encryption key
 

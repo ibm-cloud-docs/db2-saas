@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020, 2021, 2022, 2026
-lastupdated: "2026-02-12"
+lastupdated: "2026-05-12"
 
 keywords: provision cloud database, database with terraform, provisioning parameters, db2 on cloud, db2
 
@@ -43,7 +43,7 @@ When you create the deployment from the catalog, you need to specify the followi
 
 1. **Service name** - The name can be any string and is the name that is used on the web and in the command line to identify the new deployment.
 
-1. 1. **Region** - The region in which the deployment resides. Available regions include:
+1. **Region** - The region in which the deployment resides. Available regions include:
    - `us-south` (Dallas)
    - `us-east` (Washington DC)
    - `eu-de` (Frankfurt)
@@ -70,7 +70,9 @@ When you create the deployment from the catalog, you need to specify the followi
 
 4. **Oracle compatibility** - whether the service instance should have Oracle compatibility enabled
 
-5. **Db2 Version** - Choose the Db2 version for your deployment. The Performance plan supports both **Db2 version 12** (recommended) and **Db2 version 11.5** for customers requiring application compatibility.
+5. **EU cloud supported** - When you select Frankfurt (eu-de) as the deployment region, the **EU cloud supported** option is displayed. Select **YES** if you require your data to be stored and processed under EU policy standards. This option is only available in the Frankfurt (eu-de) region.
+
+6. **Db2 Version** - Choose the Db2 version for your deployment.
 
    When provisioning through the CLI, specify the version by using the `-p` flag:
 ```
@@ -84,7 +86,7 @@ When you create the deployment from the catalog, you need to specify the followi
 
    Valid values are `12` or `11.5`. If omitted, the default is `12`.
 
-6. **Instance Profile** -  Choose machine type resource for your deployment based on your CPU and memory requirements. This option is only available with the Performance plan.
+7. **Instance Profile** -  Choose machine type resource for your deployment based on your CPU and memory requirements. This option is only available with the Performance plan.
 
 After selecting the appropriate settings, click **Create** to start the provisioning process.
 

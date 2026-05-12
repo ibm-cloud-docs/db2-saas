@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2014, 2026
-lastupdated: "2026-01-23"
+lastupdated: "2026-05-12"
 keywords:
 subcollection: db2-saas
 ---
@@ -36,6 +36,14 @@ The Performance plan is supported in the following data center geographies:
 - **Madrid** - (eu-es)
 - **London** - (eu-gb)
 - **Tokyo** - (jp-tok)
+
+### EU-Cloud supported (Performance)
+
+The Performance plan supports EU-Cloud deployments in the **Frankfurt** (eu-de) region. When you select Frankfurt as your deployment region, you can enable the **EU cloud supported** option to ensure that your data is stored and processed under EU policy standards.
+
+EU-Cloud support is available only in the Frankfurt (eu-de) region.
+{: note}
+
 ## Standard/Enterprise Plans
 {: #ab_plans_cfgs}
 
