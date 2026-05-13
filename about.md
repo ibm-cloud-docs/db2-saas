@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2014, 2026
-lastupdated: "2026-05-12"
+lastupdated: "2026-05-13"
 keywords:
 subcollection: db2-saas
 ---
@@ -26,7 +26,6 @@ The [IBM Documentation for the service](https://www.ibm.com/docs/en/db2-as-a-ser
 - 2-node High Availability
 - Customizable IOPS Scaling
 ### Supported data centers (Performance)
-The Performance plan is supported in the following data center geographies:
 - **Dallas** - (us-south)
 - **Washington** - (us-east)
 - **Sydney** - (au-syd)
@@ -38,8 +37,7 @@ The Performance plan is supported in the following data center geographies:
 - **Tokyo** - (jp-tok)
 
 ### EU-Cloud supported (Performance)
-EU-Cloud is supported in the following data center geography:
-- **Frankfurt (SZR)** - (eu-de)
+- **Frankfurt** - (eu-de)
 
 EU-Cloud support is available only in the Frankfurt (eu-de) region.
 {: note}
