@@ -22,7 +22,7 @@ subcollection: Db2onCloud
 # Reserved Instances
 {: #reserved-instances}
 
-Reserved Instances (RI) for Db2 on Cloud allow you to commit to a 1-year or 3-year term in exchange for a discounted compute price compared to the standard On Demand pricing model.
+Reserved Instances (RI) for Db2 SaaS allow you to commit to a 1-year or 3-year term in exchange for a discounted compute price compared to the standard On Demand pricing model.
 {: shortdesc}
 
 ## Prerequisites
@@ -30,7 +30,7 @@ Reserved Instances (RI) for Db2 on Cloud allow you to commit to a 1-year or 3-ye
 
 Before switching to a Reserved Instance license, ensure that you meet the following requirements:
 
-- An active Db2 on Cloud instance on the **Performance** plan.
+- An active Db2 SaaS instance on the **Performance** plan.
 
 ## Restrictions
 {: #ri-restrictions}
@@ -46,7 +46,7 @@ Review the restrictions carefully before committing. Reserved Instance terms are
 ## Selecting a Reserved Instance during provisioning
 {: #ri-provisioning}
 
-You can select a Reserved Instance license type when provisioning a new Db2 on Cloud instance.
+You can select a Reserved Instance license type when provisioning a new Db2 SaaS instance.
 
 During the provisioning process, locate the **Reserved Instance/BYOL** dropdown. By default, the license is set to **Default license**. Select **Reserved Instance (1 year)** or **Reserved Instance (3 year)** from the dropdown, then continue with the rest of the provisioning steps.
 
@@ -55,12 +55,12 @@ During the provisioning process, locate the **Reserved Instance/BYOL** dropdown.
 ## Configuring a Reserved Instance in the UI
 {: #ri-configuration}
 
-You can also change your license type to a Reserved Instance on an existing Db2 on Cloud instance through the console.
+You can also change your license type to a Reserved Instance on an existing Db2 SaaS instance through the console.
 
 ### Step 1: Navigate to the license settings
 {: #ri-step1}
 
-From your Db2 on Cloud instance dashboard:
+From your Db2 SaaS instance dashboard:
 
 1. Click the **Settings** icon in the left sidebar (wrench icon), or select **Settings** from the top navigation bar.
 1. Select the **License** sub-tab.
