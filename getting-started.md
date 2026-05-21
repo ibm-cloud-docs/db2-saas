@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-29"
+lastupdated: "2026-05-21"
 
 keywords:
 
@@ -36,4 +36,8 @@ After creating the Db2 SaaS service, you can create a user name and password by 
 
 While logged in as the **IAM** user that provisioned the instance, you can log into the web console by clicking on the **Go to UI** button on the **Manage** tab.
 
-You can create database/JDBC users, which you will use to connect to the database, by navigating to the  **Administration** > **Databases** > **Select your database** > **User Management** panel. Additionally, you may want to give admin access to an IAM user to allow them to use console administration functions such as user management, backup, and restore. Before you can add an IAM user in the console, you must first give the user access to the service in IAM". For more information, see [Identity and access management (IAM) on IBM Cloud](https://cloud.ibm.com/docs/Db2onCloud?topic=Db2onCloud-iam).
+You can create database/JDBC users, which you will use to connect to the database, by navigating to the  **Administration** > **User Management** panel.
+
+
+
+Additionally, you may want to give admin access to an IAM user to allow them to use console administration functions such as user management, backup, and restore. Before you can add an IAM user in the console, you must first give the user access to the service in IAM". For more information, see [Identity and access management (IAM) on IBM Cloud](https://cloud.ibm.com/docs/Db2onCloud?topic=Db2onCloud-iam).
