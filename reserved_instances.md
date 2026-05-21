@@ -55,13 +55,7 @@ During the provisioning process, locate the **Reserved Instance/BYOL** dropdown.
 ## Configuring a Reserved Instance in the UI
 {: #ri-configuration}
 
-You can also change your license type to a Reserved Instance on an existing Db2 SaaS instance through the console.
 
-The steps for configuring a reserved instance in the UI vary depending on the console you are using.  
-{: note}
-
-If you are using the legacy console, follow the steps outlined below. If you are using the Genius Hub–enabled console, refer to [Configuring a Reserved Instance in the UI]() for the correct steps.
-{: important}
 
 ### Step 1: Navigate to the license settings
 {: #ri-step1}
