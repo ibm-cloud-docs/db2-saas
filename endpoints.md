@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2026-05-07"
+lastupdated: "2026-05-26"
 
 keywords:
 
@@ -29,13 +29,15 @@ subcollection: db2-saas
 
 Performance plans offer the choice of Public, Private, or both Public and Private endpoints.
 
-- Public network service endpoint is accessible from anywhere on the internet.
-- Private network service endpoint access traverses only the {{site.data.keyword.cloud_notm}} backbone network, not the public internet.
+- The public network service endpoint is accessible from anywhere on the internet.
+- The private network service endpoint access traverses only the {{site.data.keyword.cloud_notm}} backbone network, not the public internet.
 
 ### Changing endpoints
 {: #ep_perf_chg_epts}
 
 To change endpoints, complete the following steps:
+
+
 
 - Select your Db2 service from {{site.data.keyword.cloud_notm}}.
 - From the **Manage** tab, click **Open Console**.
@@ -45,9 +47,6 @@ To change endpoints, complete the following steps:
 - Click **Update**. The change occurs immediately.
 
 ![Performance access restriction](images/performance_access_restriction.png "Service endpoints"){: caption="Service endpoints configuration for Performance plans" caption-side="bottom"}
-
-
-
 
 
 
