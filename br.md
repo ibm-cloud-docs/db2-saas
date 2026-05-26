@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-23"
+lastupdated: "2026-05-25"
 
 keywords:
 
@@ -182,6 +182,9 @@ The following is an example of the end-of-backup restore operation in the web co
 {: #point-in-time}
 
 {{site.data.keyword.Db2_on_Cloud_long}} added a point-in-time restore capability for systems in {{site.data.keyword.Bluemix_notm}} Public. You can restore to an exact point in time from your backups.
+
+After a point-in-time restore completes, a new log chain begins. Before performing another point-in-time restore, you must first take a new backup. The timestamp for any subsequent point-in-time restore must fall after that new backup.
+{: important}
 
 The following are a selected example of screen captures of the point-in-time restore operation in the web console UI:
 
