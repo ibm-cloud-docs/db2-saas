@@ -25,19 +25,15 @@ subcollection: db2-saas
 
 # Auto-scaling
 
-
 When you enable autoscaling, the storage on your {{site.data.keyword.Db2_on_Cloud_long}}  instance will automatically be scaled up if your storage use exceeds the threshold you specify. For example, you can choose to scale up your storage by 20GB if more than 90% of your storage is in use for a period of 15 minutes.
 
 To monitor your storage usage, use the IBM Cloud® Monitoring integration, which provides metrics for disk space.
-
-
 
 ## General Autoscaling Parameters
 
 - When to scale, based on usage over time.
 - A hard limit on scaling, your deployment stops autoscaling at the limit.
 
----
 
 ## Classic Plan
 
@@ -53,8 +49,6 @@ To monitor your storage usage, use the IBM Cloud® Monitoring integration, which
 - If you rarely increase storage on your deployment, you might want to manually scale your deployment rather than enabling the auto-scaling feature.
 - Scaling is an online operation.
 - Some scaling operations can be more long running than others. Significantly increasing the storage size can take longer than increasing it by a small amount because additional underlying hardware resources must be provisioned.
-
-
 
 ## ****Configuring Autoscaling in the UI****
 
@@ -76,7 +70,6 @@ The Autoscaling panel is on the Administration tab of your deployment's console 
 2. Uncheck **Enable storage autoscaling**.
 3. Click **Save Changes** to save the configuration.
 
----
 
 ## Performance Plan
 
@@ -96,7 +89,6 @@ The Autoscaling panel is on the Administration tab of your deployment's console 
 - Scaling is an online operation.
 - Some scaling operations can be more long running than others. Significantly increasing the storage size can take longer than increasing it by a small amount because additional underlying hardware resources must be provisioned.
 - IOPS value will be maintained during auto scale in most cases. However, if the current IOPS is less than the minimum IOPS required for the new storage, it will be automatically increased to the minimum value required.
-
 
 
 ## ****Configuring Autoscaling in the UI****
