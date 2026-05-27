@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2025-12-16"
+lastupdated: "2026-05-27"
 
 keywords:
 
@@ -79,6 +79,9 @@ The Autoscaling panel is on the Administration tab of your deployment's console 
 ---
 
 ## Performance Plan
+
+
+
 
 ![paras.png](images/autoscaling_perf_img1.png){: caption="Example Autoscaling panel" caption-side="bottom"}
 
