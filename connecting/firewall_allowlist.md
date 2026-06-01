@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2025-09-30"
+lastupdated: "2026-06-01"
 
 keywords:
 
@@ -27,6 +27,8 @@ If you use allowlists to control connections in your environment, you can use th
 
 As new clusters in a region are created, there will be additional IP ranges that will be added. If an existing Db2oC customer adds a new instance, it may be necessary to add these new IP ranges into the firewall rules.
 {:important}
+
+## Standard Plan
 
 ### `Dallas` List
 Subnet | Location
@@ -145,7 +147,7 @@ Subnet | Location
 Subnet | Location
 -- | --
 169.53.186.200/29 | tor01
-169.48.7.8/29/29 | tor01
+169.48.7.8/29 | tor01
 169.55.169.160/29 | tor01
 169.55.132.216/29 | tor01
 163.74.72.240/29 | tor04
@@ -159,3 +161,72 @@ Subnet | Location
 -- | --
 169.51.52.168/29 | ams03
 169.50.186.48/29 | ams03
+
+
+## Performance Plan
+
+### `Sydney` List
+IP Address | Location
+-- | --
+159.23.103.227 | au-syd
+130.198.19.198 | au-syd
+135.90.129.91 | au-syd
+
+### `Sao Paulo` List
+IP Address | Location
+-- | --
+13.116.93.200 | br-sao
+163.107.87.37 | br-sao
+163.109.81.133 | br-sao
+
+### `Toronto` List
+IP Address | Location
+-- | --
+163.66.86.252 | ca-tor
+163.74.82.21 | ca-tor
+163.75.82.44 | ca-tor
+
+### `Frankfurt` List
+IP Address | Location
+-- | --
+149.81.2.36 | eu-de
+161.156.84.142 | eu-de
+149.81.240.2 | eu-de
+
+### `Madrid` List
+IP Address | Location
+-- | --
+13.116.93.200 | eu-es
+163.107.87.37 | eu-es
+163.109.81.133 | eu-es
+
+### `London` List
+IP Address | Location
+-- | --
+161.156.197.101 | eu-gb
+141.125.107.62 | eu-gb
+158.176.190.221 | eu-gb
+
+### `Tokyo` List
+IP Address | Location
+-- | --
+162.133.135.10 | jp-tok
+128.168.142.95 | jp-tok
+165.192.131.119 | jp-tok
+
+### `Washington` List
+IP Address | Location
+-- | --
+150.239.85.197 | us-east
+169.63.189.8 | us-east
+150.239.225.138 | us-east
+
+### `Dallas` List
+IP Address | Location
+-- | --
+150.240.69.80 | us-south
+52.118.211.118 | us-south
+67.18.95.24 | us-south
+52.118.185.16 | us-south
+52.116.201.47 | us-south
+67.18.115.37 | us-south
