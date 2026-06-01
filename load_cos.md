@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2026-05-08"
+lastupdated: "2026-05-26"
 
 keywords:
 
@@ -63,6 +63,7 @@ BLUUSERS cannot load data from the console.
 ### Open the Db2 Console to the load data page
 
 
+
 1. Click on `Data` on the left menu
 2. Click on `Load Data` on the top tab
 3. Click on `Cloud Object Storage`
@@ -73,12 +74,7 @@ BLUUSERS cannot load data from the console.
 
 
 
-
-
 ![Load Data page](images/key.png "Load COS Data"){: caption="Load COS Data" caption-side="bottom"}
-
-
-
 
 
 

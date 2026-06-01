@@ -22,7 +22,7 @@ subcollection: Db2onCloud
 # Bring Your Own License (BYOL)
 {: #byol}
 
-The Bring Your Own License (BYOL) option for Db2 on Cloud allows you to apply your existing eligible Db2 software licenses to your cloud instance, resulting in up to a **28% discount** on compute costs compared to the standard On Demand pricing model.
+The Bring Your Own License (BYOL) option for Db2 SaaS allows you to apply your existing eligible Db2 software licenses to your cloud instance, resulting in up to a **28% discount** on compute costs compared to the standard On Demand pricing model.
 {: shortdesc}
 
 ## Prerequisites
@@ -30,7 +30,7 @@ The Bring Your Own License (BYOL) option for Db2 on Cloud allows you to apply yo
 
 Before switching to the BYOL license model, ensure that you meet the following requirements:
 
-- An active Db2 on Cloud instance on the **Performance** plan.
+- An active Db2 SaaS instance on the **Performance** plan.
 - Eligible Db2 software licenses (**Db2 Standard** or **Db2 Advanced**) with active Subscription and Support.
 - Sufficient license VPCs (Virtual Processor Cores) to cover the compute allocation of your instance.
 - Eligibility requirements as stated in **Section 5.4** of the [Db2 on Cloud Service Description](https://www.ibm.com/support/customer/csol/terms/?id=i126-7519&lc=en){: external} must be satisfied.
@@ -38,7 +38,7 @@ Before switching to the BYOL license model, ensure that you meet the following r
 ## Selecting BYOL during provisioning
 {: #byol-provisioning}
 
-You can select the BYOL license type when provisioning a new Db2 on Cloud instance.
+You can select the BYOL license type when provisioning a new Db2 SaaS instance.
 
 During the provisioning process, locate the **Reserved Instance/BYOL** dropdown. By default, the license is set to **Default license**. Select **Bring your own license (BYOL)** from the dropdown, then continue with the rest of the provisioning steps.
 
@@ -47,20 +47,18 @@ During the provisioning process, locate the **Reserved Instance/BYOL** dropdown.
 ## Configuring BYOL in the UI
 {: #byol-configuration}
 
-You can also change your license type on an existing Db2 on Cloud instance through the console.
+You can also change your license type on an existing Db2 SaaS instance through the console.
 
 ### Step 1: Navigate to the license settings
 {: #byol-step1}
 
-From your Db2 on Cloud instance dashboard:
+From your Db2 SaaS instance dashboard:
+
 
 
 1. Click the **Settings** icon in the left sidebar (wrench icon), or select **Settings** from the top navigation bar.
-1. Select the **License** sub-tab.
-1. Click the **Change** button on the right side to modify your license type.
-
-
-
+2. Select the **License** sub-tab.
+3. Click the **Change** button on the right side to modify your license type.
 
 
 ![Navigating to Settings > License > Change](images/step1_navigate_settings.png){: caption="Navigate to Settings > License and click Change" caption-side="bottom"}
@@ -74,10 +72,7 @@ On the License selection page, select the **Bring Your Own License (BYOL)** radi
 The BYOL option provides the highest discount at 28% off compute costs. Ensure you meet the eligibility requirements stated in Section 5.4 of the Service Description before proceeding. Eligible licenses include Db2 Standard and Db2 Advanced, and you must maintain active Subscription and Support on your existing license entitlements.
 {: important}
 
-
 ![Selecting the BYOL license option](images/step2_select_byol.png){: caption="Select the Bring Your Own License (BYOL) option" caption-side="bottom"}
-
-
 
 
 ### Step 3: Confirm the license change
