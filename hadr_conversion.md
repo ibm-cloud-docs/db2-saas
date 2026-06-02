@@ -32,7 +32,7 @@ With {{site.data.keyword.Db2_on_Cloud_long}} Performance plans, administrators c
 - When scaling from a single-node setup to a high-availability configuration, expect a brief connection interruption as the orchestrator restarts to integrate the newly added pod.
 - Deployments which have a Disaster Recovery configured can not switch to single node without unconfiguring the diasaster recovery settings.
 
-## Configuring Availability in the UI*
+## Configuring Availability in the UI
 
 
 
