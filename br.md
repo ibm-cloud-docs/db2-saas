@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-05-25"
+lastupdated: "2026-06-03"
 
 keywords:
 
@@ -38,16 +38,20 @@ Changing the backup time can take upto 2 hours to take effect. {: important}
 The following is an example of the manual backup operation in the web console UI:
 
 ### Performance plans
+{: #bk_perfplan}
+
+
+
 1. Click **Administration** in the left menu and select the **Backups** tab. Click the **Run backup** button.
 ![View of the highlighted selection of the backup option](images/performance_backup.png "Backup and restore console page"){: caption="Selection of the backup option" caption-side="bottom"}
 
-2. Click **Run** to run an on demand backup.
+1. Click **Run** to run an on demand backup.
 ![View of Run Backup page option](images/performance_backup_run.png "Backup and restore console page"){: caption="View of Run backup" caption-side="bottom"}
 
-3. When the backup starts, some features might not be available until the backup is completed.
+1. When the backup starts, some features might not be available until the backup is completed.
 ![View of the backup initiation](images/performance_backup_initiated.png "Backup and restore console page"){: caption="View of the backup initiation" caption-side="bottom"}
 
-4. After backup completion, a new backup entry in the list of snapshot backups appears as a **on_demand** type. The new backup is in an available state.
+1. After backup completion, a new backup entry in the list of snapshot backups appears as a **on_demand** type. The new backup is in an available state.
 ![View of completed backup](images/performance_backup_completed.png "Backup and restore console page"){: caption="View of a completed backup" caption-side="bottom"}
 
 ### Enterprise and Standard plans
@@ -66,6 +70,7 @@ The following is an example of the manual backup operation in the web console UI
 ![View of completed backup](images/backup_completed_v2.png "Backup and restore console page"){: caption="View of a completed backup" caption-side="bottom"}
 
 ## Backup retention management
+{: #br_retmgmt}
 
 This feature allows Users to run procedures that modify the retention period for db2 backups.
 
