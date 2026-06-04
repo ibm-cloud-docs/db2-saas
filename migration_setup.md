@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-05-12"
+lastupdated: "2026-06-04"
 
 keywords:
 
@@ -57,7 +57,7 @@ Follow these steps to begin the migration:
 1. You will be redirected to the **Upgrade Db2 Systems** page. In the upgrade interface, click **Create Instance**.
 ![Upgrade Db2 Systems page example](images/migration_create_new_instance.png){: caption="Example of the Upgrade Db2 Systems page where you create the new instance." caption-side="bottom"}
 
-1. A popup will show with the current and new instance names. Select the location, Db2 version, key management services, and disk encryption key for your new instance. Click **Create** to start provisioning your new upgraded environment.
+1. A popup will show with the current and new instance names. Select the location, Db2 version, backup location, storage, IOPS, key management services, and disk encryption key for your new instance. Click **Create** to start provisioning your new upgraded environment.
 ![Create Instance Confirm](images/migration_create_confirm.png){: caption="Confirm location and create new instance." caption-side="bottom"}
 
    When using Key Protect Dedicated (Single-tenant), you must select **Regional** as the backup location.
