@@ -16,6 +16,8 @@ subcollection: Db2onCloud
 You can restore your {{site.data.keyword.Db2_on_Cloud_long}} Performance plan database from an external backup stored in IBM Cloud Object Storage (COS) or Amazon S3. This feature allows you to recover your database from backups stored in your own storage bucket.
 {: shortdesc}
 
+
+
 ## Prerequisites
 {: #restore-external-prerequisites}
 {: ui}
