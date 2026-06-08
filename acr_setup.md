@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2025
-lastupdated: "2025-09-25"
+  years: 2014, 2026
+lastupdated: "2026-06-08"
 
 keywords: HADR, Automatic Client Reroute Setup, ACR, high availability disaster recovery
 
@@ -23,7 +23,7 @@ subcollection: db2-saas
 
 # Automatic Client Reroute Setup (ACR)
 
-This ACR workaround is intended for use on {{site.data.keyword.Db2_on_Cloud_long}} High Availibility (HA) instances with private CSE enabled. It should not be used for any HA instances that are connecting to Db2 over public endpoints.
+This ACR workaround is intended for use on {{site.data.keyword.Db2_on_Cloud_long}} High Availibility (HA) instances with private endpoints enabled. It should not be used for any HA instances that are connecting to Db2 over public endpoints.
 
 ### Client-side Setup
 
