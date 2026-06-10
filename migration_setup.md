@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-06-04"
+lastupdated: "2026-06-10"
 
 keywords:
 
@@ -18,7 +18,7 @@ subcollection: db2-saas
 {:deprecated: .deprecated}
 {:pre: .pre}
 
-# Migration
+# Migration Procedure
 {: #migration}
 
 Upgrading your {{site.data.keyword.Db2_on_Cloud_long}}  deployment from the **Standard/Enterprise Plan** to the **Performance plan** provides improved scalability, enhanced reliability, and a modern management experience. After you initiate the upgrade, the system automatically provisions a new instance and migrates your data with minimal downtime. The system keeps your two instances in sync until you decide to finalize your upgrade.
