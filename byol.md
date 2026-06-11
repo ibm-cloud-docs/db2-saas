@@ -35,14 +35,7 @@ Before switching to the BYOL license model, ensure that you meet the following r
 - Sufficient license VPCs (Virtual Processor Cores) to cover the compute allocation of your instance.
 - Eligibility requirements as stated in **Section 5.4** of the [Db2 on Cloud Service Description](https://www.ibm.com/support/customer/csol/terms/?id=i126-7519&lc=en){: external} must be satisfied.
 
-## Selecting BYOL during provisioning
-{: #byol-provisioning}
 
-You can select the BYOL license type when provisioning a new Db2 SaaS instance.
-
-During the provisioning process, locate the **Reserved Instance/BYOL** dropdown. By default, the license is set to **Default license**. Select **Bring your own license (BYOL)** from the dropdown, then continue with the rest of the provisioning steps.
-
-![Selecting BYOL during provisioning](images/byol_provisioning.png){: caption="Select Bring your own license (BYOL) from the Reserved Instance/BYOL dropdown during provisioning" caption-side="bottom"}
 
 ## Configuring BYOL in the UI
 {: #byol-configuration}
