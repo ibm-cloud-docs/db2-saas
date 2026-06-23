@@ -31,11 +31,13 @@ You can pause and resume the compute resources of your Db2 on Cloud instance at 
 ### Step 1: Navigate to Pause & Resume
 {: #pause-step1}
 
+
+
 From your Db2 on Cloud instance dashboard:
 
 1. Click the **Settings** icon in the left sidebar (wrench icon).
-1. Select **Pause & Resume** from the top navigation bar.
-1. Click the **Pause now** button.
+2. Select **Pause & Resume** from the top navigation bar.
+3. Click the **Pause now** button.
 
 ![Navigate to Pause & Resume and click Pause now](images/pause_navigate.png){: caption="Navigate to Pause & Resume and click Pause now" caption-side="bottom"}
 
