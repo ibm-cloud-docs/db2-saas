@@ -71,6 +71,7 @@ toc:
           topics:
           - gen2vs_gen3.md
           - migration_setup.md
+          - migration_faq.md
       - topicgroup:
           label: Security
           topics:
