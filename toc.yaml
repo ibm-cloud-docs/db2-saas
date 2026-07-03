@@ -3,7 +3,7 @@ toc:
     subcollection: db2-saas
     category: database
     audience: service
-    href: /docs/db2-saas
+    href: /docs/db2-saas?topic=db2-saas-getting-started
     path: db2-saas
     label: IBM Db2 SaaS
   entries:
