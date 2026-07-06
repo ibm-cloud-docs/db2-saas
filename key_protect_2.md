@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2026-05-12"
+lastupdated: "2026-07-06"
 
 keywords: db2, {{site.data.keyword.Db2_on_Cloud_short}} , bring your own key, byok, crypto-shredding, kyok, keep your own key
 
@@ -35,6 +35,9 @@ To get started, you need to provision a [{{site.data.keyword.keymanagementservic
 {: #kp-create-add}
 
 To add a key in {{site.data.keyword.keymanagementserviceshort}}, navigate to your instance of {{site.data.keyword.keymanagementserviceshort}} and [generate or enter a key](/docs/key-protect?topic=key-protect-getting-started-tutorial).
+
+Each Db2 on Cloud deployment must be associated with its own unique root key. You cannot reuse the same root key across multiple Db2 on Cloud instances.
+{: important}
 
 
 ## Granting service authorization
