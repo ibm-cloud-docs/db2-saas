@@ -231,7 +231,7 @@ As part of the migration, customers moving from Standard/Enterprise plan to Perf
 
 Yes. Depending on the workload and configuration, costs may either increase or decrease after migration to the Performance Plan. Pricing is specific to each customer's usage profile.
 
-Please refer to the Resource Units (RUs) published in the Db2 Catalog to estimate costs for your environment. If you have further questions, please reach out to your IBM representative.
+Please refer to the **Resource Units (RUs)** published in the **Db2 Catalog** to estimate costs for your environment. If you have further questions, please reach out to your IBM representative.
 
 ## Do Explain Tables need to be recreated after upgrading to Db2 v12?
 {: #q_explain_tables}
