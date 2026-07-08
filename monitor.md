@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2025-09-25"
+lastupdated: "2026-07-08"
 
 keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode
 
@@ -105,6 +105,9 @@ For additional details on platform metrics, please see [Platform Metrics Introdu
 Monitoring metrics are currently available for only Enterprise and Standard plans. Lite plans are currently not supported.
 {: important}
 
+Sharing metrics with customers is not yet supported on V3 (Performance) plan instances. Sharing logs with customers is supported.
+{: important}
+
 ## Set up your {{site.data.keyword.Db2_on_Cloud_short}} service instance
 {: #setup-monitor}
 
@@ -134,25 +137,25 @@ For more information, see [{{site.data.keyword.mon_short}} Getting started tutor
 ​
 | Metric Name |
 |-----------|
-| [Database Availability Check](#ibm_db2_db_availability_check) | 
-| [Database commits time](#ibm_db2_db_commits_time) | 
-| [Database rollbacks](#ibm_db2_db_rollbacks) | 
-| [Disaster recovery Log Gap](#ibm_db2_dr_log_gap) | 
-| [High Availability Disaster Recovery Log Gap](#ibm_db2_hadr_log_gap) | 
-| [Is disaster recovery connected?](#ibm_db2_is_dr_connected) | 
+| [Database Availability Check](#ibm_db2_db_availability_check) |
+| [Database commits time](#ibm_db2_db_commits_time) |
+| [Database rollbacks](#ibm_db2_db_rollbacks) |
+| [Disaster recovery Log Gap](#ibm_db2_dr_log_gap) |
+| [High Availability Disaster Recovery Log Gap](#ibm_db2_hadr_log_gap) |
+| [Is disaster recovery connected?](#ibm_db2_is_dr_connected) |
 | [Is disaster recovery configured?](#ibm_db2_is_dr_configured) |
-| [Last backup duration in minutes](#ibm_db2_last_backup_duration_minutes) | 
-| [Log Disk wait](#ibm_db2_log_disk_wait) | 
-| [Number of Unique ID statements](#ibm_db2_uid_stmts) | 
-| [Number of rows deleted](#ibm_db2_rows_deleted) | 
-| [Number of rows updated](#ibm_db2_rows_updated) | 
-| [Numbers of rows inserted](#ibm_db2_rows_inserted) | 
-| [Time since last backup in hours](#ibm_db2_since_last_backup_hours) | 
-| [Total Activities Aborted](#ibm_db2_db_act_aborted) | 
-| [Total Activities Completed](#ibm_db2_db_act_completed) | 
-| [Total Activities Rejected](#ibm_db2_db_act_rejected) | 
-| [Total Connections](#ibm_db2_total_conn) | 
-| [Total number of commits](#ibm_db2_db_num_commits) | 
+| [Last backup duration in minutes](#ibm_db2_last_backup_duration_minutes) |
+| [Log Disk wait](#ibm_db2_log_disk_wait) |
+| [Number of Unique ID statements](#ibm_db2_uid_stmts) |
+| [Number of rows deleted](#ibm_db2_rows_deleted) |
+| [Number of rows updated](#ibm_db2_rows_updated) |
+| [Numbers of rows inserted](#ibm_db2_rows_inserted) |
+| [Time since last backup in hours](#ibm_db2_since_last_backup_hours) |
+| [Total Activities Aborted](#ibm_db2_db_act_aborted) |
+| [Total Activities Completed](#ibm_db2_db_act_completed) |
+| [Total Activities Rejected](#ibm_db2_db_act_rejected) |
+| [Total Connections](#ibm_db2_total_conn) |
+| [Total number of commits](#ibm_db2_db_num_commits) |
 
 
 ​
