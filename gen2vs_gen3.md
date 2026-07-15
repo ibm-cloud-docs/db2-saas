@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-06-23"
+lastupdated: "2026-07-15"
 
 keywords:
 
@@ -61,8 +61,8 @@ The Db2 Performance Plan introduces a more flexible approach to storage and perf
 
 The Db2 Performance Plan uses a snapshot-based backup model designed to improve efficiency and recovery speed.
 
-- Snapshot-based backups for faster and more efficient recovery  
-- Lower storage consumption  
+- Snapshot-based backups for faster and more efficient recovery
+- Lower storage consumption
 - Improved backup and restore performance
 
 Additional capabilities include:
@@ -87,7 +87,7 @@ How it works:
 - Transactions are committed on both nodes before completion
 - Automatic failover using **Automatic Client Reroute (ACR)**
 
-High Availability (HA) operates within a single region (MZR) and ensures near-zero downtime during failover, scaling, and maintenance activities. 
+High Availability (HA) operates within a single region (MZR) and ensures near-zero downtime during failover, scaling, and maintenance activities.
 
 **Disaster Recovery (DR)**: With [Geo‑Replicated Disaster Recovery](https://cloud.ibm.com/docs/db2-saas?topic=db2-saas-dr_gen) nodes, you can extend availability to another region by adding an on‑demand DR node, ensuring continued data access even if the primary region experiences an outage.
 
@@ -143,6 +143,7 @@ With the transition from Db2 11.5 to 12.1, users benefit from a range of new enh
 - MongoDB 8.x client support
 - Alter the precision of decimal-type columns in Db2 column-organized tables
 - New transaction application lock types and shared locking for DBMS_LOCK
+- Audit logs are now stored in Cloud Object Storage (COS) instead of database tables to align with cloud-native architecture and improve scalability.
 
 For more information, see [Whats's New](https://www.ibm.com/docs/en/db2/12.1.x?topic=database-whats-new)
 
@@ -170,7 +171,7 @@ To prepare for migration, review the following actions:
 
     - Review dependencies on Standard/Enterprise Plan behavior
     - For customers upgrading Db2 to v12.1: Test applications with the latest version.
-    
+
     Customers can choose to remain on Db2 v11.5. Upgrading to v12.1 is optional and based on customer preference. Please note that upgrading to v12.1 may result in a longer outage window during migration.
     {: note}
 
