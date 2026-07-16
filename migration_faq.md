@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-07-15"
+lastupdated: "2026-07-16"
 
 keywords:
 
@@ -139,7 +139,7 @@ To configure audit output to COS, complete the following steps.
 
     Run the following SQL statement to register your COS bucket, then note the storage alias name that you created:
 
-```sql
+    ```
     CALL SYSIBMADM.STORAGE_ACCESS_ALIAS.CATALOG(
      '<aliasname>',
      's3',
@@ -151,7 +151,7 @@ To configure audit output to COS, complete the following steps.
      'G',
      'BLUADMIN'
     );
-```
+    ```
     {: codeblock}
 
     Replace `<aliasname>`, `<endpoint_without_https>`, and `<bucketname>` with your specific values.
