@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-06-03"
+lastupdated: "2026-07-16"
 
 keywords:
 
@@ -40,6 +40,12 @@ The following is an example of the manual backup operation in the web console UI
 ### Performance plans
 {: #bk_perfplan}
 
+
+The steps for configuring backup and restore in the UI vary depending on the console you are using.  
+{: note}
+
+If you are using the legacy console, follow the steps outlined below. If you are using the Genius Hub–enabled console, refer to [backup and restore](https://cloud.ibm.com/docs/db2-saas?topic=db2-saas-gh_bnr) for the correct steps.
+{: important}
 
 
 1. Click **Administration** in the left menu and select the **Backups** tab. Click the **Run backup** button.
