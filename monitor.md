@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2026-07-08"
+lastupdated: "2026-07-17"
 
 keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode
 
@@ -98,7 +98,7 @@ subcollection: db2-saas
 
 Get insight into your {{site.data.keyword.Db2_on_Cloud_short}} instance. These metrics can help you find bottlenecks or predict possible production problems.
 
-You can use the IBM Cloud® Monitoring service to monitor your {{site.data.keyword.Db2_on_Cloud_short}} instance. {{site.data.keyword.Db2_on_Cloud_short}} forwards selected information about your instance to Monitoring so that you can monitor specific metrics such as cpu and memory utilization.
+
 
 For additional details on platform metrics, please see [Platform Metrics Introduction](https://www.ibm.com/cloud/blog/announcements/introducing-ibm-cloud-platform-metrics-for-db2-on-cloud). {: important}
 
