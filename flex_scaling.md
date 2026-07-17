@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-06-02"
+lastupdated: "2026-07-17"
 
 keywords:
 
@@ -175,6 +175,7 @@ The following table shows the available IOPS ranges based on storage capacity.
 {: caption="Storage/IOPS scaling ranges" caption-side="top"}
 
 ## Scaling Storage from the Console
+
 
 
 

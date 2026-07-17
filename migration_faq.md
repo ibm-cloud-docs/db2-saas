@@ -2,15 +2,15 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-07-07"
+lastupdated: "2026-07-17"
 
-keywords: 
+keywords:
 
 subcollection: db2-saas
 
 ---
 
- 
+
 {:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:codeblock: .codeblock}
@@ -49,7 +49,7 @@ No. Upgrading to Db2 v12 is optional. If you plan to move to v12, test your syst
 {: faq}
 {: support}
 
-In Step 8 of the [Migration Procedure](https://cloud.ibm.com/docs/db2-saas?topic=db2-saas-migration), select **“Yes, create a clone for testing.”** This creates a clone of your existing database for testing. 
+In Step 8 of the [Migration Procedure](https://cloud.ibm.com/docs/db2-saas?topic=db2-saas-migration), select **“Yes, create a clone for testing.”** This creates a clone of your existing database for testing.
 
 The original database is not impacted and continues running, while the clone provides a clean, separate environment where you can safely test Db2 v12. Once you are satisfied with your testing, you can delete the clone without affecting your production system.
 
@@ -57,8 +57,8 @@ The original database is not impacted and continues running, while the clone pro
 {: #q_no_upgrade}
 {: faq}
 {: support}
-  
-Select this option when you are ready to perform the final migration and move on from your Standard or Enterprise database. Up to this step, the last full backup from the old system has already been restored in the new Performance instance, and transaction logs have been continuously rolled forward. 
+
+Select this option when you are ready to perform the final migration and move on from your Standard or Enterprise database. Up to this step, the last full backup from the old system has already been restored in the new Performance instance, and transaction logs have been continuously rolled forward.
 
 When you choose **“No, upgrade without creating a clone,”** the transaction logs are rolled forward one final time to the destination database. The compute resources of the old database are then scaled down to 0, making it obsolete. At this point, you will receive new endpoints in the Performance plan, which must be updated across your consuming systems.
 
@@ -68,6 +68,15 @@ When you choose **“No, upgrade without creating a clone,”** the transaction 
 {: support}
 
 No. The old instance is not deleted. Compute is scaled to 0, but storage and objects remain. Storage is free for 14 days, after which billing begins.
+
+## Is there a pricing change when Standard or Enterprise Plan deployments are migrated to the Performance Plan?
+{: #q_pricing}
+{: faq}
+{: support}
+
+Yes. Depending on the workload and configuration, costs may either increase or decrease after migration to the Performance Plan. Pricing is specific to each customer's usage profile.
+
+Please refer to the **Resource Units (RUs)** published in the **Db2 Catalog** to estimate costs for your environment. If you have further questions, please reach out to your IBM representative.
 
 ## Can I bring back my old (Standards/Enterprise) instance?
 {: #q_oldinstance}
@@ -88,10 +97,10 @@ No. Endpoints remain the same.
 {: faq}
 {: support}
 
-Yes. The source and destination instances remain synchronized until Step 8 of the [Migration procedure](https://cloud.ibm.com/docs/db2-saas?topic=db2-saas-migration).  
+Yes. The source and destination instances remain synchronized until Step 8 of the [Migration procedure](https://cloud.ibm.com/docs/db2-saas?topic=db2-saas-migration).
 
-- Up to Step 8: The last full backup of the old database is copied to the new Performance instance, and transaction logs are continuously rolled forward.  
-- At Step 8: You must select one of the available options. Once an option is chosen, synchronization stops and a cutoff point is established.  
+- Up to Step 8: The last full backup of the old database is copied to the new Performance instance, and transaction logs are continuously rolled forward.
+- At Step 8: You must select one of the available options. Once an option is chosen, synchronization stops and a cutoff point is established.
 
 This ensures that the new Performance instance is fully up to date until the moment you finalize the migration.
 
@@ -102,11 +111,11 @@ This ensures that the new Performance instance is fully up to date until the mom
 
 Downtime begins at Step 8 when you select **“No, upgrade without creating a clone.”** It ends when new endpoints appear in the console.
 
-## How can I estimate downtime? 
+## How can I estimate downtime?
 {: #q_estimatedwntime}
 {: faq}
 {: support}
-  
+
 To estimate downtime for your Standard or Enterprise instance, select **“Yes, create a clone for testing”** in Step 8 of the [Migration procedure](https://cloud.ibm.com/docs/db2-saas?topic=db2-saas-migration). After creating the clone, monitor the time it takes for the new system’s endpoints to appear in the migration tool UI. The duration between these two actions represents your expected downtime.
 
 ## How can downtime be minimized?
@@ -121,11 +130,47 @@ Downtime cannot be completely avoided. However, if you migrate and remain on **D
 {: faq}
 {: support}
 
-During migration from Standard/Enterprise plan to Perfomance plan, all existing audit policies and audit data are retained.  
+During migration from Standard/Enterprise plan to Perfomance plan, all existing audit policies and audit data are retained.
 
-However, configurations that rely on **Db2 audit tables** are no longer supported in the Performance plan. While your existing audit data remains intact, you must transition to a supported auditing mechanism specifically, audit output to COS storage.  
+However, configurations that rely on **Db2 audit tables** are no longer supported in the Performance plan. While your existing audit data remains intact, you must transition to a supported auditing mechanism specifically, audit output to COS storage.
 
-If you currently use Db2 audit table based auditing, open a support ticket and the SRE team will assist you with configuring the supported auditing method.
+To configure audit output to COS, complete the following steps.
+
+1. **Review the documentation**
+
+    Familiarize yourself with the auditing process by reading the [Getting started with auditing guide](https://www.ibm.com/docs/en/db2-as-a-service?topic=activities-getting-started-auditing-db2-as-service).
+
+2. **Provision COS resources**
+
+    Create a Cloud Object Storage instance and bucket where your audit data is stored.
+
+3. **Configure the storage alias**
+
+    Run the following SQL statement to register your COS bucket, then note the storage alias name that you created:
+
+    ```
+    CALL SYSIBMADM.STORAGE_ACCESS_ALIAS.CATALOG(
+     '<aliasname>',
+     's3',
+     '<endpoint_without_https>',
+     '',
+     '',
+     '<bucketname>',
+     '',
+     'G',
+     'BLUADMIN'
+    );
+    ```
+    {: codeblock}
+
+    Replace `<aliasname>`, `<endpoint_without_https>`, and `<bucketname>` with your specific values.
+
+    The storage alias must have GROUP BLUADMIN privileges for audit to be configured correctly.
+    {: note}
+
+4. **Enable audit to COS**
+
+    Run the [Install Db2 audit API](https://cloud.ibm.com/apidocs/db2-on-cloud/db2-saas-perf-v4#installdb2auditv3) and provide the storage alias name from step 3 to configure audit to COS.
 
 ## Can I migrate more than 7 instances at once?
 {: #q_instance_mig}
@@ -219,19 +264,10 @@ Yes. Location changes are supported.
 
 The network connectivity model changes when transitioning from Standard/Enterprise plan to Perfomance plan:
 
-- **Standard/Enterprise plans:** Connectivity is established using [Cloud Service Endpoints (CSE)](https://cloud.ibm.com/docs/db2-saas?topic=db2-saas-connect_options) for private access.  
-- **Performance plan:** Connectivity uses [Virtual Private Endpoints (VPE)](https://cloud.ibm.com/docs/overview?topic=overview-endpoints-support) to enable private network access to your VPC environment.  
+- **Standard/Enterprise plans:** Connectivity is established using [Cloud Service Endpoints (CSE)](https://cloud.ibm.com/docs/db2-saas?topic=db2-saas-connect_options) for private access.
+- **Performance plan:** Connectivity uses [Virtual Private Endpoints (VPE)](https://cloud.ibm.com/docs/overview?topic=overview-endpoints-support) to enable private network access to your VPC environment.
 
 As part of the migration, customers moving from Standard/Enterprise plan to Performancen plan must set up VPE to maintain private connectivity. For more details, see [Configuring VPE for Db2 SaaS](https://cloud.ibm.com/docs/db2-saas?topic=db2-saas-vpeg).
-
-## Is there a pricing change when Standard or Enterprise Plan deployments are migrated to the Performance Plan?
-{: #q_pricing}
-{: faq}
-{: support}
-
-Yes. Depending on the workload and configuration, costs may either increase or decrease after migration to the Performance Plan. Pricing is specific to each customer's usage profile.
-
-Please refer to the **Resource Units (RUs)** published in the **Db2 Catalog** to estimate costs for your environment. If you have further questions, please reach out to your IBM representative.
 
 ## Do Explain Tables need to be recreated after upgrading to Db2 v12?
 {: #q_explain_tables}
