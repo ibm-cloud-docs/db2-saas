@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-16"
+lastupdated: "2026-07-17"
 
 keywords:
 
@@ -177,8 +177,6 @@ The following table shows the available IOPS ranges based on storage capacity.
 ## Scaling Storage from the Console
 
 
-The steps for configuring flexible scaling in the UI vary depending on the console you are using. If you are using the legacy console, follow the steps outlined below. If you are using the Genius Hub–enabled console, refer to [Flexible scaling](https://cloud.ibm.com/docs/db2-saas?topic=db2-saas-gh_flex_scale&interface=ui) for the correct steps.
-{: note}
 
 
 To scale storage from within the console, complete the following steps:

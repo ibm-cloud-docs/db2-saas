@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2026-07-15"
+lastupdated: "2026-07-17"
 
 keywords:
 
@@ -73,8 +73,7 @@ The Autoscaling panel is on the Administration tab of your deployment's console 
 
 ## Performance Plan
 
-The steps for configuring autoscaling in the UI vary depending on the console you are using. If you are using the legacy console, follow the steps outlined below. If you are using the Genius Hub–enabled console, refer to [Auto-scaling](https://cloud.ibm.com/docs/db2-saas?topic=db2-saas-gh_auto_scaling) for the correct steps.
-{: note}
+
 
 
 ![paras.png](images/autoscaling_perf_img1.png){: caption="Example Autoscaling panel" caption-side="bottom"}
