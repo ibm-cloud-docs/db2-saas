@@ -2,8 +2,7 @@
 
 copyright:
   years: 2014, 2025
-  years: 2014, 2022
-lastupdated: "2026-06-02"
+lastupdated: "2026-07-24"
 
 
 keywords:
