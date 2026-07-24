@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-06-02"
+lastupdated: "2026-07-24"
 
 keywords: HADR, high availability disaster recovery, performance
 
@@ -34,7 +34,8 @@ With {{site.data.keyword.Db2_on_Cloud_long}} Performance plans, administrators c
 
 ## Configuring Availability in the UI
 
-
+The steps to access the HADR conversion page in Db2 SaaS vary depending on the console you are using. If you are using the legacy console, follow the steps outlined below. If you are using the Genius Hub–enabled console, refer to [HADR conversion](https://cloud.ibm.com/docs/db2-saas?topic=db2-saas-gh_hadr_conv) for the correct steps.
+{: note}
 
 The High Availability panel is on the Adminstration tab of your deployment's console page.
 

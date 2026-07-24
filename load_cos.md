@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2026-05-26"
+lastupdated: "2026-07-24"
 
 keywords:
 
@@ -62,7 +62,8 @@ BLUUSERS cannot load data from the console.
 
 ### Open the Db2 Console to the load data page
 
-
+The steps to access the Load Data page in Db2 SaaS vary depending on the console you are using. If you are using the legacy console, follow the steps outlined below. If you are using the Genius Hub–enabled console, refer to [Loading data](https://cloud.ibm.com/docs/db2-saas?topic=db2-saas-gh_loading&interface=ui) for the correct steps.
+{: note}
 
 1. Click on `Data` on the left menu
 2. Click on `Load Data` on the top tab
