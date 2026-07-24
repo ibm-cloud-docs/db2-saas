@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-07-17"
+lastupdated: "2026-07-24"
 
 keywords:
 
@@ -163,10 +163,10 @@ To configure audit output to COS, complete the following steps.
     ```
     {: codeblock}
 
-    Replace `<aliasname>`, `<endpoint_without_https>`, and `<bucketname>` with your specific values.
+Replace `<aliasname>`, `<endpoint_without_https>`, and `<bucketname>` with your specific values.
 
-    The storage alias must have GROUP BLUADMIN privileges for audit to be configured correctly.
-    {: note}
+The storage alias must have GROUP BLUADMIN privileges for audit to be configured correctly.
+{: note}
 
 4. **Enable audit to COS**
 

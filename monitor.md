@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2026-07-17"
+lastupdated: "2026-07-24"
 
 keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode
 
@@ -105,7 +105,7 @@ For additional details on platform metrics, please see [Platform Metrics Introdu
 Monitoring metrics are currently available for only Enterprise and Standard plans. Lite plans are currently not supported.
 {: important}
 
-Sharing metrics with customers is not yet supported on V3 (Performance) plan instances. Sharing logs with customers is supported.
+Sharing metrics with customers is not yet supported on Performance plans. Sharing logs with customers is supported.
 {: important}
 
 ## Set up your {{site.data.keyword.Db2_on_Cloud_short}} service instance
