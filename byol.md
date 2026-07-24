@@ -47,7 +47,11 @@ You can also change your license type on an existing Db2 SaaS instance through t
 
 From your Db2 SaaS instance dashboard:
 
+The steps for configuring a reserved instance in the UI vary depending on the console you are using.
+{: note}
 
+If you are using the legacy console, follow the steps outlined below. If you are using the Genius Hub–enabled console, refer to [Configuring BYOL  in the UI](https://cloud.ibm.com/docs/db2-saas?topic=db2-saas-gh_byol) for the correct steps.
+{: important}
 
 1. Click the **Settings** icon in the left sidebar (wrench icon), or select **Settings** from the top navigation bar.
 2. Select the **License** sub-tab.

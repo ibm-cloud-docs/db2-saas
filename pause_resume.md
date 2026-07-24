@@ -31,7 +31,11 @@ You can pause and resume the compute resources of your Db2 on Cloud instance at 
 ### Step 1: Navigate to Pause & Resume
 {: #pause-step1}
 
+The steps for pausing and resuming instances in the UI vary depending on the console you are using.  
+{: note}
 
+If you are using the legacy console, follow the steps outlined below. If you are using the Genius Hub–enabled console, refer to [Pausing your instance](https://cloud.ibm.com/docs/db2-saas?topic=db2-saas-gh_pause-resume) for the correct steps.
+{: important}
 
 From your Db2 on Cloud instance dashboard:
 
