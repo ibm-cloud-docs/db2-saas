@@ -1,0 +1,180 @@
+---
+
+copyright:
+  years: "2026"
+lastupdated: "2026-07-24"
+
+keywords:
+
+subcollection: db2-saas
+
+---
+
+
+{:external: target="_blank" .external}
+{:shortdesc: .shortdesc}
+{:codeblock: .codeblock}
+{:screen: .screen}
+{:tip: .tip}
+{:important: .important}
+{:note: .note}
+{:deprecated: .deprecated}
+{:pre: .pre}
+
+# Backup and restore
+{: #gh_bnr}
+
+This section explains how to configure backup and restore in Db2 SaaS in the new Genius Hub–enabled console. Follow these instructions if you see the updated UI. If you are still using the **legacy console**, refer to the [backup and restore](https://cloud.ibm.com/docs/db2-saas?topic=db2-saas-bnr) section for the correct steps.
+{: important}
+
+## Backup
+{: #gh_br_backup}
+
+For paid plans, encrypted backups of the database are done daily. A daily backup is kept for each of the last 14 days.
+
+All paid plans make use of Cross-Regional IBM Cloud Object Storage (COS), by default, to keep backups offsite. {: important}
+
+Changing the backup time can take upto 2 hours to take effect. {: important}
+
+{: shortdesc}
+
+The following is an example of the manual backup operation in the web console UI:
+
+### Performance plans
+{: #gh_perfplan}
+
+1. Click **Administration** in the left menu > Select your database > Click on **Backup and recovery** >  Click on **Backups**. Then click the **Run backup** button.
+![View of the highlighted selection of the backup option](images/caas_bradmin.png "Backup and recovery console page"){: caption="Selection of the backup option" caption-side="bottom"}
+![View of the highlighted selection of the backup option](images/caas-brbkupcomplete.png "Backup and recovery console page"){: caption="Selection of the backup option" caption-side="bottom"}
+
+1. Click **Run** to run an on demand backup.
+![View of Run Backup page option](images/performance_backup_run.png "Backup and restore console page"){: caption="View of Run backup" caption-side="bottom"}
+
+1. When the backup starts, some features might not be available until the backup is completed.
+![View of the backup initiation](images/performance_backup_initiated.png "Backup and restore console page"){: caption="View of the backup initiation" caption-side="bottom"}
+
+1. After backup completion, a new backup entry in the list of snapshot backups appears as a **on_demand** type. The new backup is in an available state.
+![View of completed backup](images/caas-brbkupcomplete.png "Backup and restore console page"){: caption="View of a completed backup" caption-side="bottom"}
+
+
+## Backup retention management
+
+This feature allows Users to run procedures that modify the retention period for db2 backups.
+
+Restoring from these retained backups requires opening a support ticket. Users cannot perform self-service restores from these backups.
+{: note}
+
+### Procedures and Usages
+
+***SAVE_BACKUP***:
+
+- The `SAVE_BACKUP` call is used to mark backups that need to be retained beyond the standard retention period. This call creates a duplicate entry in the table, where the retained backup is indicated by a `1` in the `RETAIN` column. Both the original and saved entries will appear on the list until the original backup reaches the end of its retention period and is deleted through the regular cleanup process, and only the saved backup will show on the list.
+
+`db2 "call db2inst1.SAVE_BACKUP(20240313215333);"`
+
+***REMOVE_SAVED_BACKUP***:
+
+- The `REMOVE_SAVED_BACKUP` call is used to unmark a retained back so it can be deleted by the automated cleanup process.
+
+If the original backup is no longer available and the saved copy is removed, that backup becomes unrecoverable and cannot be marked for retention again. Therefore, this call should only be used when the User is absolutely certain the backup is no longer needed. {: important}
+
+`db2 "call db2inst1.REMOVE_SAVED_BACKUP(20240313215333);"`
+
+***LIST_BACKUP***:
+
+- The `LIST_BACKUP` functionality shows the complete list of backups along with the ones marked for retention, a sample output is shown below.
+
+`db2 "select * from table(db2inst1.LIST_BACKUPS());"`
+
+```
+BACKUP         PARTS       RETAIN
+-------------- ----------- -----------
+20240229215327           6           0
+20240303215333           6           0
+20240304215356           6           0
+20240305215330           6           0
+20240306215327           6           0
+20240307215329           6           0
+20240308215332           6           0
+20240309215331           6           0
+20240310215328           6           0
+20240311215329           6           0
+20240312215333           6           0
+20240313215333           6           0
+20240314215324           6           0
+20240315215328           6           0
+20240316215327           6           0
+20240317215328           6           0
+20240318215334           6           0
+20240303215333           6           1
+20240312215333           6           1
+```
+
+The `PARTS` field shows how many parts a backup is composed of after running the procedure to save it beyond its retention period. In this example, the backup contains 6 parts. Since both the original and the saved backup entries appear in the list, users should ensure the parts count matches between them. This helps confirm that all parts of the backup were saved properly. If the parts count on the saved entry is lower than the original, the `SAVE_BACKUP` call should be run again until all parts are saved successfully.
+
+A `1` in the Retain Column indicates that the backup is saved until it's marked for deletion.
+
+### Restrictions
+
+Any backup which is within 24 hours of being removed (i.e. 1 day or less from exceeding the retention period) cannot use the `SAVE_BACKUP` process.
+{: note}
+
+## Restore
+{: #br_restore}
+
+All paid plans make use of Cross-Regional IBM Cloud Object Storage (COS), by default, to keep backups offsite. {: important}
+
+The COS bucket also stores archived transaction logs and LOAD copy images. The `DB2_LOAD_COPY_NO_OVERRIDE` registry variable is configured so that all LOAD operations execute with COPY YES, even if COPY NO is specified. This ensures that load copy images are available in COS to support point-in-time restores and high availability. Load copies are pruned automatically according to the backup retention period. COS storage is billed based on space used by the workload, and because load copies rotate with backup retention, storage costs do not grow indefinitely.
+{: note}
+
+For information about point-in-time restores, see [Point-in-time restore](#point-in-time).
+
+### End-of-backup restore
+{: #gh_br_eobrestore}
+
+#### Performance plans
+
+The following is an example of the end-of-backup restore operation in the web console UI for performance plan:
+
+1. Click **Administration** > **Databases** > Select your instance > **Backups and recovery** > **Backups** tab. Select a backup that you want to restore to end-of-backup and click **Restore**.
+![View of the highlighted selection of the end-of-backup restore option](images/caas_brendofbkup.png "Backup and restore console page"){: caption="View of the selection of the end-of-backup restore option" caption-side="bottom"}
+
+1. Click **Restore** to initiate the restore.
+![View of Restore backup screen option](images/caas_restorebkup.png "Backup and restore console page"){: caption="View of Restore backup" caption-side="bottom"}
+
+1. An information message appears when restore has started. Some features might not be available until restore is completed.
+
+2. A progress bar indicates the progress of the restore process.
+![Progress of the end-of-backup restore](images/caas_restoreinprogress.png "Backup and restore console page"){: caption="Progress of the end-of-backup restore" caption-side="bottom"}
+
+1. Notifications show a **Restore success!** message after the restore is completed. Click the **Restore** tab at the top to view your restores.
+![Successful completion of end-of-backup restore](images/caas-restorecomplete.png "Backup and restore console page"){: caption="Successful completion of end-of-backup restore" caption-side="bottom"}
+
+
+### Point-in-time restore
+{: #gh_point-in-time}
+
+{{site.data.keyword.Db2_on_Cloud_long}} added a point-in-time restore capability for systems in {{site.data.keyword.Bluemix_notm}} Public. You can restore to an exact point in time from your backups.
+
+After a point-in-time restore completes, a new log chain begins. Before performing another point-in-time restore, you must first take a new backup. The timestamp for any subsequent point-in-time restore must fall after that new backup.
+{: important}
+
+The following are a selected example of screen captures of the point-in-time restore operation in the web console UI:
+
+#### Performance plans
+{: #br_pit_perf}
+
+1. Select **Restore (point-in-time)**. In the **Backups** screen, click the down arrow beside the **Run backup** button. Select **Restore (point-in-time)**.  
+![View of the highlighted selection of the point-in-time restore option](images/caas-pintime.png "Backup and restore console page"){: caption="View of the selection of the point-in-time restore option" caption-side="bottom"}
+
+2. Select a point-in-time date and time to which you want to restore the database. The point-in-time restore process selects the backup closest to your requested point-in-time date out of the pool of retained backups made during the previous 14 days. Click **Restore**.  
+![View of date and time selection for point-in-time restore](images/caas-potcalendar.png "Backup and restore console page"){: caption="View of date and time selection for point-in-time restore" caption-side="bottom"}
+
+  The point-in-time restore process invalidates any of the previously retained backups with dates after the selected point-in-time date because of a resultant divergence in the timeline.  
+  {: note}
+
+1. Restoring the database to the selected point in time. You can monitor progress through the **Notifications** panel.  
+![View of the point-in-time restore in progress](images/caas_rinprogress.png "Initialization of point-in-time restoration"){: caption="View of the point-in-time restore in progress" caption-side="bottom"}
+
+1. The restore operation completed successfully.  
+![View of the successful completion of the restoration](images/caas_rinprogress.png "Successful completion"){: caption="View of the successful completion of the restoration" caption-side="bottom"}

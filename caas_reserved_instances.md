@@ -1,0 +1,115 @@
+---
+copyright:
+  years: 2026
+lastupdated: "2026-02-17"
+
+keywords: reserved instance, reserved pricing, cost optimization, commitment
+
+subcollection: db2-saas
+---
+
+
+{:external: target="_blank" .external}
+{:shortdesc: .shortdesc}
+{:codeblock: .codeblock}
+{:screen: .screen}
+{:tip: .tip}
+{:important: .important}
+{:note: .note}
+{:deprecated: .deprecated}
+{:pre: .pre}
+
+# Reserved Instances
+{: #gh_reserved-instances}
+
+This section explains how to manage reserved instances in Db2 SaaS in the new Genius Hub–enabled console. Follow these instructions if you see the updated UI. If you are still using the **legacy console**, refer to the [Reserved Instances](https://cloud.ibm.com/docs/db2-saas?topic=db2-saas-reserved-instances) section for the correct steps.
+{: important}
+
+Reserved Instances (RI) for Db2 SaaS allow you to commit to a 1-year or 3-year term in exchange for a discounted compute price compared to the standard On Demand pricing model.
+{: shortdesc}
+
+## Prerequisites
+{: #gh-prerequisites}
+
+Before switching to a Reserved Instance license, ensure that you meet the following requirements:
+
+- An active Db2 SaaS instance on the **Performance** plan.
+
+## Restrictions
+{: #gh_ri-restrictions}
+
+Before committing to a Reserved Instance, be aware of the following restrictions:
+
+- **Term commitment**: Once you select a 1-year or 3-year reservation, you cannot delete the instance until the term expires.
+- **Plan changes**: You cannot change plans during the reservation term.
+
+Review the restrictions carefully before committing. Reserved Instance terms are binding and cannot be cancelled early.
+{: important}
+
+## Selecting a Reserved Instance during provisioning
+{: #gh_ri-provisioning}
+
+You can select a Reserved Instance license type when provisioning a new Db2 SaaS instance.
+
+During the provisioning process, locate the **Reserved Instance/BYOL** dropdown. By default, the license is set to **Default license**. Select **Reserved Instance (1 year)** or **Reserved Instance (3 year)** from the dropdown, then continue with the rest of the provisioning steps.
+
+![Selecting a Reserved Instance during provisioning](images/byol_provisioning.png){: caption="Select Reserved Instance (1 year) or Reserved Instance (3 year) from the Reserved Instance/BYOL dropdown during provisioning" caption-side="bottom"}
+
+## Configuring a Reserved Instance in the UI
+{: #ri-configuration}
+
+You can also change your license type to a Reserved Instance on an existing Db2 SaaS instance through the console.
+
+The steps for configuring a reserved instance in the UI differ depending on whether you are using the legacy console or the new Genius Hub–enabled console.
+{: note}
+
+If you are still using the legacy console, refer to the [Configuring a Reserved Instance in the UI](https://cloud.ibm.com/docs/db2-saas?topic=db2-saas-reserved-instances#ri-configuration) section for the correct steps.
+{: important}
+
+### Step 1: Navigate to the license settings
+{: #ri-step1}
+
+From your Db2 SaaS instance dashboard:
+
+1. Select **Administration** from the left side navigation.
+2. Go to **Databases** and click on your database.
+3. Click on **Licensing** in the left menu.
+4. In the main content area, click **Manage license**.
+5. Click the **Change** button on the right side to modify your license type.
+
+![Navigating to Settings > License > Change](images/ri_mangelicence.png){: caption="Navigate to Settings > License and click Change" caption-side="bottom"}
+
+### Step 2: Select the Reserved Instance license type
+{: #gh_ri-step2}
+
+On the License selection page, select either the **1-Year Reserve (license included)** or **3-Year Reserve (license included)** radio button, then click **Save**.
+
+![Selecting a Reserved Instance license option](images/ri_mglc_img2.png){: caption="Select a Reserved Instance option" caption-side="bottom"}
+
+### Step 3: Confirm the license change
+{: #gh_ri-step3}
+
+A confirmation dialog appears showing the details of your license change:
+
+1. Verify the **Change from** and **Change to** columns reflect the correct transition.
+1. Click **Proceed** to apply the change.
+
+The discount takes effect immediately. An **Expiration date** is displayed on the License settings page indicating when the reservation term ends.
+
+![Confirming the license change](images/step3_confirm_changes_ri.png){: caption="Confirm the license change to a Reserved Instance" caption-side="bottom"}
+
+### Step 4: Verify successful update
+{: #gh_ri-step4}
+
+After clicking Proceed, you are returned to the License settings page. A green success banner confirms that the license has been successfully updated. The new Reserved Instance pricing is now active on your instance.
+
+![License successfully updated](images/step4_success.png){: caption="License successfully updated confirmation" caption-side="bottom"}
+
+## Important notes
+{: #gh_ri-notes}
+
+- **Immediate effect**: The discount takes effect immediately upon confirmation. Your next billing cycle reflects the new Reserved Instance pricing.
+- **Expiration date**: After committing, the License settings page displays an expiration date for your reservation term.
+- **No service disruption**: Changing the license type does not affect your database instance availability. There is no downtime associated with this change.
+- **Increase Term**: You can switch to a longer reservation term, but you cannot switch back to On Demand or BYOL until the reservation term expires.
+- **Pause and Resume**: Instances on a Reserved Instance term will continue to be billed at the regular rate, even if they are paused.
