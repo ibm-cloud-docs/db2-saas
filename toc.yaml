@@ -85,6 +85,27 @@ toc:
           - sec_comp_sum.md
       - db2-database-assistant.md
       - communities.md
+      - topicgroup:
+          label: CaaS
+          topics:
+          - caas_intro.md
+          - caas_topics/caas_login.md
+          - caas_topics/caas_autoscaling.md
+          - caas_topics/caas_flex_scaling.md
+          - caas_br.md
+          - caas_endpoints.md
+          - caas_load_cos.md
+          - caas_topics/caas_dr.md
+          - caas_topics/caas_hadr_conversion.md
+          - caas_topics/caas_copy_db.md
+          - caas_topics/caas_byol.md
+          - caas_pause_resume.md
+          - caas_reserved_instances.md
+          - caas_external_restore_perf.md
+          - caas_topics/caas_impact_analysis.md
+          - caas_topics/caas_tuningquery.md
+          - caas_topics/caas_agentic_ai.md
+          - caas_topics/caas_ai_config.md
       - link:
           label: What's new
           href: https://www.ibm.com/support/pages/whats-new-ibm-db2-service
