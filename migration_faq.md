@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-07-24"
+lastupdated: "2026-08-07"
 
 keywords:
 
@@ -103,6 +103,15 @@ Yes. The source and destination instances remain synchronized until Step 8 of th
 - At Step 8: You must select one of the available options. Once an option is chosen, synchronization stops and a cutoff point is established.
 
 This ensures that the new Performance instance is fully up to date until the moment you finalize the migration.
+
+## How does the migration tool map a Standard/Enterprise compute profile to a Perfomance Profile?
+{: #q_profile}
+{: faq}
+{: support}
+
+The migration tool evaluates the memory allocation of the source instance and maps it to the closest Perfomance compute profile that satisfies the memory requirement without over-provisioning.
+
+That said, the initial compute profile assigned during migration is not a fixed requirement. Customers have the flexibility to resize their environment at any time through the product UI after the instance is up & running, based on their performance and capacity needs. We encourage customers to review and adjust their compute profile as needed to best fit their workload requirements.
 
 ## When does downtime occur during migration?
 {: #q_downtime}
