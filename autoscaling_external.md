@@ -76,7 +76,11 @@ The Autoscaling panel is on the Administration tab of your deployment's console 
 The steps for configuring autoscaling in the UI vary depending on the console you are using. If you are using the legacy console, follow the steps outlined below. If you are using the Genius Hub–enabled console, refer to [Auto-scaling](https://cloud.ibm.com/docs/db2-saas?topic=db2-saas-gh_auto_scaling) for the correct steps.
 {: note}
 
-![paras.png](images/autoscaling_perf_img1.png){: caption="Example Autoscaling panel" caption-side="bottom"}
+Storage autoscaling is enabled by default when you provision a new instance, with the following default values: storage increases incrementally when usage reaches 90% utilization for more than 5 minutes, and pauses when it reaches the limit of 39.95 TB.
+
+![autoscaling_perf_default_on.png](images/autoscaling_perf_default_on.png){: caption="Storage autoscaling enabled on a new instance" caption-side="bottom"}
+
+![autoscaling_perf_default_values.png](images/autoscaling_perf_default_values.png){: caption="Default autoscaling values" caption-side="bottom"}
 
 
 ## ****Autoscaling Considerations****
@@ -95,14 +99,14 @@ The steps for configuring autoscaling in the UI vary depending on the console yo
 
 The Autoscaling panel is on the Administration tab of your deployment's console page.
 
-### To enable autoscaling
+### To enable or modify autoscaling
+Autoscaling is enabled by default. Use these steps to change the autoscaling parameters, or to re-enable autoscaling if it was previously disabled.
+
 1. Click **Edit**
 2. Check **Enable storage autoscaling**
 3. Enter your desired parameter values.
 4. Be sure to click **Save** for your configuration to be saved and your changes to take effect.
 
-![autoscaling_perf_step1.png](images/autoscale_perf_step1.png)
-<br>
 ![autoscale_perf_step2.png](images/autoscale_perf_step2.png)
 
 
