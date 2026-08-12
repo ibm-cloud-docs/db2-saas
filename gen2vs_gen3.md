@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-07-15"
+lastupdated: "2026-08-12"
 
 keywords:
 
@@ -59,7 +59,7 @@ The Db2 Performance Plan introduces a more flexible approach to storage and perf
 ### Backup and recovery strategy
 {: #backup_recovery}
 
-The Db2 Performance Plan uses a snapshot-based backup model designed to improve efficiency and recovery speed.
+The Db2 Performance Plan uses a snapshot-based backup model designed to improve efficiency and recovery speed, transitioning from daily full backups to daily snapshot backups & a single full backup performed weekly.
 
 - Snapshot-based backups for faster and more efficient recovery
 - Lower storage consumption
