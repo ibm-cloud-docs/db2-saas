@@ -301,6 +301,6 @@ We recommend keeping a record of the following settings from your source (parent
 - Database Configuration (DB CFG) parameters
 
 After migration, compare the settings in your target instance with those in the source instance to make sure all required configurations are in place.
-You can refer to the <a href="https://cloud.ibm.com/docs/db2-saas?topic=db2-saas-gen2vs_gen3#db2_config">documentation for a list of customer-manageable parameters</a> that can be adjusted directly through the service. 
+You can refer to the <a href="https://cloud.ibm.com/docs/db2-saas?topic=db2-saas-gen2vs_gen3#db2_config">documentation</a> for a list of customer-manageable parameters that can be adjusted directly through the service. 
 
-If any additional parameters need to be modified, please open an IBM Cloud Support case. Our Support team will review your request and help you with any changes that are appropriate.
+If any additional parameters need to be modified, please open an IBM Cloud Support case. Our Support team will review your request and help with any changes that are appropriate.
