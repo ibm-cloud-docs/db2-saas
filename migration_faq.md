@@ -293,7 +293,7 @@ After upgrading to Db2 v12, it is necessary to recreate the Explain Tables once 
 No, Private Endpoint to Private Endpoint federation is not supported at this time on the Performance Plan. Federation is supported only through public endpoints on the performance plan
 
 ## Do my Db2 registry variables and configuration parameters get copied over as-is during the migration?
-No. Because Db2 versions and the underlying platform can vary, Db2 registry variables and some configuration parameters may not be migrated exactly as they are on the source system.
+No. Since Db2 versions and the underlying platform can vary, Db2 registry variables and some configuration parameters may not be migrated exactly as they are on the source system.
 
 We recommend keeping a record of the following settings from your source (parent) instance before migration:
 - Db2 registry variables
