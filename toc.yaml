@@ -106,6 +106,7 @@ toc:
           - caas_topics/caas_tuningquery.md
           - caas_topics/caas_agentic_ai.md
           - caas_topics/caas_ai_config.md
+          - caas_topics/caas_monitoring.md
       - link:
           label: What's new
           href: https://www.ibm.com/support/pages/whats-new-ibm-db2-service
@@ -116,6 +117,7 @@ toc:
       id: howto
       topics:
       - provision.md
+      - ins_db2_terraform.md
       - monitor.md
       - investigating_latency_events.md
       - link:
