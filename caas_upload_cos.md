@@ -51,20 +51,6 @@ For Amazon S3, use the access key ID and secret access key for an AWS identity t
 
 The **Upload to cloud object storage** page shows the history of backups that were uploaded from this database instance to your cloud object storage. To manage or deploy the uploaded backups, go to your cloud object storage.
 
-The table shows the following details for each upload:
-
-| Column | Description |
-|--------|-------------|
-| Start time | The date and time the upload started. |
-| Type | How the upload was triggered, for example **On demand**. |
-| Size | The size of the uploaded backup. |
-| Duration | How long the upload took to complete. |
-| Backup status | The current state of the upload, for example **Completed**. |
-| Initiated by | The user who started the upload. |
-{: caption="Upload history columns" caption-side="bottom"}
-
-Use **Filter table** to search the history, and click the refresh icon to reload the table with the latest results.
-
 ![Upload to cloud object storage](images/caas_upload_cos_page.png "Upload to cloud object storage"){: caption="Upload to cloud object storage" caption-side="bottom"}
 
 ## Uploading a backup
