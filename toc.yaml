@@ -95,6 +95,7 @@ toc:
           - caas_br.md
           - caas_endpoints.md
           - caas_load_cos.md
+          - caas_upload_cos.md
           - caas_topics/caas_dr.md
           - caas_topics/caas_hadr_conversion.md
           - caas_topics/caas_copy_db.md
