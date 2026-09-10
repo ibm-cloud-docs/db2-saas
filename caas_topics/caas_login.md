@@ -78,6 +78,7 @@ Once a password policy is expired , all jdbc users tagged to the expired policy 
 1. When you attempt to login after password expiry, you will be taken to the **Password Reset** page.
 2. Enter the new password.
 3. After successful reset, click **OK**.
+
 **Note:** The new password can't be same as the old password and must pass all on-screen validations.
 {: shortdesc}
 
