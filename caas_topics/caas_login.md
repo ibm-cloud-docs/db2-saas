@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-09-10"
+lastupdated: "2026-09-11"
 
 keywords: CaaS, Genius Hub–enabled Consol, CaaS login, login to CaaS
 
@@ -77,10 +77,14 @@ The standard CaaS login URL does not work for database users. Database users req
 Once a password policy is expired , all jdbc users tagged to the expired policy have to reset their password from the login page.
 1. When you attempt to login after password expiry, you will be taken to the **Password Reset** page.
 2. Enter the new password.
+
+You must enter the old password and confirm your new password before proceeding ahead.
+{: important}
+
 3. After successful reset, click **OK**.
 
-**Note:** The new password can't be same as the old password and must pass all on-screen validations.
-{: shortdesc}
+The new password can't be same as the old password and must pass all on-screen validations.
+{: note}
 
 ## Viewing and Accessing Databases in Db2 CaaS
 {: #caas_db}
