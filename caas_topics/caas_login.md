@@ -134,6 +134,7 @@ Check the **Instance Type** to determine the database type:
 1. Select **Console** under the **Administration** icon on the left‑hand side.  
    - Alternatively, click a database with status **Available** and instance type **Db2**.  
 2. The on‑premises menu opens.  
+
 ![console_caas.png](caas_images/new_step4.png)
 
 ## Console User Management Through Launchpad 
@@ -144,7 +145,7 @@ Db2 Launchpad provides IBM Cloud account owners and Global Console Administrator
 
 Administrators can assign, modify, or remove console roles for users in the IBM Cloud accounts they are authorized to manage.
 
-### Understanding Concole Access
+### Understanding Console Access
 
 Db2 on Cloud supports two sign-in approaches:
 - Database credentials: A database user signs in directly to an individual Db2 database by using a database user ID and password.
@@ -213,18 +214,25 @@ Adding an IBM ID under Db2 SaaS console Users does not grant access to the corre
 1.	Open [Db2 Launchpad](https://db2.ibm.com/).
 2.	Under Db2 SaaS instances, select **Connect to IBM Cloud**.
 3.	Sign in to IBM Cloud with an IBM ID.
+
 ![Db2 Launchpad showing the Connect to IBM Cloud option](caas_images/doc2p1.png)
+
 4.	From the Db2 Launchpad side navigation, select **User Management**.
+
 ![Db2 Launchpad showing the Connect to IBM Cloud option](caas_images/doc2p2.png)
+
 5.	On the **User Management** page, locate **Db2 SaaS Console Users**.
 The list shows explicit and automatically assigned global console roles for IBM IDs across the IBM Cloud accounts that the administrator can manage.
+
 ![Managing global console access under Db2 SaaS console Users](caas_images/doc2p3.png)
 
 ### Add a Console User
 
 To assign an explicit global console role to an IBM ID user:
 1.	In Db2 SaaS console Users, select **Add User**.
+
 ![Add user dialog for assigning global console access](caas_images/doc2p4.png)
+
 2.	In **Enter Email Address**, enter the email address associated with the user's registered IBM ID. Email matching is not case-sensitive.
 3.	From IBM cloud account name, select the account to which the role applies. Each entry identifies the account by its account name and account ID.
 4.	From Access level, select one of the following roles:
@@ -232,6 +240,7 @@ To assign an explicit global console role to an IBM ID user:
     - Global console manager
     - Global console user
 5.	Select **Add User**.
+
 ![Specifying the IBM ID, IBM Cloud account, and global console role](caas_images/doc2p5.png)
 
 Db2 Launchpad displays a confirmation notification, sends an invitation to the specified email address, and immediately shows the assigned role in the user list.
@@ -244,15 +253,18 @@ To change an existing explicit role assignment:
 1.	Locate the user under Db2 SaaS console Users.
 2.	Open the overflow menu at the end of the user's row.
 3.	Select **Edit Role**.
+
 ![Edit Role and Delete actions in the user overflow menu](caas_images/doc2p6.png)
 
 4.	Select the new global console role from **Acess Level**.
 5.	Select **Save**.
 
 The IBM Cloud account name and email address are read-only in the Edit role dialog. Only the access level can be changed. 
+
 ![Selecting a new global console role](caas_images/doc2p7.png)
 
 After the update completes, Db2 Launchpad displays a confirmation notification.
+
 ![Confirmation of a successful role change](caas_images/doc2p8.png)
 
 Changing a user’s role does not affect the current console session. To apply the updated role, the user must sign out of the Db2 on Cloud console and sign in again. Signing out of Db2 Launchpad or IBM Cloud is not required. The updated role takes effect immediately after the user signs in.
@@ -265,6 +277,7 @@ After assigning the Global Console Administrator role:
 2.	Ask the user to sign back in with the same IBM ID.
 3.	Verify that Reports is visible in the navigation menu.
 4.	Expand **Administration** and verify that the console is available.
+
 ![Reports and Administration > Console visible to a Global Console Administrator](caas_images/doc2p9.png)
 
 The presence of Reports and **Administration** > **Console** confirms that the Global Console Administrator role is active.
@@ -276,9 +289,11 @@ To remove a user's explicit global console role assignment:
 2.	Open the overflow menu at the end of the user's row.
 3.	Select **Delete**.
 4.	Review the confirmation dialog, and then select **Delete**.
+
 ![Confirming deletion of a user's explicit console role assignment](caas_images/doc2p10.png)
 
 After the operation completes, Db2 Launchpad displays a confirmation notification.
+
 ![Confirmation that the explicit user assignment was deleted successfully](caas_images/doc2p11.png)
 
 Deleting a user in the Db2 SaaS console removes only any explicitly assigned global console role. It does not remove the user’s IBM ID from the associated IBM Cloud account, nor does it automatically block console access. If the user still has the necessary IBM Cloud IAM permissions, they continue to inherit the default Global Console User role. Because this role is assigned by default, it does not appear in the Db2 SaaS console’s Users list.
