@@ -43,6 +43,7 @@ toc:
           - acr_setup.md
           - autoscaling_external.md
           - br.md
+          - backup_download.md
           - byol.md
           - copy_db.md
           - deleting_db.md
