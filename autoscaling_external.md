@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2026-07-24"
+lastupdated: "2026-09-24"
 
 keywords:
 
@@ -40,7 +40,7 @@ To monitor your storage usage, use the IBM Cloud® Monitoring integration, which
 ![paras.png](images/autoscaling_UI.png){: caption="Example Autoscaling panel" caption-side="bottom"}
 
 
-## ****Autoscaling Considerations****
+## Autoscaling Considerations
 
 - **Storage cannot be scaled down.**
 - Each increment is 10% of your storage size. The minimum increase is 20GB.
@@ -50,7 +50,7 @@ To monitor your storage usage, use the IBM Cloud® Monitoring integration, which
 - Scaling is an online operation.
 - Some scaling operations can be more long running than others. Significantly increasing the storage size can take longer than increasing it by a small amount because additional underlying hardware resources must be provisioned.
 
-## ****Configuring Autoscaling in the UI****
+## Configuring Autoscaling in the UI
 
 The Autoscaling panel is on the Administration tab of your deployment's console page.
 
@@ -83,7 +83,7 @@ Storage autoscaling is enabled by default when you provision a new instance, wit
 ![autoscaling_perf_default_values.png](images/autoscaling_perf_default_values.png){: caption="Default autoscaling values" caption-side="bottom"}
 
 
-## ****Autoscaling Considerations****
+## Autoscaling Considerations
 
 - **Storage cannot be scaled down.**
 - Each increment is 10% of your storage size. The minimum increase is 20GB.
@@ -95,7 +95,7 @@ Storage autoscaling is enabled by default when you provision a new instance, wit
 - IOPS value will be maintained during auto scale in most cases. However, if the current IOPS is less than the minimum IOPS required for the new storage, it will be automatically increased to the minimum value required.
 
 
-## ****Configuring Autoscaling in the UI****
+## Configuring Autoscaling in the UI
 
 The Autoscaling panel is on the Administration tab of your deployment's console page.
 

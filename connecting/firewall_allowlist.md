@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2026-06-01"
+lastupdated: "2026-10-07"
 
 keywords:
 
@@ -36,6 +36,9 @@ IP Address | Location
 159.23.103.227 | au-syd
 130.198.19.198 | au-syd
 135.90.129.91 | au-syd
+159.23.100.216 | au-syd
+135.90.136.88 | au-syd
+130.198.23.195 | au-syd
 
 ### `Sao Paulo` List
 IP Address | Location
@@ -95,6 +98,9 @@ IP Address | Location
 52.118.185.16 | us-south
 52.116.201.47 | us-south
 67.18.115.37 | us-south
+150.240.69.197 | us-south
+150.239.164.67 | us-south
+67.18.101.55 | us-south
 
 ## Standard/Enterprise Plan
 

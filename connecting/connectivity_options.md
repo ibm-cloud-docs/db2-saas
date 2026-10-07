@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020, 2021, 2022
-lastupdated: "2026-01-29"
+lastupdated: "2026-10-07"
 
 keywords:
 
@@ -35,7 +35,7 @@ As with any public cloud service, you can connect your application by way of a p
 ### How to connect to a public endpoint:
 {: #pub_endpt_steps}
 
-For application connections, do not use IP addresses to connect to the {{site.data.keyword.Db2_on_Cloud_short}} instance, as the IP addresses resolved from the hostname may change. Use hostnames to reference your connection properties where it is available. In cases where hostnames cannot be used such as firewall rules, see https://cloud.ibm.com/docs/Db2onCloud?topic=Db2onCloud-firewall-allowlist on suggestions for opening firewalls with subnet information.
+For application connections, do not use IP addresses to connect to the {{site.data.keyword.Db2_on_Cloud_short}} instance, as the IP addresses resolved from the hostname may change. Use hostnames to reference your connection properties where it is available. In cases where hostnames cannot be used such as firewall rules, see [Firewall allowlist](https://cloud.ibm.com/docs/db2-saas?topic=db2-saas-firewall-allowlist) on suggestions for opening firewalls with subnet information.
 {: important}
 
 The easiest way to connect to your data is by way of the public host name that was provided in your welcome letter. You can also obtain your host name and credentials in the following ways:
