@@ -53,32 +53,32 @@ To prepare for the upgrade, it is highly recommended that you:
 {: #db2-upgrade-steps}
 
 1. On the **Databases** page, locate the instance you want to upgrade. Instances on an older Db2 version show an **Upgrade** button in the **Action** column.
-![Databases page with Upgrade button](images/caas_db2_upgrade_databases_list.png){: caption="Instances on an older Db2 version show an Upgrade button in the Action column." caption-side="bottom"}
+![Databases page with Upgrade button](caas_images/caas_db2_upgrade_databases_list.png){: caption="Instances on an older Db2 version show an Upgrade button in the Action column." caption-side="bottom"}
 
 1. Click **Upgrade**, or click the instance name and select **Db2 upgrade** on the **Administration** page.
-![Db2 upgrade tile on the Administration page](images/caas_db2_upgrade_admin_tile.png){: caption="The Db2 upgrade tile on the Administration page." caption-side="bottom"}
+![Db2 upgrade tile on the Administration page](caas_images/caas_db2_upgrade_admin_tile.png){: caption="The Db2 upgrade tile on the Administration page." caption-side="bottom"}
 
 1. The **Db2 Upgrade** page opens and shows the steps to upgrade to Db2 version 12. Only **Step 1 - Pre-upgrade check** is available. **Upgrade to version 12** stays disabled until the pre-upgrade check passes.
-![Db2 Upgrade page](images/caas_db2_upgrade_page.png){: caption="The Db2 Upgrade page before the pre-upgrade check is run." caption-side="bottom"}
+![Db2 Upgrade page](caas_images/caas_db2_upgrade_page.png){: caption="The Db2 Upgrade page before the pre-upgrade check is run." caption-side="bottom"}
 
 1. Click **Start pre-upgrade check**. The check validates compatibility, upgrade readiness, and database health, then provides guidance for any issues that need attention before you proceed.
-![Pre-upgrade check running](images/caas_db2_upgrade_precheck_running.png){: caption="The pre-upgrade check in progress." caption-side="bottom"}
+![Pre-upgrade check running](caas_images/caas_db2_upgrade_precheck_running.png){: caption="The pre-upgrade check in progress." caption-side="bottom"}
 
 1. When the check passes, the page shows **All readiness checks passed. Ready to upgrade.** with the time of the last run, and **Upgrade to version 12** is enabled.
-![Pre-upgrade check passed](images/caas_db2_upgrade_precheck_passed.png){: caption="The pre-upgrade check passed and Upgrade to version 12 is enabled." caption-side="bottom"}
+![Pre-upgrade check passed](caas_images/caas_db2_upgrade_precheck_passed.png){: caption="The pre-upgrade check passed and Upgrade to version 12 is enabled." caption-side="bottom"}
 
    You can run the pre-upgrade check as many times as needed. **Upgrade to version 12** is enabled only when the most recent check passes.
    {: note}
 
 1. Click **Upgrade to version 12**. A confirmation dialog shows important notes and the recommended preparation steps. Click **Upgrade now** to start the upgrade.
-![Db2 Upgrade confirmation dialog](images/caas_db2_upgrade_confirm.png){: caption="The Db2 Upgrade confirmation dialog." caption-side="bottom"}
+![Db2 Upgrade confirmation dialog](caas_images/caas_db2_upgrade_confirm.png){: caption="The Db2 Upgrade confirmation dialog." caption-side="bottom"}
 
 1. The upgrade starts. The current upgrade state is shown below **Upgrade to version 12**, for example **Upgrade in progress...** and **Running post-upgrade steps...**.
-![Upgrade in progress](images/caas_db2_upgrade_in_progress.png){: caption="The upgrade in progress." caption-side="bottom"}
-![Running post-upgrade steps](images/caas_db2_upgrade_post_steps.png){: caption="The upgrade running post-upgrade steps." caption-side="bottom"}
+![Upgrade in progress](caas_images/caas_db2_upgrade_in_progress.png){: caption="The upgrade in progress." caption-side="bottom"}
+![Running post-upgrade steps](caas_images/caas_db2_upgrade_post_steps.png){: caption="The upgrade running post-upgrade steps." caption-side="bottom"}
 
 1. When the upgrade completes, the page shows **Congrats! Your database upgraded successfully.** with the time of the last run.
-![Upgrade successful](images/caas_db2_upgrade_success.png){: caption="The upgrade completed successfully." caption-side="bottom"}
+![Upgrade successful](caas_images/caas_db2_upgrade_success.png){: caption="The upgrade completed successfully." caption-side="bottom"}
 
 ## During the upgrade
 {: #db2-upgrade-during}
@@ -86,19 +86,19 @@ To prepare for the upgrade, it is highly recommended that you:
 While the upgrade runs, your database is down and no other actions can be performed on it.
 
 - On the **Databases** page, the instance status shows **Db upgrade in progress** and the **Upgrade** button is disabled. Clicking the instance name opens only the **Db2 Upgrade** page.
-![Databases page during the upgrade](images/caas_db2_upgrade_databases_in_progress.png){: caption="Instance status on the Databases page during the upgrade." caption-side="bottom"}
+![Databases page during the upgrade](caas_images/caas_db2_upgrade_databases_in_progress.png){: caption="Instance status on the Databases page during the upgrade." caption-side="bottom"}
 
 - Database users are redirected to an **Upgrade in progress** page and cannot perform any actions during the upgrade.
-![Upgrade in progress page for database users](images/caas_db2_upgrade_user_in_progress.png){: caption="The page shown to database users during the upgrade." caption-side="bottom"}
+![Upgrade in progress page for database users](caas_images/caas_db2_upgrade_user_in_progress.png){: caption="The page shown to database users during the upgrade." caption-side="bottom"}
 
 ## After the upgrade
 {: #db2-upgrade-after}
 
 - The **Databases** page shows the updated Db2 version for the instance.
-![Databases page after the upgrade](images/caas_db2_upgrade_databases_updated.png){: caption="The updated Db2 version on the Databases page." caption-side="bottom"}
+![Databases page after the upgrade](caas_images/caas_db2_upgrade_databases_updated.png){: caption="The updated Db2 version on the Databases page." caption-side="bottom"}
 
 - The **Administration** page shows the banner **Your last database upgrade was successful.**
-![Upgrade success banner](images/caas_db2_upgrade_success_banner.png){: caption="The upgrade success banner on the Administration page." caption-side="bottom"}
+![Upgrade success banner](caas_images/caas_db2_upgrade_success_banner.png){: caption="The upgrade success banner on the Administration page." caption-side="bottom"}
 
 ### Recommended next steps
 {: #db2-upgrade-next-steps}
