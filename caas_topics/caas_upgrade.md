@@ -1,11 +1,13 @@
 ---
+
 copyright:
   years: 2026
-lastupdated: "2026-10-23"
+lastupdated: "2026-10-26"
 
-keywords: CaaS, Genius Hub–enabled Console, Db2 upgrade, upgrade to Db2 version 12
+keywords:
 
 subcollection: db2-saas
+
 ---
 
 
@@ -73,12 +75,15 @@ To prepare for the upgrade, it is highly recommended that you:
 1. Click **Upgrade to version 12**. A confirmation dialog shows important notes and the recommended preparation steps. Click **Upgrade now** to start the upgrade.
 ![Db2 Upgrade confirmation dialog](caas_images/caas_db2_upgrade_confirm.png){: caption="The Db2 Upgrade confirmation dialog." caption-side="bottom"}
 
-1. The upgrade starts. The current upgrade state is shown below **Upgrade to version 12**, for example **Upgrade in progress...** and **Running post-upgrade steps...**.
+1. The upgrade starts. The current upgrade state is shown below **Upgrade to version 12**, for example **Upgrading database.**
+![Upgrade started](caas_images/caas_db2_upgrade_started.png){: caption="The upgrade started." caption-side="bottom"}
 ![Upgrade in progress](caas_images/caas_db2_upgrade_in_progress.png){: caption="The upgrade in progress." caption-side="bottom"}
-![Running post-upgrade steps](caas_images/caas_db2_upgrade_post_steps.png){: caption="The upgrade running post-upgrade steps." caption-side="bottom"}
 
-1. When the upgrade completes, the page shows **Congrats! Your database upgraded successfully.** with the time of the last run.
-![Upgrade successful](caas_images/caas_db2_upgrade_success.png){: caption="The upgrade completed successfully." caption-side="bottom"}
+1. When the upgrade finishes, the page shows **Upgrade successful. Database is available to use. We're running post-upgrade in the background.** with the time of the last run.
+![Upgrade successful](caas_images/caas_db2_upgrade_success.png){: caption="The upgrade completed successfully and post-upgrade is running in the background." caption-side="bottom"}
+
+1. When post-upgrade finishes, the page shows **Upgrade complete.**
+![Upgrade complete](caas_images/caas_db2_upgrade_complete.png){: caption="The upgrade is complete." caption-side="bottom"}
 
 ## During the upgrade
 {: #db2-upgrade-during}
@@ -105,6 +110,5 @@ While the upgrade runs, your database is down and no other actions can be perfor
 
 The following steps are optional:
 
-- Review the upgrade summary.
 - Validate application connectivity and critical workloads.
 - Confirm that your database is operating as expected.
