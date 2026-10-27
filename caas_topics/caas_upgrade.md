@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-26"
+lastupdated: "2026-10-27"
 
 keywords:
 
@@ -100,7 +100,7 @@ While the upgrade runs, your database is down and no other actions can be perfor
 {: #db2-upgrade-after}
 
 - The **Databases** page shows the updated Db2 version for the instance.
-![Databases page after the upgrade](caas_images/caas_db2_upgrade_databases_updated.png){: caption="The updated Db2 version on the Databases page." caption-side="bottom"}
+![Databases page after the upgrade](caas_images/caas_db2_upgrade_databases_updated_1.png){: caption="The updated Db2 version on the Databases page." caption-side="bottom"}
 
 - The **Administration** page shows the banner **Your last database upgrade was successful.**
 ![Upgrade success banner](caas_images/caas_db2_upgrade_success_banner.png){: caption="The upgrade success banner on the Administration page." caption-side="bottom"}
